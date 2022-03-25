@@ -13,8 +13,14 @@ function App() {
         <div className="iphone-container">
           <img className="iphone-pic" src={iphone}></img>
           <div className="body-text-container">
-            <h2 className="body-text body-text-title">JUGÁ TABLÚ FAMOSOS</h2>
-            <h2 className="body-text body-text-subt">Divertite con amigos</h2>
+            <div className="body-text-first-row">
+              <h2 className="body-text body-text-title">JUGÁ </h2>
+              <h2 className="body-text-tablu">TABLÚ FAMOSOS </h2>
+            </div>
+
+            <div className="body-text-second-row">
+              <h2 className="body-text body-text-subt">Divertite con amigos</h2>
+            </div>
             <p className="body-text body-text-download">
               Descargá la app en tu smartphone
             </p>
