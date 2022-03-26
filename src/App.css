@@ -91,10 +91,26 @@
   top: 40px;
   left: 40px;
 }
+
+.body-div-light {
+  position: absolute;
+  top: 250px;
+  height: 700px;
+  width: 100%;
+  background-color: aliceblue;
+}
+.body-div-dark {
+  position: absolute;
+  top: 250px;
+  height: 700px;
+  width: 100%;
+  background-color: #141215;
+}
+
 .iphone-container {
   width: 260px;
   position: absolute;
-  top: 280px;
+  top: 65px;
   left: 50px;
 }
 .iphone-pic {
@@ -107,24 +123,25 @@
   width: 500px;
 }
 
-.body-text {
+.body-text-light {
+  font-family: "Mukta Malar", sans-serif;
+
+  color: #232323;
+}
+.body-text-dark {
   font-family: "Mukta Malar", sans-serif;
   font-size: 2rem;
-  color: #232323;
+  color: white;
 }
 
 .body-text-tablu {
   font-size: 2.8rem;
   background-color: var(--mainColor);
-  position: absolute;
   font-family: "Luckiest Guy", cursive;
   animation: fade-in-body-text 0.5s linear forwards;
   animation-delay: 1s;
   opacity: 0;
   display: inline;
-  position: absolute;
-  top: 50%;
-  transform: translate(0%, -50%);
   color: white;
   padding-right: 5px;
   padding-left: 5px;

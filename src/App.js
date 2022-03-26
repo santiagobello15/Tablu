@@ -21,6 +21,20 @@ function App() {
       return "app-header-dark";
     }
   };
+  const functionDarkModeBodyDiv = () => {
+    if (darkMode == false) {
+      return "body-div-light";
+    } else {
+      return "body-div-dark";
+    }
+  };
+  const functionDarkModeBodyText = () => {
+    if (darkMode == false) {
+      return "body-text-light";
+    } else {
+      return "body-text-dark";
+    }
+  };
 
   const changeDarkMode = () => {
     if (darkMode == false) {
@@ -41,19 +55,23 @@ function App() {
           ></div>
         </div>
       </div>
-      <div className="body-div">
+      <div className={functionDarkModeBodyDiv()}>
         <div className="iphone-container">
           <img className="iphone-pic" src={iphone}></img>
           <div className="body-text-container">
             <div className="body-text-first-row">
-              <h2 className="body-text body-text-title">JUGÁ </h2>
-              <h2 className="body-text-tablu">TABLÚ FAMOSOS </h2>
+              <h2 className={functionDarkModeBodyText() + " body-text-title"}>
+                JUGÁ{" "}
+              </h2>
+              <h2 className={"body-text-tablu"}>TABLÚ FAMOSOS </h2>
             </div>
 
             <div className="body-text-second-row">
-              <h2 className="body-text body-text-subt">Divertite con amigos</h2>
+              <h2 className={functionDarkModeBodyText() + " body-text-title"}>
+                Divertite con amigos
+              </h2>
             </div>
-            <p className="body-text body-text-download">
+            <p className={functionDarkModeBodyText() + " body-text-download"}>
               Descargá la app en tu smartphone
             </p>
             <div className="buttons-cointainer">
