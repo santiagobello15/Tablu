@@ -2,12 +2,44 @@ import "./App.css";
 import iphone from "./media/iphone-front-transparent.png";
 import iosBadge from "./media/badge-ios.svg";
 import androidBadge from "./media/badge-android.svg";
+import { useState } from "react";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const functionDarkModeToggle = () => {
+    if (darkMode == false) {
+      return "toggle-circle toggle-light";
+    } else {
+      return "toggle-circle toggle-dark";
+    }
+  };
+  const functionDarkModeHeader = () => {
+    if (darkMode == false) {
+      return "app-header-light";
+    } else {
+      return "app-header-dark";
+    }
+  };
+
+  const changeDarkMode = () => {
+    if (darkMode == false) {
+      setDarkMode(true);
+    } else {
+      setDarkMode(false);
+    }
+    console.log(darkMode);
+  };
   return (
     <div className="App">
-      <div className="app-header">
+      <div className={functionDarkModeHeader()}>
         <h1 className="header-title">TABLÚ FAMOSOS</h1>
+        <div className="toggle-button">
+          <div
+            className={functionDarkModeToggle()}
+            onClick={changeDarkMode}
+          ></div>
+        </div>
       </div>
       <div className="body-div">
         <div className="iphone-container">
