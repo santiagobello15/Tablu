@@ -193,6 +193,21 @@
   width: 500px;
   height: 100px;
   position: absolute;
+  animation: up-and-fade 0.3s linear forwards;
+  opacity: 0;
+  animation-delay: 2.5s;
+}
+
+@keyframes up-and-fade {
+  0% {
+    opacity: 0;
+    top: 360px;
+  }
+
+  100% {
+    opacity: 1;
+    top: 355px;
+  }
 }
 
 .absDivIos {
@@ -283,6 +298,7 @@
   position: absolute;
   top: 20px;
   animation: parpadding 1s linear forwards infinite;
+  cursor: pointer;
 }
 
 @keyframes parpadding {
