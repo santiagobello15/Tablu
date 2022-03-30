@@ -45,11 +45,18 @@ const Home: NextPage = () => {
       return styles.bodyTextSubtDark;
     }
   };
+  const functionDarkModeWebVersion = () => {
+    if (darkMode == false) {
+      return styles.WebVersionLight;
+    } else {
+      return styles.bodyTextWebVersionDark;
+    }
+  };
   const functionDarkModeBodyDownload = () => {
     if (darkMode == false) {
-      return styles.bodyTextDownloadLight;
+      return styles.bodyTextWebVersionLight;
     } else {
-      return styles.bodyTextDownloadDark;
+      return styles.bodyTextWebVersionDark;
     }
   };
 
@@ -107,6 +114,12 @@ const Home: NextPage = () => {
               ></Image>
             </div>
           </div>
+        </div>
+        <div className={styles.bodyTextFifth}>
+          <h1 className={functionDarkModeBodyDownload()}>
+            Ó usá la versión web
+          </h1>
+          <h1 className={styles.onlineVersion}>Jugar Online</h1>
         </div>
       </div>
     </div>

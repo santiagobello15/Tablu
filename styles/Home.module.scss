@@ -6,7 +6,7 @@
   left: 0px;
   position: absolute;
   width: 100%;
-  height: 250px;
+  height: 220px;
   background: #7b2cbf;
   background: linear-gradient(
     90deg,
@@ -19,7 +19,7 @@
   left: 0px;
   position: absolute;
   width: 100%;
-  height: 250px;
+  height: 220px;
   background: rgb(33, 29, 36);
   background: linear-gradient(
     90deg,
@@ -85,20 +85,20 @@
   font-family: "Luckiest Guy", cursive;
   color: white;
   position: absolute;
-  top: 40px;
+  top: 30px;
   left: 40px;
 }
 
 .bodyDivLight {
   position: absolute;
-  top: 250px;
+  top: 220px;
   height: 700px;
   width: 100%;
   background-color: aliceblue;
 }
 .bodyDivDark {
   position: absolute;
-  top: 250px;
+  top: 220px;
   height: 700px;
   width: 100%;
   background-color: #141215;
@@ -107,16 +107,16 @@
 .iphoneContainer {
   width: 260px;
   position: absolute;
-  top: 65px;
-  left: 50px;
+  top: 60px;
+  left: 30px;
 }
 .iphonePic {
   width: 100%;
 }
 .bodyTextContainer {
   position: absolute;
-  left: 300px;
-  top: 50px;
+  left: 330px;
+  top: 60px;
   width: 500px;
 }
 
@@ -173,16 +173,26 @@
   animation-delay: 1.5s;
   opacity: 0;
   width: 500px;
-  height: 75px;
+  height: 25px;
+  top: 180px;
+  position: absolute;
 }
 .bodyTextFourthRow {
   position: absolute;
-  top: 250px;
+  top: 205px;
   height: 55px;
   width: 350px;
   animation: fade-in-body-text 0.5s linear forwards;
   animation-delay: 1.8s;
   opacity: 0;
+}
+
+.bodyTextFifth {
+  left: 330px;
+  top: 350px;
+  width: 500px;
+  height: 100px;
+  position: absolute;
 }
 
 .absDivIos {
@@ -238,16 +248,57 @@
 .bodyTextDownloadLight {
   position: absolute;
   font-weight: 400;
-  font-size: 1.3rem;
-  top: 180px;
+  font-size: 1rem;
+  top: 170px;
   font-family: "Mukta Malar", sans-serif;
   color: #232322;
 }
 .bodyTextDownloadDark {
   position: absolute;
   font-weight: 400;
-  font-size: 1.3rem;
+  font-size: 1rem;
   color: white;
   font-family: "Mukta Malar", sans-serif;
-  top: 180px;
+  top: 170px;
+}
+.bodyTextWebVersionLight {
+  position: absolute;
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: "Mukta Malar", sans-serif;
+  color: #232322;
+}
+.bodyTextWebVersionDark {
+  position: absolute;
+  font-weight: 400;
+  font-size: 1rem;
+  color: white;
+  font-family: "Mukta Malar", sans-serif;
+}
+.onlineVersion {
+  font-size: 3rem;
+  font-family: "Luckiest Guy", cursive;
+  color: #9d4edd;
+  text-shadow: 2px 2px black;
+  position: absolute;
+  top: 20px;
+  animation: parpadding 1s linear forwards infinite;
+}
+
+@keyframes parpadding {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.01);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  75% {
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
