@@ -1,30 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@200;300;400;500;600;700;800&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style: none;
-}
 
-:root {
-  --mainColor: #7b2cbf;
-}
-
-.app-header-light {
+.appHeaderLight {
   top: 0px;
   left: 0px;
   position: absolute;
   width: 100%;
   height: 250px;
-  background: var(--mainColor);
+  background: #7b2cbf;
   background: linear-gradient(
     90deg,
     rgba(123, 44, 191, 1) 0%,
     rgba(157, 78, 221, 1) 100%
   );
 }
-.app-header-dark {
+.appHeaderDark {
   top: 0px;
   left: 0px;
   position: absolute;
@@ -38,7 +28,7 @@
   );
 }
 
-.toggle-button {
+.toggleButton {
   position: absolute;
   width: 50px;
   height: 23px;
@@ -48,7 +38,20 @@
   top: 25px;
 }
 
-.toggle-circle {
+.toggleLight {
+  animation: lightMode 0.3s linear forwards;
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: azure;
+  top: 50%;
+  transform: translate(0%, -50%);
+  left: 2px;
+  cursor: pointer;
+}
+.toggleDark {
+  animation: darkMode 0.3s linear forwards;
   position: absolute;
   height: 20px;
   width: 20px;
@@ -60,13 +63,7 @@
   cursor: pointer;
 }
 
-.toggle-light {
-  animation: light-mode 0.3s linear forwards;
-}
-.toggle-dark {
-  animation: dark-mode 0.3s linear forwards;
-}
-@keyframes light-mode {
+@keyframes lightMode {
   0% {
     left: 26px;
   }
@@ -74,7 +71,7 @@
     left: 2px;
   }
 }
-@keyframes dark-mode {
+@keyframes darkMode {
   0% {
     left: 2px;
   }
@@ -83,7 +80,7 @@
   }
 }
 
-.header-title {
+.headerTitle {
   font-size: 5rem;
   font-family: "Luckiest Guy", cursive;
   color: white;
@@ -92,14 +89,14 @@
   left: 40px;
 }
 
-.body-div-light {
+.bodyDivLight {
   position: absolute;
   top: 250px;
   height: 700px;
   width: 100%;
   background-color: aliceblue;
 }
-.body-div-dark {
+.bodyDivDark {
   position: absolute;
   top: 250px;
   height: 700px;
@@ -107,44 +104,103 @@
   background-color: #141215;
 }
 
-.iphone-container {
+.iphoneContainer {
   width: 260px;
   position: absolute;
   top: 65px;
   left: 50px;
 }
-.iphone-pic {
+.iphonePic {
   width: 100%;
 }
-.body-text-container {
+.bodyTextContainer {
   position: absolute;
   left: 300px;
   top: 50px;
   width: 500px;
 }
 
-.body-text-light {
+.bodyTextLight {
   font-family: "Mukta Malar", sans-serif;
-
   color: #232323;
-}
-.body-text-dark {
-  font-family: "Mukta Malar", sans-serif;
-  font-size: 2rem;
-  color: white;
-}
-
-.body-text-tablu {
-  font-size: 2.8rem;
-  background-color: var(--mainColor);
-  font-family: "Luckiest Guy", cursive;
+  font-size: 3rem;
+  font-weight: 800;
   animation: fade-in-body-text 0.5s linear forwards;
   animation-delay: 1s;
   opacity: 0;
   display: inline;
+  padding-right: 10px;
+}
+.bodyTextDark {
+  font-family: "Mukta Malar", sans-serif;
+  font-size: 2rem;
+  color: white;
+  font-size: 3rem;
+  font-weight: 800;
+  animation: fade-in-body-text 0.5s linear forwards;
+  animation-delay: 1s;
+  opacity: 0;
+  display: inline;
+  padding-right: 10px;
+}
+
+.bodyTextTablu {
+  font-size: 2.8rem;
+  background-color: #7b2cbf;
+  font-family: "Luckiest Guy", cursive;
+  display: inline;
   color: white;
   padding-right: 5px;
   padding-left: 5px;
+}
+
+.bodyTextFirstRow {
+  animation: fade-in-body-text 0.5s linear forwards;
+  animation-delay: 1s;
+  opacity: 0;
+  width: 500px;
+  height: 75px;
+}
+.bodyTextSecondRow {
+  animation: fade-in-body-text 0.5s linear forwards;
+  animation-delay: 1s;
+  opacity: 0;
+  width: 500px;
+  height: 75px;
+}
+.bodyTextThirdRow {
+  animation: fade-in-body-text 0.5s linear forwards;
+  animation-delay: 1.5s;
+  opacity: 0;
+  width: 500px;
+  height: 75px;
+}
+.bodyTextFourthRow {
+  position: absolute;
+  top: 250px;
+  height: 55px;
+  width: 350px;
+  animation: fade-in-body-text 0.5s linear forwards;
+  animation-delay: 1.8s;
+  opacity: 0;
+}
+
+.absDivIos {
+  position: absolute;
+  width: 45%;
+  height: 100%;
+  right: 0px;
+}
+.absDivAndroid {
+  position: absolute;
+  width: 45%;
+  height: 100%;
+  left: 0px;
+}
+
+.buttonsStores {
+  height: 50px;
+  position: relative;
 }
 
 @keyframes fade-in-body-text {
@@ -156,48 +212,42 @@
   }
 }
 
-.body-text-title {
+.bodyTextTitle {
   font-size: 3rem;
   font-weight: 800;
-  animation: fade-in-body-text 0.5s linear forwards;
-  animation-delay: 1s;
-  opacity: 0;
   display: inline;
   padding-right: 10px;
 }
-.body-text-subt {
+
+.bodyTextSubtLight {
   position: absolute;
   font-weight: 800;
   top: 80px;
-  animation: fade-in-body-text 0.5s linear forwards;
-  animation-delay: 1s;
-  opacity: 0;
+  font-size: 2rem;
+  font-family: "Mukta Malar", sans-serif;
+  color: #232323;
 }
-.body-text-download {
+.bodyTextSubtDark {
+  position: absolute;
+  font-weight: 800;
+  top: 80px;
+  font-size: 2rem;
+  font-family: "Mukta Malar", sans-serif;
+  color: white;
+}
+.bodyTextDownloadLight {
   position: absolute;
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   top: 180px;
-  animation: fade-in-body-text 0.5s linear forwards;
-  animation-delay: 1.5s;
-  opacity: 0;
+  font-family: "Mukta Malar", sans-serif;
+  color: #232323;
 }
-.buttons-cointainer {
+.bodyTextDownloadDark {
   position: absolute;
-  top: 250px;
-  height: 45px;
-  width: 350px;
-  animation: fade-in-body-text 0.5s linear forwards;
-  animation-delay: 1.8s;
-  opacity: 0;
-}
-.button-app {
-  position: absolute;
-  height: 100%;
-  left: 0px;
-}
-.app-android {
-  position: absolute;
-  right: 0px;
-  left: auto;
+  font-weight: 400;
+  font-size: 1.3rem;
+  color: white;
+  font-family: "Mukta Malar", sans-serif;
+  top: 180px;
 }
