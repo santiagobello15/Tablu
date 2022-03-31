@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
 import { useState } from "react";
 import iphone from "./media/iphone-front-transparent.png";
 import iosBadge from "./media/badge-ios.svg";
 import androidBadge from "./media/badge-android.svg";
+import { AspectRatio } from "@chakra-ui/layout";
 
 const Home: NextPage = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -59,6 +59,20 @@ const Home: NextPage = () => {
       return styles.bodyTextWebVersionDark;
     }
   };
+  const functionH1DarkMode = () => {
+    if (darkMode == false) {
+      return "Light";
+    } else {
+      return "Dark";
+    }
+  };
+  const functionH1DarkModeClass = () => {
+    if (darkMode == false) {
+      return styles.h1LightMode;
+    } else {
+      return styles.h1DarkMode;
+    }
+  };
 
   const changeDarkMode = () => {
     if (darkMode == false) {
@@ -72,11 +86,12 @@ const Home: NextPage = () => {
     <div className="App">
       <div className={functionDarkModeHeader()}>
         <h1 className={styles.headerTitle}>TABLÚ FAMOSOS</h1>
-        <div className={styles.toggleButton}>
+        <div onClick={changeDarkMode} className={styles.toggleButton}>
           <div
             className={functionDarkModeToggle()}
             onClick={changeDarkMode}
           ></div>
+          <h1 className={functionH1DarkModeClass()}>{functionH1DarkMode()}</h1>
         </div>
       </div>
       <div className={functionDarkModeBodyDiv()}>
@@ -120,6 +135,16 @@ const Home: NextPage = () => {
             Ó usá la versión web
           </h1>
           <h1 className={styles.onlineVersion}>Jugar Online</h1>
+        </div>
+        <div>
+          <AspectRatio className={styles.videoframe} maxW="520px" ratio={9 / 6}>
+            <iframe
+              className={styles.videonoframes}
+              title="video"
+              src="https://www.youtube.com/embed/QhBnZ6NPOY0"
+              allowFullScreen
+            />
+          </AspectRatio>
         </div>
       </div>
     </div>
