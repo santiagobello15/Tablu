@@ -73,6 +73,13 @@ const Home: NextPage = () => {
       return styles.h1DarkMode;
     }
   };
+  const functionDarkModeFooter = () => {
+    if (darkMode == false) {
+      return styles.footerLight;
+    } else {
+      return styles.footerDark;
+    }
+  };
 
   const changeDarkMode = () => {
     if (darkMode == false) {
@@ -80,7 +87,6 @@ const Home: NextPage = () => {
     } else {
       setDarkMode(false);
     }
-    console.log(darkMode);
   };
   return (
     <div className="App">
@@ -136,17 +142,16 @@ const Home: NextPage = () => {
           </h1>
           <h1 className={styles.onlineVersion}>Jugar Online</h1>
         </div>
-        <div>
-          <AspectRatio className={styles.videoframe} maxW="520px" ratio={9 / 6}>
-            <iframe
-              className={styles.videonoframes}
-              title="video"
-              src="https://www.youtube.com/embed/QhBnZ6NPOY0"
-              allowFullScreen
-            />
-          </AspectRatio>
-        </div>
+        <AspectRatio className={styles.videoframe} maxW="520px" ratio={9 / 6}>
+          <iframe
+            className={styles.videonoframes}
+            title="video"
+            src="https://www.youtube.com/embed/QhBnZ6NPOY0"
+            allowFullScreen
+          />
+        </AspectRatio>
       </div>
+      <div className={functionDarkModeFooter()}></div>
     </div>
   );
 };
