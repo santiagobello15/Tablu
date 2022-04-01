@@ -11,7 +11,13 @@ import {
 function settingsModal({ closeSettingsModal }: any) {
   const closeSettModal = () => {
     closeSettingsModal(false);
+    console.log(sliderTimeValue);
+    console.log(sliderRoundsValue);
   };
+
+  const [sliderTimeValue, setSliderTimeValue] = useState();
+
+  const [sliderRoundsValue, setSliderRoundsValue] = useState();
 
   return (
     <div className={styles.overlayModal}>
@@ -22,13 +28,58 @@ function settingsModal({ closeSettingsModal }: any) {
             <p>Cantidad de rondas</p>
           </li>
           <li className={styles.secondLi}>
-            <p>Tiempo por ronda</p>
+            <Slider
+              onChange={(val) => setSliderRoundsValue(val)}
+              aria-label="slider-ex-1"
+              defaultValue={15}
+              min={5}
+              max={25}
+              step={5}
+              colorScheme="purple"
+            >
+              <SliderMark value={5} mt="1" ml="-2.5" fontSize="sm">
+                5
+              </SliderMark>
+              <SliderMark value={10} mt="1" ml="-2.5" fontSize="sm">
+                10
+              </SliderMark>
+              <SliderMark value={15} mt="1" ml="-2.5" fontSize="sm">
+                15
+              </SliderMark>
+              <SliderMark value={20} mt="1" ml="-2.5" fontSize="sm">
+                20
+              </SliderMark>
+              <SliderMark value={25} mt="1" ml="-2.5" fontSize="sm">
+                25
+              </SliderMark>
+              <SliderTrack>
+                <SliderFilledTrack />
+              </SliderTrack>
+              <SliderThumb />
+            </Slider>
           </li>
           <li className={styles.thirdLi}>
             <p>Tiempo por ronda</p>
           </li>
           <li className={styles.fourthLi}>
-            <Slider aria-label="slider-ex-1" defaultValue={30}>
+            <Slider
+              onChange={(val) => setSliderTimeValue(val)}
+              aria-label="slider-ex-1"
+              defaultValue={60}
+              min={30}
+              max={90}
+              step={30}
+              colorScheme="purple"
+            >
+              <SliderMark value={30} mt="1" ml="-2.5" fontSize="sm">
+                30
+              </SliderMark>
+              <SliderMark value={60} mt="1" ml="-2.5" fontSize="sm">
+                60
+              </SliderMark>
+              <SliderMark value={90} mt="1" ml="-2.5" fontSize="sm">
+                90
+              </SliderMark>
               <SliderTrack>
                 <SliderFilledTrack />
               </SliderTrack>
