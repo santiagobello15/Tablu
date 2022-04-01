@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { NextPage } from "next";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
@@ -140,7 +141,9 @@ const Home: NextPage = () => {
           <h1 className={functionDarkModeBodyDownload()}>
             Ó usá la versión web
           </h1>
-          <h1 className={styles.onlineVersion}>Jugar Online</h1>
+          <Link href="/game">
+            <h1 className={styles.onlineVersion}>Jugar Online</h1>
+          </Link>
         </div>
         <AspectRatio className={styles.videoframe} maxW="520px" ratio={9 / 6}>
           <iframe
@@ -151,6 +154,7 @@ const Home: NextPage = () => {
           />
         </AspectRatio>
       </div>
+
       <div className={functionDarkModeFooter()}></div>
     </div>
   );
