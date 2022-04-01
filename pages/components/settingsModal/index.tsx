@@ -1,5 +1,12 @@
 import React, { useState } from "react";
 import styles from "./settingsModal.module.scss";
+import {
+  Slider,
+  SliderTrack,
+  SliderFilledTrack,
+  SliderThumb,
+  SliderMark,
+} from "@chakra-ui/react";
 
 function settingsModal({ closeSettingsModal }: any) {
   const closeSettModal = () => {
@@ -20,7 +27,14 @@ function settingsModal({ closeSettingsModal }: any) {
           <li className={styles.thirdLi}>
             <p>Tiempo por ronda</p>
           </li>
-          <li className={styles.fourthLi}></li>
+          <li className={styles.fourthLi}>
+            <Slider aria-label="slider-ex-1" defaultValue={30}>
+              <SliderTrack>
+                <SliderFilledTrack />
+              </SliderTrack>
+              <SliderThumb />
+            </Slider>
+          </li>
           <li className={styles.fifthLi}>
             <p>Incrementos de dificultad</p>
           </li>
