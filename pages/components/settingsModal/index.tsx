@@ -14,11 +14,13 @@ function SettingsModal({
   GetTimeFromSettings,
   CloseSettingsModal,
   GetMuletillasFromSettings,
+  GetInsultosFromSettings,
 }: any) {
   const CloseSettModal = () => {
     SendTimetoGame();
     SendRoundstoGame();
     SendMuletillastoGame();
+    SendInsultostoGame();
     CloseSettingsModal(false);
   };
 
@@ -35,6 +37,9 @@ function SettingsModal({
   };
   const SendMuletillastoGame = () => {
     GetMuletillasFromSettings(muletillaChecked);
+  };
+  const SendInsultostoGame = () => {
+    GetInsultosFromSettings(insultosChecked);
   };
 
   return (

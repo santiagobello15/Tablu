@@ -1,10 +1,12 @@
 import type { NextPage } from "next";
 import styles from "../styles/game.module.scss";
 import SettingsModal from "./components/settingsModal";
+import RulesModal from "./components/rulesModal";
 import React, { useState } from "react";
 
 const Game: NextPage = () => {
   const [showsettingsModal, setShowSettingsModal] = useState(false);
+  const [showrulesModal, setShowRulesModal] = useState(false);
   const [timeRound, setTimeRound] = useState(60);
   const [clickedMuletillas, setClickedMuletillas] = useState(false);
   const [clickedInsultos, setClickedInsultos] = useState(false);
@@ -18,12 +20,21 @@ const Game: NextPage = () => {
           GetTimeFromSettings={setTimeRound}
           GetRoundsFromSettings={setQuantityRound}
           GetMuletillasFromSettings={setClickedMuletillas}
+          GetInsultosFromSettings={setClickedInsultos}
         />
       );
     }
   };
+  const renderrulesModal = () => {
+    if (showrulesModal == true) {
+      return <RulesModal CloseRulesModal={setShowRulesModal} />;
+    }
+  };
   const settModalShow = () => {
     setShowSettingsModal(true);
+  };
+  const rulesModalShow = () => {
+    setShowRulesModal(true);
   };
 
   const muletillaFunction = () => {
@@ -44,6 +55,7 @@ const Game: NextPage = () => {
   return (
     <div className={styles.mainDiv}>
       {rendersettingsModal()}
+      {renderrulesModal()}
       <div className={styles.centerDiv}>
         <h1 className={styles.headerTitle}>TABLÚ FAMOSOS</h1>
 
@@ -51,7 +63,7 @@ const Game: NextPage = () => {
           <div className={styles.configButton} onClick={settModalShow}>
             <p>Configuración</p>
           </div>
-          <div className={styles.rulesButton}>
+          <div className={styles.rulesButton} onClick={rulesModalShow}>
             <p>Reglas</p>
           </div>
           <div className={styles.startButton}>
@@ -59,7 +71,10 @@ const Game: NextPage = () => {
           </div>
         </div>
         <div className={styles.timerView}>
-          <p>{timeRound}''</p>
+          <p>
+            {timeRound}
+            {'"'}
+          </p>
         </div>
         <div className={styles.roundsView}>
           <p>{quantityRound}</p>
