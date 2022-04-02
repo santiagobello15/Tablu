@@ -2,11 +2,13 @@ import type { NextPage } from "next";
 import styles from "../styles/game.module.scss";
 import SettingsModal from "./components/settingsModal";
 import RulesModal from "./components/rulesModal";
+import StartModal from "./components/startModal";
 import React, { useState } from "react";
 
 const Game: NextPage = () => {
   const [showsettingsModal, setShowSettingsModal] = useState(false);
   const [showrulesModal, setShowRulesModal] = useState(false);
+  const [showstartModal, setShowStartModal] = useState(false);
   const [timeRound, setTimeRound] = useState(60);
   const [clickedMuletillas, setClickedMuletillas] = useState(false);
   const [clickedInsultos, setClickedInsultos] = useState(false);
@@ -30,11 +32,19 @@ const Game: NextPage = () => {
       return <RulesModal CloseRulesModal={setShowRulesModal} />;
     }
   };
+  const renderstartModal = () => {
+    if (showstartModal == true) {
+      return <StartModal CloseStartModal={setShowStartModal} />;
+    }
+  };
   const settModalShow = () => {
     setShowSettingsModal(true);
   };
   const rulesModalShow = () => {
     setShowRulesModal(true);
+  };
+  const startModalShow = () => {
+    setShowStartModal(true);
   };
 
   const muletillaFunction = () => {
@@ -56,6 +66,7 @@ const Game: NextPage = () => {
     <div className={styles.mainDiv}>
       {rendersettingsModal()}
       {renderrulesModal()}
+      {renderstartModal()}
       <div className={styles.centerDiv}>
         <h1 className={styles.headerTitle}>TABLÚ FAMOSOS</h1>
 
@@ -66,23 +77,27 @@ const Game: NextPage = () => {
           <div className={styles.rulesButton} onClick={rulesModalShow}>
             <p>Reglas</p>
           </div>
-          <div className={styles.startButton}>
+          <div className={styles.startButton} onClick={startModalShow}>
             <p>Comenzar</p>
           </div>
         </div>
         <div className={styles.timerView}>
+          <a>Tiempo</a>
           <p>
             {timeRound}
             {'"'}
           </p>
         </div>
         <div className={styles.roundsView}>
+          <a>Rondas</a>
           <p>{quantityRound}</p>
         </div>
         <div className={styles.muletillaView}>
+          <a>Modificador #1</a>
           <p>{muletillaFunction()}</p>
         </div>
         <div className={styles.insultosView}>
+          <a>Modificador #2</a>
           <p>{insultosFunction()}</p>
         </div>
       </div>

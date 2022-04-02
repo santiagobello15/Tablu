@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./rulesModal.module.scss";
+import styles from "./startModal.module.scss";
 
-function RulesModal({ CloseRulesModal }: any) {
-  const CloseRullModal = () => {
-    CloseRulesModal(false);
+function StartModal({ CloseStartModal }: any) {
+  const CloseStModal = () => {
+    CloseStartModal(false);
   };
 
   return (
@@ -34,8 +34,7 @@ function RulesModal({ CloseRulesModal }: any) {
             <p>4) Prohibido gritar</p>
           </li>
         </ul>
-        {}
-        <div className={styles.closeBtn} onClick={CloseRulesModal}>
+        <div className={styles.closeBtn} onClick={CloseStartModal}>
           <p>X</p>
         </div>
       </div>
@@ -43,4 +42,4 @@ function RulesModal({ CloseRulesModal }: any) {
   );
 }
 
-export default RulesModal;
+export default StartModal;
