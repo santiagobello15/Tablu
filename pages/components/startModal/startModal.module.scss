@@ -79,42 +79,44 @@
       transform: translate(-50%, -0%);
       background-color: transparent;
       text-align: center;
+      outline: none;
+      font-weight: 800;
     }
   }
 }
 
 .firstRowRed {
   top: 30px;
-  background-color: hsla(12, 76%, 61%);
+  background-color: hsla(356, 81%, 88%);
 }
 .firstRowBlue {
   top: 30px;
-  background-color: hsla(197, 37%, 24%);
+  background-color: hsl(207, 61%, 86%);
 }
 .firstRowGreen {
   top: 30px;
-  background-color: hsl(173, 58%, 39%);
+  background-color: hsl(167, 33%, 84%);
 }
 .firstRowYellow {
   top: 30px;
-  background-color: hsl(43, 74%, 66%);
+  background-color: hsl(43, 82%, 89%);
 }
 
 .secondRowRed {
   top: 150px;
-  background-color: hsla(12, 76%, 61%);
+  background-color: hsla(356, 81%, 88%);
 }
 .secondRowBlue {
   top: 150px;
-  background-color: hsla(197, 37%, 24%);
+  background-color: hsla(207, 61%, 86%);
 }
 .secondRowGreen {
   top: 150px;
-  background-color: hsl(173, 58%, 39%);
+  background-color: hsl(167, 33%, 84%);
 }
 .secondRowYellow {
   top: 150px;
-  background-color: hsl(43, 74%, 66%);
+  background-color: hsl(43, 82%, 89%);
 }
 
 .secondRow {
@@ -145,31 +147,31 @@
 .colorRed {
   position: absolute;
   left: 5px;
-  background-color: hsla(12, 76%, 61%, 0.5);
+  background-color: hsla(356, 81%, 88%, 0.7);
 }
 .colorRed:hover {
-  background-color: hsla(12, 76%, 61%);
+  background-color: hsl(356, 81%, 88%);
 }
 
 .colorBlue {
   left: 25px;
-  background-color: hsla(197, 37%, 24%, 0.5);
+  background-color: hsla(207, 61%, 86%, 0.7);
 }
 .colorBlue:hover {
-  background-color: hsla(197, 37%, 24%);
+  background-color: hsla(207, 61%, 86%);
 }
 
 .colorGreen {
   left: 45px;
-  background-color: hsl(173, 58%, 39%, 0.5);
+  background-color: hsl(167, 33%, 84%, 0.7);
 }
 .colorGreen:hover {
-  background-color: hsl(173, 58%, 39%);
+  background-color: hsl(167, 33%, 84%);
 }
 .colorYellow {
   left: 65px;
-  background-color: hsl(43, 74%, 66%, 0.5);
+  background-color: hsl(43, 82%, 89%, 0.7);
 }
 .colorYellow:hover {
-  background-color: hsl(43, 74%, 66%);
+  background-color: hsl(43, 82%, 89%);
 }

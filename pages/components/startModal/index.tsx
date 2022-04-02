@@ -66,7 +66,7 @@ function StartModal({ CloseStartModal }: any) {
         <h1>Comenzar</h1>
         <ul className={styles.configUl}>
           <li className={picked1stRowFunction()}>
-            <input placeholder="Equipo 1" />
+            <input placeholder="Equipo 1..." />
             <div className={styles.colorsDiv}>
               <div className={styles.colorRed} onClick={pickedRed1}></div>
               <div className={styles.colorBlue} onClick={pickedBlue1}></div>
@@ -75,7 +75,7 @@ function StartModal({ CloseStartModal }: any) {
             </div>
           </li>
           <li className={picked2ndRowFunction()}>
-            <input placeholder="Equipo 2" />
+            <input placeholder="Equipo 2..." />
             <div className={styles.colorsDiv}>
               <div className={styles.colorRed} onClick={pickedRed2}></div>
               <div className={styles.colorBlue} onClick={pickedBlue2}></div>
