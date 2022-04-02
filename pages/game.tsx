@@ -4,23 +4,41 @@ import SettingsModal from "./components/settingsModal";
 import React, { useState } from "react";
 
 const Game: NextPage = () => {
-  const [showsettingsModal, setshowsettingsModal] = useState(false);
-
-  const moveData = (personalData) => {
-    console.log(personalData);
-  };
+  const [showsettingsModal, setShowSettingsModal] = useState(false);
+  const [timeRound, setTimeRound] = useState(60);
+  const [clickedMuletillas, setClickedMuletillas] = useState(false);
+  const [clickedInsultos, setClickedInsultos] = useState(false);
+  const [quantityRound, setQuantityRound] = useState(15);
 
   const rendersettingsModal = () => {
     if (showsettingsModal == true) {
       return (
         <SettingsModal
-          /* closeSettingsModal={setshowsettingsModal} */ onMoveData={moveData}
+          CloseSettingsModal={setShowSettingsModal}
+          GetTimeFromSettings={setTimeRound}
+          GetRoundsFromSettings={setQuantityRound}
+          GetMuletillasFromSettings={setClickedMuletillas}
         />
       );
     }
   };
   const settModalShow = () => {
-    setshowsettingsModal(true);
+    setShowSettingsModal(true);
+  };
+
+  const muletillaFunction = () => {
+    if (clickedMuletillas == false) {
+      return "Sin penalización por muletillas";
+    } else {
+      return "Penalización por muletillas";
+    }
+  };
+  const insultosFunction = () => {
+    if (clickedInsultos == false) {
+      return "Sin penalización por insultos";
+    } else {
+      return "Penalización por insultos";
+    }
   };
 
   return (
@@ -41,7 +59,16 @@ const Game: NextPage = () => {
           </div>
         </div>
         <div className={styles.timerView}>
-          <p>2</p>
+          <p>{timeRound}''</p>
+        </div>
+        <div className={styles.roundsView}>
+          <p>{quantityRound}</p>
+        </div>
+        <div className={styles.muletillaView}>
+          <p>{muletillaFunction()}</p>
+        </div>
+        <div className={styles.insultosView}>
+          <p>{insultosFunction()}</p>
         </div>
       </div>
     </div>

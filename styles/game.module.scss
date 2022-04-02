@@ -107,11 +107,71 @@
   position: absolute;
   width: 100px;
   height: 100px;
+  top: 450px;
+  left: 150px;
+  background-color: #585858;
+  p {
+    font-size: 3rem;
+    color: white;
+    font-weight: 200;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.roundsView {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 450px;
+  left: 283.33px;
+  background-color: #585858;
 
   p {
-    font-size: 2rem;
-    color: yellow;
-    font-weight: 800;
-    background-color: black;
+    font-size: 3rem;
+    color: white;
+    font-weight: 200;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.muletillaView {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 450px;
+  left: 416.66px;
+  background-color: #585858;
+
+  p {
+    font-size: 0.8rem;
+    color: white;
+    font-weight: 400;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.insultosView {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 450px;
+  left: 550px;
+  background-color: #585858;
+
+  p {
+    font-size: 0.8rem;
+    color: white;
+    font-weight: 400;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }

@@ -9,20 +9,32 @@ import {
   Checkbox,
 } from "@chakra-ui/react";
 
-function settingsModal(props, { closeSettingsModal }: any) {
-  const closeSettModal = () => {
-    closeSettingsModal(false);
+function SettingsModal({
+  GetRoundsFromSettings,
+  GetTimeFromSettings,
+  CloseSettingsModal,
+  GetMuletillasFromSettings,
+}: any) {
+  const CloseSettModal = () => {
+    SendTimetoGame();
+    SendRoundstoGame();
+    SendMuletillastoGame();
+    CloseSettingsModal(false);
   };
 
-  const [sliderRoundsValue, setSliderRoundsValue] = useState();
+  const [sliderRoundsValue, setSliderRoundsValue] = useState(15);
   const [muletillaChecked, setMuletillaChecked] = useState(false);
   const [insultosChecked, setInsultosChecked] = useState(false);
-  const [sliderTimeValue, setSliderTimeValue] = useState("60");
+  const [sliderTimeValue, setSliderTimeValue] = useState(60);
 
-  const entrada = "JA";
-
-  const moveDataHandler = () => {
-    props.onMoveData(entrada);
+  const SendTimetoGame = () => {
+    GetTimeFromSettings(sliderTimeValue);
+  };
+  const SendRoundstoGame = () => {
+    GetRoundsFromSettings(sliderRoundsValue);
+  };
+  const SendMuletillastoGame = () => {
+    GetMuletillasFromSettings(muletillaChecked);
   };
 
   return (
@@ -115,7 +127,7 @@ function settingsModal(props, { closeSettingsModal }: any) {
           </li>
         </ul>
         {}
-        <div className={styles.closeBtn} onClick={moveDataHandler}>
+        <div className={styles.closeBtn} onClick={CloseSettModal}>
           <p>X</p>
         </div>
       </div>
@@ -123,4 +135,4 @@ function settingsModal(props, { closeSettingsModal }: any) {
   );
 }
 
-export default settingsModal;
+export default SettingsModal;
