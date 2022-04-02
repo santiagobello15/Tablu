@@ -64,30 +64,112 @@
   border-radius: 5px;
 
   li {
+    width: 80%;
+    height: 100px;
     position: absolute;
     left: 50%;
     transform: translate(-50%, -0%);
-    width: 80%;
-    height: 40px;
+    border-radius: 10px;
 
-    p {
-      font-weight: 600;
-      font-size: 0.7rem;
-      font-family: "Mukta Malar", sans-serif;
-      color: #232323;
+    input {
+      width: 80%;
+      position: absolute;
+      left: 50%;
+      top: 15px;
+      transform: translate(-50%, -0%);
+      background-color: transparent;
+      text-align: center;
     }
   }
 }
 
-.firstLi {
-  top: 20px;
+.firstRowRed {
+  top: 30px;
+  background-color: hsla(12, 76%, 61%);
 }
-.secondLi {
-  top: 100px;
+.firstRowBlue {
+  top: 30px;
+  background-color: hsla(197, 37%, 24%);
 }
-.thirdLi {
-  top: 160px;
+.firstRowGreen {
+  top: 30px;
+  background-color: hsl(173, 58%, 39%);
 }
-.fourthLi {
-  top: 220px;
+.firstRowYellow {
+  top: 30px;
+  background-color: hsl(43, 74%, 66%);
+}
+
+.secondRowRed {
+  top: 150px;
+  background-color: hsla(12, 76%, 61%);
+}
+.secondRowBlue {
+  top: 150px;
+  background-color: hsla(197, 37%, 24%);
+}
+.secondRowGreen {
+  top: 150px;
+  background-color: hsl(173, 58%, 39%);
+}
+.secondRowYellow {
+  top: 150px;
+  background-color: hsl(43, 74%, 66%);
+}
+
+.secondRow {
+  top: 150px;
+  background-color: rgb(144, 127, 255);
+}
+
+.colorsDiv {
+  position: absolute;
+  background-color: #282222;
+  bottom: 10px;
+  right: 10px;
+  width: 45%;
+  height: 25px;
+  border-radius: 5px;
+
+  div {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 30%;
+    top: 50%;
+    transform: translate(0%, -50%);
+    cursor: pointer;
+  }
+}
+
+.colorRed {
+  position: absolute;
+  left: 5px;
+  background-color: hsla(12, 76%, 61%, 0.5);
+}
+.colorRed:hover {
+  background-color: hsla(12, 76%, 61%);
+}
+
+.colorBlue {
+  left: 25px;
+  background-color: hsla(197, 37%, 24%, 0.5);
+}
+.colorBlue:hover {
+  background-color: hsla(197, 37%, 24%);
+}
+
+.colorGreen {
+  left: 45px;
+  background-color: hsl(173, 58%, 39%, 0.5);
+}
+.colorGreen:hover {
+  background-color: hsl(173, 58%, 39%);
+}
+.colorYellow {
+  left: 65px;
+  background-color: hsl(43, 74%, 66%, 0.5);
+}
+.colorYellow:hover {
+  background-color: hsl(43, 74%, 66%);
 }
