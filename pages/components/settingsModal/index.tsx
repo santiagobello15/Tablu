@@ -6,18 +6,18 @@ import {
   SliderFilledTrack,
   SliderThumb,
   SliderMark,
+  Checkbox,
 } from "@chakra-ui/react";
 
 function settingsModal({ closeSettingsModal }: any) {
   const closeSettModal = () => {
     closeSettingsModal(false);
-    console.log(sliderTimeValue);
-    console.log(sliderRoundsValue);
   };
 
   const [sliderTimeValue, setSliderTimeValue] = useState();
-
   const [sliderRoundsValue, setSliderRoundsValue] = useState();
+  const [muletillaChecked, setMuletillaChecked] = useState(false);
+  const [insultosChecked, setInsultosChecked] = useState(false);
 
   return (
     <div className={styles.overlayModal}>
@@ -88,6 +88,24 @@ function settingsModal({ closeSettingsModal }: any) {
           </li>
           <li className={styles.fifthLi}>
             <p>Incrementos de dificultad</p>
+          </li>
+          <li className={styles.sixthLi}>
+            <div className={styles.checkbtn1}>
+              <Checkbox
+                onChange={(e) => setMuletillaChecked(e.target.checked)}
+                colorScheme="purple"
+              >
+                <a>Sin muletillas</a>
+              </Checkbox>
+            </div>
+            <div className={styles.checkbtn2}>
+              <Checkbox
+                onChange={(e) => setInsultosChecked(e.target.checked)}
+                colorScheme="purple"
+              >
+                <a>Sin insultos</a>
+              </Checkbox>
+            </div>
           </li>
         </ul>
         {}
