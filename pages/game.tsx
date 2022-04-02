@@ -5,9 +5,18 @@ import React, { useState } from "react";
 
 const Game: NextPage = () => {
   const [showsettingsModal, setshowsettingsModal] = useState(false);
+
+  const moveData = (personalData) => {
+    console.log(personalData);
+  };
+
   const rendersettingsModal = () => {
     if (showsettingsModal == true) {
-      return <SettingsModal closeSettingsModal={setshowsettingsModal} />;
+      return (
+        <SettingsModal
+          /* closeSettingsModal={setshowsettingsModal} */ onMoveData={moveData}
+        />
+      );
     }
   };
   const settModalShow = () => {
@@ -30,6 +39,9 @@ const Game: NextPage = () => {
           <div className={styles.startButton}>
             <p>Comenzar</p>
           </div>
+        </div>
+        <div className={styles.timerView}>
+          <p>2</p>
         </div>
       </div>
     </div>

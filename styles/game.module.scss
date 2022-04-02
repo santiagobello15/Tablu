@@ -102,3 +102,16 @@
 .configButton:hover {
   background-color: green;
 }
+
+.timerView {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+
+  p {
+    font-size: 2rem;
+    color: yellow;
+    font-weight: 800;
+    background-color: black;
+  }
+}

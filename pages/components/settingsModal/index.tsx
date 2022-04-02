@@ -9,15 +9,21 @@ import {
   Checkbox,
 } from "@chakra-ui/react";
 
-function settingsModal({ closeSettingsModal }: any) {
+function settingsModal(props, { closeSettingsModal }: any) {
   const closeSettModal = () => {
     closeSettingsModal(false);
   };
 
-  const [sliderTimeValue, setSliderTimeValue] = useState();
   const [sliderRoundsValue, setSliderRoundsValue] = useState();
   const [muletillaChecked, setMuletillaChecked] = useState(false);
   const [insultosChecked, setInsultosChecked] = useState(false);
+  const [sliderTimeValue, setSliderTimeValue] = useState("60");
+
+  const entrada = "JA";
+
+  const moveDataHandler = () => {
+    props.onMoveData(entrada);
+  };
 
   return (
     <div className={styles.overlayModal}>
@@ -29,7 +35,7 @@ function settingsModal({ closeSettingsModal }: any) {
           </li>
           <li className={styles.secondLi}>
             <Slider
-              onChange={(val) => setSliderRoundsValue(val)}
+              onChange={(val: number) => setSliderRoundsValue(val)}
               aria-label="slider-ex-1"
               defaultValue={15}
               min={5}
@@ -109,7 +115,7 @@ function settingsModal({ closeSettingsModal }: any) {
           </li>
         </ul>
         {}
-        <div className={styles.closeBtn} onClick={closeSettModal}>
+        <div className={styles.closeBtn} onClick={moveDataHandler}>
           <p>X</p>
         </div>
       </div>
