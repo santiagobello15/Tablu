@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import styles from "./startModal.module.scss";
 
 function StartModal({
-  GetColorsFromSettingsTeamOne,
-  GetColorsFromSettingsTeamTwo,
-  GetNameFromSettingsTeamOne,
-  GetNameFromSettingsTeamTwo,
+  GetColorsFromStartTeamOne,
+  GetColorsFromStartTeamTwo,
+  GetNameFromStartTeamOne,
+  GetNameFromStartTeamTwo,
+  GetOpacityfromStart,
   CloseStartModal,
 }: any) {
   const [pickedColor1stRow, setPickedColor1stRow] = useState("Red");
@@ -19,18 +20,29 @@ function StartModal({
     SendNameTeamTwotoGame();
     CloseStartModal(false);
   };
+  const PlayBtn = () => {
+    SendColorTeamOnetoGame();
+    SendColorTeamTwotoGame();
+    SendNameTeamOnetoGame();
+    SendNameTeamTwotoGame();
+    SendOpacitytoGame();
+    CloseStartModal(false);
+  };
 
   const SendColorTeamOnetoGame = () => {
-    GetColorsFromSettingsTeamOne(pickedColor1stRow);
+    GetColorsFromStartTeamOne(pickedColor1stRow);
   };
   const SendColorTeamTwotoGame = () => {
-    GetColorsFromSettingsTeamTwo(pickedColor2ndRow);
+    GetColorsFromStartTeamTwo(pickedColor2ndRow);
   };
   const SendNameTeamOnetoGame = () => {
-    GetNameFromSettingsTeamOne(teamOneName);
+    GetNameFromStartTeamOne(teamOneName);
   };
   const SendNameTeamTwotoGame = () => {
-    GetNameFromSettingsTeamTwo(teamTwoName);
+    GetNameFromStartTeamTwo(teamTwoName);
+  };
+  const SendOpacitytoGame = () => {
+    GetOpacityfromStart(0);
   };
 
   const pickedRed1 = () => {
@@ -120,7 +132,7 @@ function StartModal({
           </li>
         </ul>
         <div className={styles.playContainer}>
-          <h2 className={styles.play} onClick={CloseStModal}>
+          <h2 className={styles.play} onClick={PlayBtn}>
             Jugar Online
           </h2>
         </div>

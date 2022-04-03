@@ -3,7 +3,7 @@ import styles from "../styles/game.module.scss";
 import SettingsModal from "./components/settingsModal";
 import RulesModal from "./components/rulesModal";
 import StartModal from "./components/startModal";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Game: NextPage = () => {
   const [showsettingsModal, setShowSettingsModal] = useState(false);
@@ -17,6 +17,9 @@ const Game: NextPage = () => {
   const [teamTwoColor, setTeamTwoColor] = useState("Blue");
   const [teamOneName, setTeamOneName] = useState("Team 1");
   const [teamTwoName, setTeamTwoName] = useState("Team 1");
+  const [centerDivOpacity, setCenterDivOpacity] = useState(1);
+  const [countDownGame, setCountDownGame] = useState(timeRound);
+  const [startCounter, setStartCounter] = useState(false);
 
   const rendersettingsModal = () => {
     if (showsettingsModal == true) {
@@ -40,11 +43,12 @@ const Game: NextPage = () => {
     if (showstartModal == true) {
       return (
         <StartModal
-          GetColorsFromSettingsTeamOne={setTeamOneColor}
-          GetColorsFromSettingsTeamTwo={setTeamTwoColor}
-          GetNameFromSettingsTeamOne={setTeamOneName}
-          GetNameFromSettingsTeamTwo={setTeamTwoName}
+          GetColorsFromStartTeamOne={setTeamOneColor}
+          GetColorsFromStartTeamTwo={setTeamTwoColor}
+          GetNameFromStartTeamOne={setTeamOneName}
+          GetNameFromStartTeamTwo={setTeamTwoName}
           CloseStartModal={setShowStartModal}
+          GetOpacityfromStart={setCenterDivOpacity}
         />
       );
     }
@@ -74,51 +78,121 @@ const Game: NextPage = () => {
     }
   };
 
+  const CenterDivFunction = () => {
+    if (centerDivOpacity == 1) {
+      return (
+        <div className={styles.centerDiv}>
+          <h1 className={styles.headerTitle}>TABLÚ FAMOSOS</h1>
+
+          <div className={styles.btnsContainer}>
+            <div className={styles.configButton} onClick={settModalShow}>
+              <p>Configuración</p>
+            </div>
+            <div className={styles.rulesButton} onClick={rulesModalShow}>
+              <p>Reglas</p>
+            </div>
+            <div className={styles.startButton} onClick={startModalShow}>
+              <p>Comenzar</p>
+            </div>
+          </div>
+          <div className={styles.timerView}>
+            <a>Tiempo</a>
+            <p>
+              {timeRound}
+              {'"'}
+            </p>
+          </div>
+          <div className={styles.roundsView}>
+            <a>Rondas</a>
+            <p>{quantityRound}</p>
+          </div>
+          <div className={styles.muletillaView}>
+            <a>Modificador #1</a>
+            <p>{muletillaFunction()}</p>
+          </div>
+          <div className={styles.insultosView}>
+            <a>Modificador #2</a>
+            <p>{insultosFunction()}</p>
+          </div>
+        </div>
+      );
+    }
+  };
+
+  /*   const CounterFunction = () => {
+    for (let i = timeRound; i > 0; i--) {
+      console.log(i);
+      setTimeout(CounterFunction(), 1000);
+    }
+  };
+ */
+  const TeamOneCardColor = () => {
+    if (teamOneColor == "Red") {
+      return styles.cardRedTeamOne;
+    }
+    if (teamOneColor == "Blue") {
+      return styles.cardBlueTeamOne;
+    }
+    if (teamOneColor == "Green") {
+      return styles.cardGreenTeamOne;
+    }
+    return styles.cardYellowTeamOne;
+  };
+  const TeamTwoCardColor = () => {
+    if (teamTwoColor == "Red") {
+      return styles.cardRedTeamTwo;
+    }
+    if (teamTwoColor == "Blue") {
+      return styles.cardBlueTeamTwo;
+    }
+    if (teamTwoColor == "Green") {
+      return styles.cardGreenTeamTwo;
+    }
+    return styles.cardYellowTeamTwo;
+  };
+
+  function CounterFunction() {
+    setStartCounter(true);
+  }
+
+  useEffect(() => {
+    if (startCounter == true) {
+      countDownGame > 0 &&
+        setTimeout(() => setCountDownGame(countDownGame - 1), 1000);
+    }
+  });
+
+  const PlayingDiv = () => {
+    if (centerDivOpacity == 0) {
+      return (
+        <div className={styles.centerDiv}>
+          <h1 className={styles.headerTitle}>TABLÚ FAMOSOS</h1>
+          <div className={styles.startRoundBtn} onClick={CounterFunction}>
+            <p>Iniciar</p>
+          </div>
+          <div className={styles.startRound}>
+            <p>{countDownGame}</p>
+          </div>
+          <div className={styles.gameCounter}>
+            <div className={TeamOneCardColor()}>
+              <p>{teamOneName}</p>
+            </div>
+            <div className={TeamTwoCardColor()}>
+              <p>{teamTwoName}</p>
+            </div>
+          </div>
+        </div>
+      );
+    }
+  };
+
   return (
     <div className={styles.mainDiv}>
       {rendersettingsModal()}
       {renderrulesModal()}
       {renderstartModal()}
-      <div className={styles.centerDiv}>
-        <h1 className={styles.headerTitle}>TABLÚ FAMOSOS</h1>
-
-        <div className={styles.btnsContainer}>
-          <div className={styles.configButton} onClick={settModalShow}>
-            <p>Configuración</p>
-          </div>
-          <div className={styles.rulesButton} onClick={rulesModalShow}>
-            <p>Reglas</p>
-          </div>
-          <div className={styles.startButton} onClick={startModalShow}>
-            <p>Comenzar</p>
-          </div>
-        </div>
-        <div className={styles.timerView}>
-          <a>Tiempo</a>
-          <p>
-            {timeRound}
-            {'"'}
-          </p>
-        </div>
-        <div className={styles.roundsView}>
-          <a>Rondas</a>
-          <p>{quantityRound}</p>
-        </div>
-        <div className={styles.muletillaView}>
-          <a>Modificador #1</a>
-          <p>{muletillaFunction()}</p>
-        </div>
-        <div className={styles.insultosView}>
-          <a>Modificador #2</a>
-          <p>{insultosFunction()}</p>
-        </div>
-        <div className={styles.coll}>
-          <a>{teamOneColor}</a>
-          <a>{teamTwoColor}</a>
-          <a>{teamOneName}</a>
-          <a>{teamTwoName}</a>
-        </div>
-      </div>
+      {PlayingDiv()}
+      {CenterDivFunction()}
     </div>
   );
 };
