@@ -13,6 +13,10 @@ const Game: NextPage = () => {
   const [clickedMuletillas, setClickedMuletillas] = useState(false);
   const [clickedInsultos, setClickedInsultos] = useState(false);
   const [quantityRound, setQuantityRound] = useState(15);
+  const [teamOneColor, setTeamOneColor] = useState("Red");
+  const [teamTwoColor, setTeamTwoColor] = useState("Blue");
+  const [teamOneName, setTeamOneName] = useState("Team 1");
+  const [teamTwoName, setTeamTwoName] = useState("Team 1");
 
   const rendersettingsModal = () => {
     if (showsettingsModal == true) {
@@ -34,7 +38,15 @@ const Game: NextPage = () => {
   };
   const renderstartModal = () => {
     if (showstartModal == true) {
-      return <StartModal CloseStartModal={setShowStartModal} />;
+      return (
+        <StartModal
+          GetColorsFromSettingsTeamOne={setTeamOneColor}
+          GetColorsFromSettingsTeamTwo={setTeamTwoColor}
+          GetNameFromSettingsTeamOne={setTeamOneName}
+          GetNameFromSettingsTeamTwo={setTeamTwoName}
+          CloseStartModal={setShowStartModal}
+        />
+      );
     }
   };
   const settModalShow = () => {
@@ -99,6 +111,12 @@ const Game: NextPage = () => {
         <div className={styles.insultosView}>
           <a>Modificador #2</a>
           <p>{insultosFunction()}</p>
+        </div>
+        <div className={styles.coll}>
+          <a>{teamOneColor}</a>
+          <a>{teamTwoColor}</a>
+          <a>{teamOneName}</a>
+          <a>{teamTwoName}</a>
         </div>
       </div>
     </div>

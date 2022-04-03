@@ -1,11 +1,36 @@
 import React, { useState } from "react";
 import styles from "./startModal.module.scss";
 
-function StartModal({ CloseStartModal }: any) {
+function StartModal({
+  GetColorsFromSettingsTeamOne,
+  GetColorsFromSettingsTeamTwo,
+  GetNameFromSettingsTeamOne,
+  GetNameFromSettingsTeamTwo,
+  CloseStartModal,
+}: any) {
   const [pickedColor1stRow, setPickedColor1stRow] = useState("Red");
   const [pickedColor2ndRow, setPickedColor2ndRow] = useState("Blue");
+  const [teamOneName, setTeamOneName] = useState("Equipo 1");
+  const [teamTwoName, setTeamTwoName] = useState("Equipo 2");
   const CloseStModal = () => {
+    SendColorTeamOnetoGame();
+    SendColorTeamTwotoGame();
+    SendNameTeamOnetoGame();
+    SendNameTeamTwotoGame();
     CloseStartModal(false);
+  };
+
+  const SendColorTeamOnetoGame = () => {
+    GetColorsFromSettingsTeamOne(pickedColor1stRow);
+  };
+  const SendColorTeamTwotoGame = () => {
+    GetColorsFromSettingsTeamTwo(pickedColor2ndRow);
+  };
+  const SendNameTeamOnetoGame = () => {
+    GetNameFromSettingsTeamOne(teamOneName);
+  };
+  const SendNameTeamTwotoGame = () => {
+    GetNameFromSettingsTeamTwo(teamTwoName);
   };
 
   const pickedRed1 = () => {
@@ -66,7 +91,12 @@ function StartModal({ CloseStartModal }: any) {
         <h1>Comenzar</h1>
         <ul className={styles.configUl}>
           <li className={picked1stRowFunction()}>
-            <input placeholder="Equipo 1..." />
+            <input
+              placeholder="Equipo 1..."
+              onChange={(evt) => {
+                setTeamOneName(evt.target.value);
+              }}
+            />
             <div className={styles.colorsDiv}>
               <div className={styles.colorRed} onClick={pickedRed1}></div>
               <div className={styles.colorBlue} onClick={pickedBlue1}></div>
@@ -75,7 +105,12 @@ function StartModal({ CloseStartModal }: any) {
             </div>
           </li>
           <li className={picked2ndRowFunction()}>
-            <input placeholder="Equipo 2..." />
+            <input
+              placeholder="Equipo 2..."
+              onChange={(evt) => {
+                setTeamTwoName(evt.target.value);
+              }}
+            />
             <div className={styles.colorsDiv}>
               <div className={styles.colorRed} onClick={pickedRed2}></div>
               <div className={styles.colorBlue} onClick={pickedBlue2}></div>
@@ -84,7 +119,12 @@ function StartModal({ CloseStartModal }: any) {
             </div>
           </li>
         </ul>
-        <div className={styles.closeBtn} onClick={CloseStartModal}>
+        <div className={styles.playContainer}>
+          <h2 className={styles.play} onClick={CloseStModal}>
+            Jugar Online
+          </h2>
+        </div>
+        <div className={styles.closeBtn} onClick={CloseStModal}>
           <p>X</p>
         </div>
       </div>

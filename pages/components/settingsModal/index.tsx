@@ -16,6 +16,11 @@ function SettingsModal({
   GetMuletillasFromSettings,
   GetInsultosFromSettings,
 }: any) {
+  const [sliderRoundsValue, setSliderRoundsValue] = useState(15);
+  const [muletillaChecked, setMuletillaChecked] = useState(false);
+  const [insultosChecked, setInsultosChecked] = useState(false);
+  const [sliderTimeValue, setSliderTimeValue] = useState(60);
+
   const CloseSettModal = () => {
     SendTimetoGame();
     SendRoundstoGame();
@@ -23,11 +28,6 @@ function SettingsModal({
     SendInsultostoGame();
     CloseSettingsModal(false);
   };
-
-  const [sliderRoundsValue, setSliderRoundsValue] = useState(15);
-  const [muletillaChecked, setMuletillaChecked] = useState(false);
-  const [insultosChecked, setInsultosChecked] = useState(false);
-  const [sliderTimeValue, setSliderTimeValue] = useState(60);
 
   const SendTimetoGame = () => {
     GetTimeFromSettings(sliderTimeValue);
