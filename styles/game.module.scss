@@ -620,3 +620,25 @@ $CardColorYellow: hsl(43, 82%, 89%);
     text-align: center;
   }
 }
+
+.victoryH1 {
+  position: absolute;
+  height: 50px;
+  width: 450px;
+  top: 300px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background-color: $AppColor;
+
+  h1 {
+    color: white;
+    font-size: 1.7rem;
+    font-family: "Luckiest Guy", cursive;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+  }
+}
