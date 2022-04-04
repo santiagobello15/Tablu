@@ -89,11 +89,14 @@ function SettingsModal({
               onChange={(val) => setSliderTimeValue(val)}
               aria-label="slider-ex-1"
               defaultValue={60}
-              min={30}
+              min={5}
               max={90}
-              step={30}
+              step={5}
               colorScheme="purple"
             >
+              <SliderMark value={5} mt="1" ml="-2.5" fontSize="sm">
+                5
+              </SliderMark>
               <SliderMark value={30} mt="1" ml="-2.5" fontSize="sm">
                 30
               </SliderMark>

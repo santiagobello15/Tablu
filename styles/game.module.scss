@@ -22,6 +22,25 @@ $CardColorYellow: hsl(43, 82%, 89%);
   background-color: #fafafa;
 }
 
+.closeBtn {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: red;
+  cursor: pointer;
+
+  p {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 700;
+    color: white;
+  }
+}
+
 .centerDiv0Opacity {
   opacity: 0;
 }

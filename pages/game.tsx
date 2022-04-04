@@ -124,6 +124,16 @@ const Game: NextPage = () => {
     }
   };
 
+  const GameOverScreen = () => {
+    if (centerDivOpacity == 2) {
+      return (
+        <div className={styles.centerDiv}>
+          <h1 className={styles.headerTitle}>TABLÚ FAMOSOS</h1>
+        </div>
+      );
+    }
+  };
+
   const TeamOneCardColor = () => {
     if (teamOneColor == "Red") {
       return styles.cardRedTeamOne;
@@ -157,11 +167,7 @@ const Game: NextPage = () => {
   }
 
   const RestartCounter = () => {
-    if (startCounter == true) {
-      alert("primero pausá");
-    } else {
-      setCountDownGame(timeRound);
-    }
+    setCountDownGame(timeRound);
   };
 
   const PauseBtn = () => {
@@ -180,7 +186,7 @@ const Game: NextPage = () => {
   };
 
   const RestartBtn = () => {
-    if (startCounter == false) {
+    if (startCounter == false && countDownGame != timeRound) {
       return (
         <div className={styles.restartBtn} onClick={RestartCounter}>
           <p>Reiniciar</p>
@@ -224,10 +230,24 @@ const Game: NextPage = () => {
     if (countDownGame == 0) {
       setStartCounter(false);
       setCountDownGame(timeRound);
-      setActiveTeamOne(false);
+      setCurrentRonda(currentRonda + 1);
+      if (activeTeamOne == true) {
+        setActiveTeamOne(false);
+      } else {
+        setActiveTeamOne(true);
+      }
     }
   };
+
+  const GameOver = () => {
+    if (countDownGame == 0 && currentRonda == quantityRound) {
+      console.log("Game Over");
+      setCenterDivOpacity(2);
+    }
+  };
+
   FinishedAlert();
+  GameOver();
 
   const PlayingDiv = () => {
     if (centerDivOpacity == 0) {
@@ -240,7 +260,9 @@ const Game: NextPage = () => {
                 <p>{countDownGame}</p>
               </div>
               <div className={styles.roundsDiv}>
-                <p>Ronda: {currentRonda}</p>
+                <p>
+                  Ronda: {currentRonda}/{quantityRound}
+                </p>
               </div>
             </div>
             <div className={styles.gameCard}>
@@ -284,6 +306,14 @@ const Game: NextPage = () => {
               <a>{pointsTeamTwo}</a>
             </div>
           </div>
+          <div
+            className={styles.closeBtn}
+            onClick={() => {
+              setCenterDivOpacity(1);
+            }}
+          >
+            <p>X</p>
+          </div>
         </div>
       );
     }
@@ -296,6 +326,7 @@ const Game: NextPage = () => {
       {renderstartModal()}
       {PlayingDiv()}
       {CenterDivFunction()}
+      {GameOverScreen()}
     </div>
   );
 };
