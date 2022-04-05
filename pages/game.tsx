@@ -4,6 +4,7 @@ import claps from "../styles/claps.module.scss";
 import SettingsModal from "./components/settingsModal";
 import RulesModal from "./components/rulesModal";
 import StartModal from "./components/startModal";
+import ExitModal from "./components/exitModal";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import clapsImg from "./media/clapsImg.png";
@@ -12,6 +13,7 @@ const Game: NextPage = () => {
   const [showsettingsModal, setShowSettingsModal] = useState(false);
   const [showrulesModal, setShowRulesModal] = useState(false);
   const [showstartModal, setShowStartModal] = useState(false);
+  const [showexitModal, setShowExitModal] = useState(false);
   const [timeRound, setTimeRound] = useState(60);
   const [clickedMuletillas, setClickedMuletillas] = useState(false);
   const [clickedInsultos, setClickedInsultos] = useState(false);
@@ -49,6 +51,11 @@ const Game: NextPage = () => {
       return <RulesModal CloseRulesModal={setShowRulesModal} />;
     }
   };
+  const renderexitModal = () => {
+    if (showexitModal == true) {
+      return <ExitModal CloseExitModal={setShowExitModal} />;
+    }
+  };
   const renderstartModal = () => {
     if (showstartModal == true) {
       return (
@@ -72,6 +79,21 @@ const Game: NextPage = () => {
   const startModalShow = () => {
     setShowStartModal(true);
     setCountDownGame(timeRound);
+  };
+  const exitModalShow = () => {
+    setShowExitModal(true);
+    /*     setCountDownGame(timeRound);
+    setCenterDivOpacity(1);
+    setActiveTeamOne(true);
+    setPointsTeamOne(0);
+    setPointsTeamTwo(0);
+    setTeamOneColor("Red");
+    setTeamTwoColor("Blue");
+    setTeamOneName("Team 1");
+    setTeamTwoName("Team 2");
+    setCurrentRonda(1);
+    setStartCounter(false);
+    setCountDownGame(timeRound); */
   };
   const muletillaFunction = () => {
     if (clickedMuletillas == false) {
@@ -144,12 +166,7 @@ const Game: NextPage = () => {
               <a>{pointsTeamTwo}</a>
             </div>
           </div>
-          <div
-            className={styles.closeBtn}
-            onClick={() => {
-              setCenterDivOpacity(1);
-            }}
-          >
+          <div className={styles.closeBtn} onClick={exitModalShow}>
             <p>X</p>
           </div>
         </div>
@@ -206,6 +223,24 @@ const Game: NextPage = () => {
           </div>
           <div className={claps.clapsBtn} onClick={clapsBtn}>
             <p>Aplaudir</p>
+          </div>
+          <div
+            className={styles.closeBtn}
+            onClick={() => {
+              setCenterDivOpacity(1);
+              setActiveTeamOne(true);
+              setPointsTeamOne(0);
+              setPointsTeamTwo(0);
+              setTeamOneColor("Red");
+              setTeamTwoColor("Blue");
+              setTeamOneName("Team 1");
+              setTeamTwoName("Team 2");
+              setCurrentRonda(1);
+              setStartCounter(false);
+              setCountDownGame(timeRound);
+            }}
+          >
+            <p>X</p>
           </div>
         </div>
       );
@@ -418,6 +453,7 @@ const Game: NextPage = () => {
       {rendersettingsModal()}
       {renderrulesModal()}
       {renderstartModal()}
+      {renderexitModal()}
       {PlayingDiv()}
       {CenterDivFunction()}
       {GameOverScreen()}

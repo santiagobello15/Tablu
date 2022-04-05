@@ -25,8 +25,8 @@ function StartModal({
     SendColorTeamTwotoGame();
     SendNameTeamOnetoGame();
     SendNameTeamTwotoGame();
-    SendOpacitytoGame();
     CloseStartModal(false);
+    SendOpacitytoGame();
   };
 
   const SendColorTeamOnetoGame = () => {
