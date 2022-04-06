@@ -32,6 +32,16 @@ const Game: NextPage = () => {
   const [seeClaps, setSeeClaps] = useState(true);
   const [winnerTeam, setWinnerTeam] = useState("");
   const [drawGame, setDrawGame] = useState(false);
+  const [restartCounterBoolean, setRestartCounterBoolean] = useState(false);
+
+  const cancelCounterQuitting = () => {
+    if (restartCounterBoolean == true) {
+      setStartCounter(false);
+      setRestartCounterBoolean(false);
+      setCountDownGame(timeRound);
+    }
+  };
+  cancelCounterQuitting();
 
   const rendersettingsModal = () => {
     if (showsettingsModal == true) {
@@ -53,7 +63,14 @@ const Game: NextPage = () => {
   };
   const renderexitModal = () => {
     if (showexitModal == true) {
-      return <ExitModal CloseExitModal={setShowExitModal} />;
+      return (
+        <ExitModal
+          CloseExitModal={setShowExitModal}
+          GetCounterFromExit={setStartCounter}
+          GetOpacityfromExit={setCenterDivOpacity}
+          GetRestarter={setRestartCounterBoolean}
+        />
+      );
     }
   };
   const renderstartModal = () => {
@@ -78,12 +95,7 @@ const Game: NextPage = () => {
   };
   const startModalShow = () => {
     setShowStartModal(true);
-    setCountDownGame(timeRound);
-  };
-  const exitModalShow = () => {
-    setShowExitModal(true);
-    /*     setCountDownGame(timeRound);
-    setCenterDivOpacity(1);
+    RestartCounter();
     setActiveTeamOne(true);
     setPointsTeamOne(0);
     setPointsTeamTwo(0);
@@ -93,7 +105,10 @@ const Game: NextPage = () => {
     setTeamTwoName("Team 2");
     setCurrentRonda(1);
     setStartCounter(false);
-    setCountDownGame(timeRound); */
+  };
+  const exitModalShow = () => {
+    setShowExitModal(true);
+    setStartCounter(false);
   };
   const muletillaFunction = () => {
     if (clickedMuletillas == false) {
@@ -273,6 +288,9 @@ const Game: NextPage = () => {
   };
   function CounterFunction() {
     setStartCounter(true);
+    if (countDownGame == 1.5) {
+      setCountDownGame(timeRound);
+    }
   }
   function PauseCounterFunction() {
     setStartCounter(false);
@@ -306,7 +324,10 @@ const Game: NextPage = () => {
   useEffect(() => {
     if (startCounter == true) {
       countDownGame > 0 &&
-        setTimeout(() => setCountDownGame(countDownGame - 1), 1000);
+        setTimeout(
+          () => setCountDownGame((countDownGame - 0.1).toFixed(1)),
+          100
+        );
     }
   });
   const AddPoints = () => {
@@ -333,9 +354,10 @@ const Game: NextPage = () => {
   };
 
   const FinishedAlert = () => {
-    if (countDownGame == 0) {
-      setStartCounter(false);
+    if (countDownGame == 0.1) {
       setCountDownGame(timeRound);
+      setStartCounter(false);
+
       setCurrentRonda(currentRonda + 1);
       if (activeTeamOne == true) {
         setActiveTeamOne(false);
@@ -364,7 +386,6 @@ const Game: NextPage = () => {
 
   const GameOver = () => {
     if (countDownGame == 0 && currentRonda == quantityRound) {
-      console.log("Game Over");
       setCenterDivOpacity(2);
     }
   };
