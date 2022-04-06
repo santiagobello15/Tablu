@@ -354,10 +354,9 @@ const Game: NextPage = () => {
   };
 
   const FinishedAlert = () => {
-    if (countDownGame == 0.1) {
+    if (countDownGame == 0.0) {
       setCountDownGame(timeRound);
       setStartCounter(false);
-
       setCurrentRonda(currentRonda + 1);
       if (activeTeamOne == true) {
         setActiveTeamOne(false);
@@ -385,7 +384,7 @@ const Game: NextPage = () => {
   };
 
   const GameOver = () => {
-    if (countDownGame == 0 && currentRonda == quantityRound) {
+    if (countDownGame == 0.0 && currentRonda == quantityRound) {
       setCenterDivOpacity(2);
     }
   };
