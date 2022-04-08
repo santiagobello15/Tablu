@@ -404,64 +404,64 @@ const Game: NextPage = () => {
       return (
         <div className={claps.clapsContainer}>
           <div className={claps.claps1}>
-            <Image width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
           </div>
           <div className={claps.claps2}>
-            <Image width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
           </div>
           <div className={claps.claps3}>
-            <Image width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
           </div>
           <div className={claps.claps4}>
-            <Image width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
           </div>
           <div className={claps.claps5}>
-            <Image width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
           </div>
           <div className={claps.claps6}>
-            <Image width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
           </div>
           <div className={claps.claps7}>
-            <Image width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
           </div>
           <div className={claps.claps8}>
-            <Image width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
           </div>
           <div className={claps.claps9}>
-            <Image width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
           </div>
           <div className={claps.claps10}>
-            <Image width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
           </div>
           <div className={claps.claps11}>
-            <Image width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
           </div>
           <div className={claps.claps12}>
-            <Image width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
           </div>
           <div className={claps.claps13}>
-            <Image width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
           </div>
           <div className={claps.claps14}>
-            <Image width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
           </div>
           <div className={claps.claps15}>
-            <Image width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
           </div>
           <div className={claps.claps16}>
-            <Image width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
           </div>
           <div className={claps.claps17}>
-            <Image width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
           </div>
           <div className={claps.claps18}>
-            <Image width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
           </div>
           <div className={claps.claps19}>
-            <Image width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
           </div>
           <div className={claps.claps20}>
-            <Image width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
           </div>
         </div>
       );

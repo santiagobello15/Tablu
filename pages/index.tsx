@@ -7,6 +7,7 @@ import iphone from "./media/iphone-front-transparent.png";
 import iosBadge from "./media/badge-ios.svg";
 import androidBadge from "./media/badge-android.svg";
 import { AspectRatio } from "@chakra-ui/layout";
+import { getServerSideProps } from "./api/cards";
 
 const Home: NextPage = () => {
   const [darkMode, setDarkMode] = useState(false);
