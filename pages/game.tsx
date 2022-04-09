@@ -5,12 +5,15 @@ import SettingsModal from "./components/settingsModal";
 import RulesModal from "./components/rulesModal";
 import StartModal from "./components/startModal";
 import ExitModal from "./components/exitModal";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import clapsImg from "./media/clapsImg.png";
+import { Context } from "../context/AppContext";
 
-const Game: NextPage = () => {
-  const [showsettingsModal, setShowSettingsModal] = useState(false);
+const Game: NextPage = ({ data }) => {
+  const { showSettingsModal, setShowSettingsModal } = useContext(Context);
+
+  /*   const [showsettingsModal, setShowSettingsModal] = useState(false); */
   const [showrulesModal, setShowRulesModal] = useState(false);
   const [showstartModal, setShowStartModal] = useState(false);
   const [showexitModal, setShowExitModal] = useState(false);
@@ -21,9 +24,9 @@ const Game: NextPage = () => {
   const [teamOneColor, setTeamOneColor] = useState("Red");
   const [teamTwoColor, setTeamTwoColor] = useState("Blue");
   const [teamOneName, setTeamOneName] = useState("Team 1");
-  const [teamTwoName, setTeamTwoName] = useState("Team 2");
+  const [teamTwoName, setTeamTwoName] = useState<string>("Team 2");
   const [centerDivOpacity, setCenterDivOpacity] = useState(1); // set back to one
-  const [countDownGame, setCountDownGame] = useState(60);
+  const [countDownGame, setCountDownGame] = useState<Number>(60);
   const [startCounter, setStartCounter] = useState(false);
   const [currentRonda, setCurrentRonda] = useState(1);
   const [activeTeamOne, setActiveTeamOne] = useState(true);
@@ -33,32 +36,49 @@ const Game: NextPage = () => {
   const [winnerTeam, setWinnerTeam] = useState("");
   const [drawGame, setDrawGame] = useState(false);
   const [restartCounterBoolean, setRestartCounterBoolean] = useState(false);
-  const [cardName, setCardName] = useState("Nombre");
-  const [cardLastName, setCardLastName] = useState("Apellido");
-  const [wordOne, setWordOne] = useState("Palabra 1");
-  const [wordTwo, setWordTwo] = useState("Palabra 2");
-  const [wordThree, setWordThree] = useState("Palabra 3");
-  const [wordFour, setWordFour] = useState("Palabra 4");
-  const [wordFive, setWordFive] = useState("Palabra 5");
-  const [wordSix, setWordSix] = useState("Palabra 6");
+
+  interface CardsTableType {
+    cardName: string;
+    cardLastName: string;
+    wordOne: string;
+    wordTwo: string;
+    wordThree: string;
+    wordFour: string;
+    wordFive: string;
+    wordSix: string;
+  }
+  const [cardsTable, setCardsTable] = useState<CardsTableType>({
+    cardName: "Nombre",
+    cardLastName: "Apellido",
+    wordOne: "Palabra 1",
+    wordTwo: "Palabra 2",
+    wordThree: "Palabra 3",
+    wordFour: "Palabra 4",
+    wordFive: "Palabra 5",
+    wordSix: "Palabra 6",
+  });
+
+  // agregar switches inplay paused, etc...
+
+  const updateCardsTable = (key: string, value: string): void => {
+    setCardsTable((prev) => ({ ...prev, [key]: value }));
+  };
+
   const [currentCard, setCurrentCard] = useState(0);
 
   const CardsData = async () => {
-    const response = await fetch("/api/cards");
-    const data = await response.json();
-    setCardName(data.CardsArray[currentCard].firstname);
-    setCardLastName(data.CardsArray[currentCard].lastname);
-    setWordOne(data.CardsArray[currentCard].word1);
-    setWordTwo(data.CardsArray[currentCard].word2);
-    setWordThree(data.CardsArray[currentCard].word3);
-    setWordFour(data.CardsArray[currentCard].word4);
-    setWordFive(data.CardsArray[currentCard].word5);
-    setWordSix(data.CardsArray[currentCard].word6);
+    updateCardsTable("cardName", data.CardsArray[currentCard].firstname);
+    updateCardsTable("cardLastName", data.CardsArray[currentCard].lastname);
+    updateCardsTable("wordOne", data.CardsArray[currentCard].word1);
+    updateCardsTable("wordTwo", data.CardsArray[currentCard].word2);
+    updateCardsTable("wordThree", data.CardsArray[currentCard].word3);
+    updateCardsTable("wordFour", data.CardsArray[currentCard].word4);
+    updateCardsTable("wordFive", data.CardsArray[currentCard].word5);
+    updateCardsTable("wordSix", data.CardsArray[currentCard].word6);
   };
-
-  useEffect(() => {
-    CardsData();
-  }, [currentCard]);
+  // useEffect(() => {
+  //   CardsData(data);
+  // }, [currentCard]);
 
   const cancelCounterQuitting = () => {
     if (restartCounterBoolean == true) {
@@ -69,24 +89,6 @@ const Game: NextPage = () => {
   };
   cancelCounterQuitting();
 
-  const rendersettingsModal = () => {
-    if (showsettingsModal == true) {
-      return (
-        <SettingsModal
-          CloseSettingsModal={setShowSettingsModal}
-          GetTimeFromSettings={setTimeRound}
-          GetRoundsFromSettings={setQuantityRound}
-          GetMuletillasFromSettings={setClickedMuletillas}
-          GetInsultosFromSettings={setClickedInsultos}
-        />
-      );
-    }
-  };
-  const renderrulesModal = () => {
-    if (showrulesModal == true) {
-      return <RulesModal CloseRulesModal={setShowRulesModal} />;
-    }
-  };
   const renderexitModal = () => {
     if (showexitModal == true) {
       return (
@@ -167,17 +169,17 @@ const Game: NextPage = () => {
               </div>
             </div>
             <div className={styles.gameCard}>
-              <h1>{cardName}</h1>
-              <h2>{cardLastName}</h2>
+              <h1>{cardsTable.cardName}</h1>
+              <h2>{cardsTable.cardLastName}</h2>
               <ul className={styles.cardsUL1}>
-                <li>{wordOne}</li>
-                <li>{wordTwo}</li>
-                <li>{wordThree}</li>
+                <li>{cardsTable.wordOne}</li>
+                <li>{cardsTable.wordTwo}</li>
+                <li>{cardsTable.wordThree}</li>
               </ul>
               <ul className={styles.cardsUL2}>
-                <li>{wordFour}</li>
-                <li>{wordFive}</li>
-                <li>{wordSix}</li>
+                <li>{cardsTable.wordFour}</li>
+                <li>{cardsTable.wordFive}</li>
+                <li>{cardsTable.wordSix}</li>
               </ul>
             </div>
             <div className={styles.gameCardRight}>
@@ -314,7 +316,7 @@ const Game: NextPage = () => {
   };
   const CounterFunction = () => {
     setStartCounter(true);
-    CardsData();
+    CardsData(data);
     if (countDownGame == 1.5) {
       setCountDownGame(timeRound);
     }
@@ -504,8 +506,16 @@ const Game: NextPage = () => {
 
   return (
     <div className={styles.mainDiv}>
-      {rendersettingsModal()}
-      {renderrulesModal()}
+      {showstartModal && (
+        <SettingsModal
+          CloseSettingsModal={setShowSettingsModal}
+          GetTimeFromSettings={setTimeRound}
+          GetRoundsFromSettings={setQuantityRound}
+          GetMuletillasFromSettings={setClickedMuletillas}
+          GetInsultosFromSettings={setClickedInsultos}
+        />
+      )}
+      {showrulesModal && <RulesModal CloseRulesModal={setShowRulesModal} />}
       {renderstartModal()}
       {renderexitModal()}
       {PlayingDiv()}
@@ -514,4 +524,15 @@ const Game: NextPage = () => {
     </div>
   );
 };
+
+export async function getServerSideProps() {
+  const response = await fetch("http://localhost:3000/api/cards");
+  const data = await response.json();
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
 export default Game;
