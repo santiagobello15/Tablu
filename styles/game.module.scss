@@ -607,11 +607,10 @@ $CardColorYellow: hsl(43, 82%, 89%);
   width: 80%;
   left: 50%;
   transform: translate(-50%, 0%);
-  background-color: aqua;
   top: -70px;
 
   p {
-    color: rgb(255, 13, 13);
+    color: $AppColor;
     font-size: 1.7rem;
     font-family: "Luckiest Guy", cursive;
     position: absolute;
@@ -620,6 +619,7 @@ $CardColorYellow: hsl(43, 82%, 89%);
     transform: translate(-50%, -50%);
     width: 100%;
     text-align: center;
+    text-shadow: 1px 1px black;
   }
 }
 

@@ -33,6 +33,27 @@ const Game: NextPage = () => {
   const [winnerTeam, setWinnerTeam] = useState("");
   const [drawGame, setDrawGame] = useState(false);
   const [restartCounterBoolean, setRestartCounterBoolean] = useState(false);
+  const [cardName, setCardName] = useState("Nombre");
+  const [cardLastName, setCardLastName] = useState("Apellido");
+  const [wordOne, setWordOne] = useState("Palabra 1");
+  const [wordTwo, setWordTwo] = useState("Palabra 2");
+  const [wordThree, setWordThree] = useState("Palabra 3");
+  const [wordFour, setWordFour] = useState("Palabra 4");
+  const [wordFive, setWordFive] = useState("Palabra 5");
+  const [wordSix, setWordSix] = useState("Palabra 6");
+
+  const CardsData = async () => {
+    const response = await fetch("/api/cards");
+    const data = await response.json();
+    setCardName(data.CardsArray[currentRonda - 1].firstname);
+    setCardLastName(data.CardsArray[currentRonda - 1].lastname);
+    setWordOne(data.CardsArray[currentRonda - 1].word1);
+    setWordTwo(data.CardsArray[currentRonda - 1].word2);
+    setWordThree(data.CardsArray[currentRonda - 1].word3);
+    setWordFour(data.CardsArray[currentRonda - 1].word4);
+    setWordFive(data.CardsArray[currentRonda - 1].word5);
+    setWordSix(data.CardsArray[currentRonda - 1].word6);
+  };
 
   const cancelCounterQuitting = () => {
     if (restartCounterBoolean == true) {
@@ -141,17 +162,17 @@ const Game: NextPage = () => {
               </div>
             </div>
             <div className={styles.gameCard}>
-              <h1>SUSANA</h1>
-              <h2>GIMENEZ</h2>
+              <h1>{cardName}</h1>
+              <h2>{cardLastName}</h2>
               <ul className={styles.cardsUL1}>
-                <li>CARLOS</li>
-                <li>ZAMORA</li>
-                <li>BOXEO</li>
+                <li>{wordOne}</li>
+                <li>{wordTwo}</li>
+                <li>{wordThree}</li>
               </ul>
               <ul className={styles.cardsUL2}>
-                <li>CARLOS</li>
-                <li>ZAMORA</li>
-                <li>BOXEO</li>
+                <li>{wordFour}</li>
+                <li>{wordFive}</li>
+                <li>{wordSix}</li>
               </ul>
             </div>
             <div className={styles.gameCardRight}>
@@ -286,12 +307,13 @@ const Game: NextPage = () => {
     }
     return styles.cardYellowTeamTwo;
   };
-  function CounterFunction() {
+  const CounterFunction = () => {
     setStartCounter(true);
+    CardsData();
     if (countDownGame == 1.5) {
       setCountDownGame(timeRound);
     }
-  }
+  };
   function PauseCounterFunction() {
     setStartCounter(false);
   }

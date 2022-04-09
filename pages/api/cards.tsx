@@ -11,23 +11,7 @@ export default async function handler(req: any, res: any) {
       break;
     case "GET":
       const posts = await db.collection("cards").find({}).toArray();
-      res.json({ data: posts });
+      res.json({ CardsArray: posts });
       break;
   }
 }
-
-export async function getServerSideProps(context) {
-  let res = await fetch("http://localhost:3000/api/cards", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  let cards = await res.json();
-
-  return {
-    props: { cards },
-  };
-}
-
-console.log(props.data.)
