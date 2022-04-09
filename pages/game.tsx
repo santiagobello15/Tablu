@@ -41,19 +41,24 @@ const Game: NextPage = () => {
   const [wordFour, setWordFour] = useState("Palabra 4");
   const [wordFive, setWordFive] = useState("Palabra 5");
   const [wordSix, setWordSix] = useState("Palabra 6");
+  const [currentCard, setCurrentCard] = useState(0);
 
   const CardsData = async () => {
     const response = await fetch("/api/cards");
     const data = await response.json();
-    setCardName(data.CardsArray[currentRonda - 1].firstname);
-    setCardLastName(data.CardsArray[currentRonda - 1].lastname);
-    setWordOne(data.CardsArray[currentRonda - 1].word1);
-    setWordTwo(data.CardsArray[currentRonda - 1].word2);
-    setWordThree(data.CardsArray[currentRonda - 1].word3);
-    setWordFour(data.CardsArray[currentRonda - 1].word4);
-    setWordFive(data.CardsArray[currentRonda - 1].word5);
-    setWordSix(data.CardsArray[currentRonda - 1].word6);
+    setCardName(data.CardsArray[currentCard].firstname);
+    setCardLastName(data.CardsArray[currentCard].lastname);
+    setWordOne(data.CardsArray[currentCard].word1);
+    setWordTwo(data.CardsArray[currentCard].word2);
+    setWordThree(data.CardsArray[currentCard].word3);
+    setWordFour(data.CardsArray[currentCard].word4);
+    setWordFive(data.CardsArray[currentCard].word5);
+    setWordSix(data.CardsArray[currentCard].word6);
   };
+
+  useEffect(() => {
+    CardsData();
+  }, [currentCard]);
 
   const cancelCounterQuitting = () => {
     if (restartCounterBoolean == true) {
@@ -179,7 +184,7 @@ const Game: NextPage = () => {
               <div className={styles.answerOk} onClick={AddPoints}>
                 <p>+1 Punto</p>
               </div>
-              <div className={styles.answerPass}>
+              <div className={styles.answerPass} onClick={Pass}>
                 <p>Pasar</p>
               </div>
               <div className={styles.answerWrong} onClick={DeductPoints}>
@@ -353,19 +358,26 @@ const Game: NextPage = () => {
     }
   });
   const AddPoints = () => {
+    setPointsTeamOne(pointsTeamOne + 1);
     if (activeTeamOne == true) {
-      setPointsTeamOne(pointsTeamOne + 1);
+      setCurrentCard(currentCard + 1);
     } else {
       setPointsTeamTwo(pointsTeamTwo + 1);
     }
   };
   const DeductPoints = () => {
+    setCurrentCard(currentCard + 1);
     if (activeTeamOne == true) {
       setPointsTeamOne(pointsTeamOne - 1);
     } else {
       setPointsTeamTwo(pointsTeamTwo - 1);
     }
   };
+
+  const Pass = () => {
+    setCurrentCard(currentCard + 1);
+  };
+
   const CurrTeamShow = () => {
     if (activeTeamOne == true) {
       return teamOneName;

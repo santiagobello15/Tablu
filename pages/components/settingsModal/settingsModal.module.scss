@@ -16,6 +16,7 @@
   top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 6px;
+  animation: initial-anim 0.3s ease-out;
   h1 {
     position: absolute;
     font-weight: 400;
@@ -26,6 +27,18 @@
     left: 50%;
     top: 10px;
     transform: translate(-50%, 0%);
+  }
+}
+
+@keyframes initial-anim {
+  0% {
+    top: 0%;
+  }
+  75% {
+    top: 52%;
+  }
+  100% {
+    top: 50%;
   }
 }
 
