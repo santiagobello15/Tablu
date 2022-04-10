@@ -2,10 +2,6 @@ import React, { useContext } from "react";
 import { Context } from "../../context/AppContext";
 import styles from "../../styles/Home.module.scss";
 
-interface DarkModeInterface {
-  darkMode: boolean;
-}
-
 export const FunctionDarkModeToggle = () => {
   const { darkMode } = useContext(Context);
   if (darkMode == false) {
@@ -16,7 +12,7 @@ export const FunctionDarkModeToggle = () => {
 };
 
 export const FunctionDarkModeHeader = () => {
-  const { darkMode } = useContext<DarkModeInterface>(Context);
+  const { darkMode } = useContext(Context);
   if (darkMode == false) {
     return styles.appHeaderLight;
   } else {
@@ -25,7 +21,7 @@ export const FunctionDarkModeHeader = () => {
 };
 
 export const FunctionDarkModeBodyDiv = () => {
-  const { darkMode } = useContext<DarkModeInterface>(Context);
+  const { darkMode } = useContext(Context);
   if (darkMode == false) {
     return styles.bodyDivLight;
   } else {
@@ -33,7 +29,7 @@ export const FunctionDarkModeBodyDiv = () => {
   }
 };
 export const FunctionDarkModeBodyText = () => {
-  const { darkMode } = useContext<DarkModeInterface>(Context);
+  const { darkMode } = useContext(Context);
   if (darkMode == false) {
     return styles.bodyTextLight;
   } else {
@@ -41,7 +37,7 @@ export const FunctionDarkModeBodyText = () => {
   }
 };
 export const FunctionDarkModeBodySubtText = () => {
-  const { darkMode } = useContext<DarkModeInterface>(Context);
+  const { darkMode } = useContext(Context);
   if (darkMode == false) {
     return styles.bodyTextSubtLight;
   } else {
@@ -49,7 +45,7 @@ export const FunctionDarkModeBodySubtText = () => {
   }
 };
 export const FunctionDarkModeWebVersion = () => {
-  const { darkMode } = useContext<DarkModeInterface>(Context);
+  const { darkMode } = useContext(Context);
   if (darkMode == false) {
     return styles.WebVersionLight;
   } else {
@@ -57,7 +53,7 @@ export const FunctionDarkModeWebVersion = () => {
   }
 };
 export const FunctionDarkModeBodyDownload = () => {
-  const { darkMode } = useContext<DarkModeInterface>(Context);
+  const { darkMode } = useContext(Context);
   if (darkMode == false) {
     return styles.bodyTextWebVersionLight;
   } else {
@@ -65,7 +61,7 @@ export const FunctionDarkModeBodyDownload = () => {
   }
 };
 export const FunctionH1DarkMode = () => {
-  const { darkMode } = useContext<DarkModeInterface>(Context);
+  const { darkMode } = useContext(Context);
   if (darkMode == false) {
     return "Light";
   } else {
@@ -73,7 +69,7 @@ export const FunctionH1DarkMode = () => {
   }
 };
 export const FunctionH1DarkModeClass = () => {
-  const { darkMode } = useContext<DarkModeInterface>(Context);
+  const { darkMode } = useContext(Context);
   if (darkMode == false) {
     return styles.h1LightMode;
   } else {
@@ -81,7 +77,7 @@ export const FunctionH1DarkModeClass = () => {
   }
 };
 export const FunctionDarkModeFooter = () => {
-  const { darkMode } = useContext<DarkModeInterface>(Context);
+  const { darkMode } = useContext(Context);
   if (darkMode == false) {
     return styles.footerLight;
   } else {
