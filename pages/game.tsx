@@ -13,8 +13,8 @@ import { Context } from "../context/AppContext";
 const ENVIRONMENT = process.env.REACT_APP_ENVIRONMENT;
 const API_URL =
   ENVIRONMENT === "local"
-    ? "http://localhost:3000/"
-    : "https://tablu.vercel.app/";
+    ? "http://localhost:3000"
+    : "https://tablu.vercel.app";
 
 const Game: NextPage = ({ data }: any) => {
   const {
