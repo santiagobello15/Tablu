@@ -1,14 +1,14 @@
 import { createContext, useState } from "react";
 
-export const Context = createContext<Context.Provider | null>(null);
+export const Context = createContext(null);
 
-const GameContext = ({ children }: any) => {
+const GameContext = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
   const [showSettingsModal, setShowSettingsModal] = useState(false);
   const [showRulesModal, setShowRulesModal] = useState(false);
   const [showStartModal, setShowStartModal] = useState(false);
   const [showExitModal, setShowExitModal] = useState(false);
-  const [timeRound, setTimeRound] = useState<Number>(60);
+  const [timeRound, setTimeRound] = useState(60);
   const [clickedMuletillas, setClickedMuletillas] = useState(false);
   const [clickedInsultos, setClickedInsultos] = useState(false);
   const [quantityRound, setQuantityRound] = useState(15);
