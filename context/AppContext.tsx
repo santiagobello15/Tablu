@@ -1,7 +1,10 @@
 import { createContext, useState } from "react";
 
-export const Context = createContext<firebase.app.App | null>(null);
-
+export const Context = createContext({} as ContextState);
+interface ContextState {
+  // set the type of state you want to handle with context e.g.
+  name: string | null;
+}
 const GameContext = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
   const [showSettingsModal, setShowSettingsModal] = useState(false);
