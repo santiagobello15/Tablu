@@ -45,6 +45,9 @@ const Game: NextPage = ({ data }) => {
   const [winnerTeam, setWinnerTeam] = useState("");
   const [drawGame, setDrawGame] = useState(false);
   const [restartCounterBoolean, setRestartCounterBoolean] = useState(false);
+  const [plusPoint, setPlusPoint] = useState(false);
+  const [minusPoint, setMinusPoint] = useState(false);
+  const [passPoint, setPassPoint] = useState(false);
 
   interface CardsTableInterface {
     cardName: string;
@@ -86,6 +89,10 @@ const Game: NextPage = ({ data }) => {
   useEffect(() => {
     CardsData(data);
   }, [currentCard]);
+
+  useEffect(() => {
+    BlurAndText();
+  });
 
   const pivot4dev = () => {
     if (currentCard == Object.keys(data.CardsArray).length - 1) {
@@ -141,12 +148,28 @@ const Game: NextPage = ({ data }) => {
     }
   };
 
-  const BlurAndText = (scenario: string) => {
-    return (
-      <div className={styles.gameCardBlur}>
-        <h1>{scenario}</h1>
-      </div>
-    );
+  const BlurAndText = () => {
+    if (plusPoint == true) {
+      return (
+        <div className={styles.gameCardBlur}>
+          <h1>+1</h1>
+        </div>
+      );
+    }
+    if (minusPoint == true) {
+      return (
+        <div className={styles.gameCardBlur}>
+          <h1>-1</h1>
+        </div>
+      );
+    }
+    if (passPoint == true) {
+      return (
+        <div className={styles.gameCardBlur}>
+          <h1>Pasar</h1>
+        </div>
+      );
+    }
   };
 
   const PlayingDiv = () => {
@@ -167,6 +190,7 @@ const Game: NextPage = ({ data }) => {
             </div>
 
             <div className={styles.gameCard}>
+              {BlurAndText("+1")}
               <h1>{cardsTable.cardName}</h1>
               <h2>{cardsTable.cardLastName}</h2>
               <ul className={styles.cardsUL1}>
@@ -360,7 +384,8 @@ const Game: NextPage = ({ data }) => {
   });
   const AddPoints = () => {
     setCurrentCard(currentCard + 1);
-    BlurAndText("Ganaste");
+    setPlusPoint(true);
+    setTimeout(() => setPlusPoint(false), 1000);
     if (activeTeamOne == true) {
       setPointsTeamOne(pointsTeamOne + 1);
     } else {
@@ -369,6 +394,8 @@ const Game: NextPage = ({ data }) => {
   };
   const DeductPoints = () => {
     setCurrentCard(currentCard + 1);
+    setMinusPoint(true);
+    setTimeout(() => setMinusPoint(false), 1000);
     if (activeTeamOne == true) {
       setPointsTeamOne(pointsTeamOne - 1);
     } else {
@@ -378,6 +405,8 @@ const Game: NextPage = ({ data }) => {
 
   const Pass = () => {
     setCurrentCard(currentCard + 1);
+    setPassPoint(true);
+    setTimeout(() => setPassPoint(false), 1000);
   };
 
   const CurrTeamShow = () => {
