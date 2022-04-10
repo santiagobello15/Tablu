@@ -10,6 +10,12 @@ import Image from "next/image";
 import clapsImg from "../media/clapsImg.png";
 import { Context } from "../context/AppContext";
 
+const ENVIRONMENT = process.env.REACT_APP_ENVIRONMENT;
+const API_URL =
+  ENVIRONMENT === "local"
+    ? "http://localhost:3000/"
+    : "https://tablu.vercel.app/";
+
 const Game: NextPage = ({ data }: any) => {
   const {
     showSettingsModal,
@@ -561,7 +567,7 @@ const Game: NextPage = ({ data }: any) => {
 };
 
 export async function getServerSideProps() {
-  const response = await fetch("http://localhost:3000/api/cards");
+  const response = await fetch(`${API_URL}/api/cards`);
   const data = await response.json();
 
   return {
