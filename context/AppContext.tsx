@@ -8,7 +8,7 @@ const GameContext = ({ children }: any) => {
   const [showRulesModal, setShowRulesModal] = useState(false);
   const [showStartModal, setShowStartModal] = useState(false);
   const [showExitModal, setShowExitModal] = useState(false);
-  const [timeRound, setTimeRound] = useState(60);
+  const [timeRound, setTimeRound] = useState<Number>(60);
   const [clickedMuletillas, setClickedMuletillas] = useState(false);
   const [clickedInsultos, setClickedInsultos] = useState(false);
   const [quantityRound, setQuantityRound] = useState(15);

@@ -20,7 +20,6 @@ const Game: NextPage = ({ data }) => {
     setShowStartModal,
     showExitModal,
     setShowExitModal,
-    timeRound,
     clickedMuletillas,
     clickedInsultos,
     quantityRound,
@@ -32,6 +31,7 @@ const Game: NextPage = ({ data }) => {
     setTeamOneName,
     teamTwoName,
     setTeamTwoName,
+    timeRound,
   } = useContext<any>(Context);
 
   const [centerDivOpacity, setCenterDivOpacity] = useState<Number>(1);

@@ -2,12 +2,8 @@ import React, { useContext } from "react";
 import { Context } from "../../context/AppContext";
 import styles from "../../styles/Home.module.scss";
 
-interface DarkModeInterface {
-  darkMode: boolean;
-}
-
 export const FunctionDarkModeToggle = () => {
-  const { darkMode } = useContext<DarkModeInterface>(Context);
+  const { darkMode } = useContext(Context);
   if (darkMode == false) {
     return styles.toggleLight;
   } else {
