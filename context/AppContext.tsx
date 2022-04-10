@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-export const Context = createContext(null);
+export const Context = createContext<Context.Provider | null>(null);
 
 const GameContext = ({ children }: any) => {
   const [darkMode, setDarkMode] = useState(false);
