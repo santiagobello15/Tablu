@@ -35,7 +35,7 @@ function RulesModal({ CloseRulesModal }: any) {
           </li>
         </ul>
         {}
-        <div className={styles.closeBtn} onClick={CloseRulesModal}>
+        <div className={styles.closeBtn} onClick={CloseRullModal}>
           <p>X</p>
         </div>
       </div>

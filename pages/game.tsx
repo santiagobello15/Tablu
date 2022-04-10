@@ -11,16 +11,21 @@ import clapsImg from "./media/clapsImg.png";
 import { Context } from "../context/AppContext";
 
 const Game: NextPage = ({ data }) => {
-  const { showSettingsModal, setShowSettingsModal } = useContext(Context);
+  const {
+    showSettingsModal,
+    setShowSettingsModal,
+    showRulesModal,
+    setShowRulesModal,
+    showStartModal,
+    setShowStartModal,
+    showExitModal,
+    setShowExitModal,
+    timeRound,
+    clickedMuletillas,
+    clickedInsultos,
+    quantityRound,
+  } = useContext(Context);
 
-  /*   const [showsettingsModal, setShowSettingsModal] = useState(false); */
-  const [showrulesModal, setShowRulesModal] = useState(false);
-  const [showstartModal, setShowStartModal] = useState(false);
-  const [showexitModal, setShowExitModal] = useState(false);
-  const [timeRound, setTimeRound] = useState(60);
-  const [clickedMuletillas, setClickedMuletillas] = useState(false);
-  const [clickedInsultos, setClickedInsultos] = useState(false);
-  const [quantityRound, setQuantityRound] = useState(15);
   const [teamOneColor, setTeamOneColor] = useState("Red");
   const [teamTwoColor, setTeamTwoColor] = useState("Blue");
   const [teamOneName, setTeamOneName] = useState("Team 1");
@@ -101,20 +106,7 @@ const Game: NextPage = ({ data }) => {
       );
     }
   };
-  const renderstartModal = () => {
-    if (showstartModal == true) {
-      return (
-        <StartModal
-          GetColorsFromStartTeamOne={setTeamOneColor}
-          GetColorsFromStartTeamTwo={setTeamTwoColor}
-          GetNameFromStartTeamOne={setTeamOneName}
-          GetNameFromStartTeamTwo={setTeamTwoName}
-          CloseStartModal={setShowStartModal}
-          GetOpacityfromStart={setCenterDivOpacity}
-        />
-      );
-    }
-  };
+
   const settModalShow = () => {
     setShowSettingsModal(true);
   };
@@ -506,18 +498,28 @@ const Game: NextPage = ({ data }) => {
 
   return (
     <div className={styles.mainDiv}>
-      {showstartModal && (
-        <SettingsModal
-          CloseSettingsModal={setShowSettingsModal}
-          GetTimeFromSettings={setTimeRound}
-          GetRoundsFromSettings={setQuantityRound}
-          GetMuletillasFromSettings={setClickedMuletillas}
-          GetInsultosFromSettings={setClickedInsultos}
+      {showSettingsModal && (
+        <SettingsModal CloseSettingsModal={setShowSettingsModal} />
+      )}
+      {showRulesModal && <RulesModal CloseRulesModal={setShowRulesModal} />}
+      {showStartModal && (
+        <StartModal
+          GetColorsFromStartTeamOne={setTeamOneColor}
+          GetColorsFromStartTeamTwo={setTeamTwoColor}
+          GetNameFromStartTeamOne={setTeamOneName}
+          GetNameFromStartTeamTwo={setTeamTwoName}
+          CloseStartModal={setShowStartModal}
+          GetOpacityfromStart={setCenterDivOpacity}
         />
       )}
-      {showrulesModal && <RulesModal CloseRulesModal={setShowRulesModal} />}
-      {renderstartModal()}
-      {renderexitModal()}
+      {showExitModal && (
+        <ExitModal
+          CloseExitModal={setShowExitModal}
+          GetCounterFromExit={setStartCounter}
+          GetOpacityfromExit={setCenterDivOpacity}
+          GetRestarter={setRestartCounterBoolean}
+        />
+      )}
       {PlayingDiv()}
       {CenterDivFunction()}
       {GameOverScreen()}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styles from "./settingsModal.module.scss";
 import {
   Slider,
@@ -8,38 +8,18 @@ import {
   SliderMark,
   Checkbox,
 } from "@chakra-ui/react";
+import { Context } from "../../../context/AppContext";
 
-function SettingsModal({
-  GetRoundsFromSettings,
-  GetTimeFromSettings,
-  CloseSettingsModal,
-  GetMuletillasFromSettings,
-  GetInsultosFromSettings,
-}: any) {
-  const [sliderRoundsValue, setSliderRoundsValue] = useState(15);
-  const [muletillaChecked, setMuletillaChecked] = useState(false);
-  const [insultosChecked, setInsultosChecked] = useState(false);
-  const [sliderTimeValue, setSliderTimeValue] = useState(60);
+function SettingsModal({ CloseSettingsModal }: any) {
+  const {
+    setTimeRound,
+    setClickedMuletillas,
+    setClickedInsultos,
+    setQuantityRound,
+  } = useContext(Context);
 
   const CloseSettModal = () => {
-    SendTimetoGame();
-    SendRoundstoGame();
-    SendMuletillastoGame();
-    SendInsultostoGame();
     CloseSettingsModal(false);
-  };
-
-  const SendTimetoGame = () => {
-    GetTimeFromSettings(sliderTimeValue);
-  };
-  const SendRoundstoGame = () => {
-    GetRoundsFromSettings(sliderRoundsValue);
-  };
-  const SendMuletillastoGame = () => {
-    GetMuletillasFromSettings(muletillaChecked);
-  };
-  const SendInsultostoGame = () => {
-    GetInsultosFromSettings(insultosChecked);
   };
 
   return (
@@ -52,7 +32,7 @@ function SettingsModal({
           </li>
           <li className={styles.secondLi}>
             <Slider
-              onChange={(val: number) => setSliderRoundsValue(val)}
+              onChange={(val: number) => setQuantityRound(val)}
               aria-label="slider-ex-1"
               defaultValue={15}
               min={5}
@@ -86,7 +66,7 @@ function SettingsModal({
           </li>
           <li className={styles.fourthLi}>
             <Slider
-              onChange={(val) => setSliderTimeValue(val)}
+              onChange={(val) => setTimeRound(val)}
               aria-label="slider-ex-1"
               defaultValue={60}
               min={5}
@@ -118,7 +98,7 @@ function SettingsModal({
           <li className={styles.sixthLi}>
             <div className={styles.checkbtn1}>
               <Checkbox
-                onChange={(e) => setMuletillaChecked(e.target.checked)}
+                onChange={(e) => setClickedMuletillas(e.target.checked)}
                 colorScheme="purple"
               >
                 <a>Sin muletillas</a>
@@ -126,7 +106,7 @@ function SettingsModal({
             </div>
             <div className={styles.checkbtn2}>
               <Checkbox
-                onChange={(e) => setInsultosChecked(e.target.checked)}
+                onChange={(e) => setClickedInsultos(e.target.checked)}
                 colorScheme="purple"
               >
                 <a>Sin insultos</a>
