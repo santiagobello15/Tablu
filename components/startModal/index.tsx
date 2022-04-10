@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./startModal.module.scss";
 import { Context } from "../../context/AppContext";
 
@@ -10,10 +10,11 @@ function StartModal({ GetOpacityfromStart, CloseStartModal }: any) {
     setTeamTwoColor,
     setTeamOneName,
     setTeamTwoName,
-  } = useContext(Context);
-
+  } = useContext<any>(Context);
+  const [exitModalActive, setExitModalActive] = useState(false);
   const CloseStModal = () => {
-    CloseStartModal(false);
+    setExitModalActive(true);
+    setTimeout(() => CloseStartModal(false), 250);
   };
   const PlayBtn = () => {
     CloseStartModal(false);
@@ -78,7 +79,11 @@ function StartModal({ GetOpacityfromStart, CloseStartModal }: any) {
 
   return (
     <div className={styles.overlayModal}>
-      <div className={styles.modalContainer}>
+      <div
+        className={
+          exitModalActive ? styles.modalContainerOut : styles.modalContainer
+        }
+      >
         <h1>Comenzar</h1>
         <ul className={styles.configUl}>
           <li className={picked1stRowFunction()}>

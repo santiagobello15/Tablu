@@ -11,20 +11,26 @@ import {
 import { Context } from "../../context/AppContext";
 
 function SettingsModal({ CloseSettingsModal }: any) {
+  const [exitModalActive, setExitModalActive] = useState(false);
   const {
     setTimeRound,
     setClickedMuletillas,
     setClickedInsultos,
     setQuantityRound,
-  } = useContext(Context);
+  } = useContext<any>(Context);
 
   const CloseSettModal = () => {
-    CloseSettingsModal(false);
+    setExitModalActive(true);
+    setTimeout(() => CloseSettingsModal(false), 250);
   };
 
   return (
     <div className={styles.overlayModal}>
-      <div className={styles.modalContainer}>
+      <div
+        className={
+          exitModalActive ? styles.modalContainerOut : styles.modalContainer
+        }
+      >
         <h1>Configuración</h1>
         <ul className={styles.configUl}>
           <li className={styles.firstLi}>

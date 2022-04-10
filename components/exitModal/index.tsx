@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./exitModal.module.scss";
 
 function ExitModal({
@@ -7,9 +7,11 @@ function ExitModal({
   GetOpacityfromExit,
   GetRestarter,
 }: any) {
+  const [exitModalActive, setExitModalActive] = useState(false);
   const CloseExModal = () => {
-    CloseExitModal(false);
     SendCountertoGame();
+    setExitModalActive(true);
+    setTimeout(() => CloseExitModal(false), 250);
   };
 
   const SendCountertoGame = () => {
@@ -25,14 +27,17 @@ function ExitModal({
   const OutOfGame = () => {
     CloseExitModal(false);
     SendCountertoGame();
-
     SendOpacitytoGame();
     SendRestarter();
   };
 
   return (
     <div className={styles.overlayModal}>
-      <div className={styles.modalContainer}>
+      <div
+        className={
+          exitModalActive ? styles.modalContainerOut : styles.modalContainer
+        }
+      >
         <div className={styles.titlesContainer}>
           <h1>¿SEGURO DESEAS SALIR?</h1>
           <h3>SE PERDERÁN LOS PROGRESOS</h3>

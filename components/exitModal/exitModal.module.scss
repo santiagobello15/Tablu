@@ -16,6 +16,7 @@
   top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 6px;
+  animation: initial-anim 0.3s ease-out;
   h1 {
     position: absolute;
     font-weight: 400;
@@ -43,7 +44,6 @@
     transform: translate(-50%, 0%);
     text-align: center;
   }
-
   h2 {
     position: absolute;
     font-weight: 200;
@@ -56,6 +56,79 @@
     transform: translate(-50%, 0%);
     cursor: pointer;
     text-align: center;
+  }
+}
+
+@keyframes initial-anim {
+  0% {
+    top: 0%;
+  }
+  75% {
+    top: 52%;
+  }
+  100% {
+    top: 50%;
+  }
+}
+.modalContainerOut {
+  background-color: rgb(221, 221, 221);
+  background-image: url("../../media/patternpad.svg");
+  height: 250px;
+  width: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 6px;
+  animation: exit-anim 0.3s ease-out;
+  h1 {
+    position: absolute;
+    font-weight: 400;
+    font-size: 1.3rem;
+    font-family: "Luckiest Guy", cursive;
+    background-color: #7b2cbf;
+    color: white;
+    left: 50%;
+    top: 30px;
+    transform: translate(-50%, 0%);
+    text-align: center;
+    width: 100%;
+    height: 40px;
+  }
+  h3 {
+    position: absolute;
+    font-weight: 400;
+    font-size: 1rem;
+    font-family: "Luckiest Guy", cursive;
+    background-color: #b97af0;
+    color: white;
+    left: 50%;
+    top: 70px;
+    width: 100%;
+    transform: translate(-50%, 0%);
+    text-align: center;
+  }
+  h2 {
+    position: absolute;
+    font-weight: 200;
+    font-size: 2rem;
+    font-family: "Luckiest Guy", cursive;
+    background-color: #bf2c2c;
+    color: white;
+    left: 50%;
+    top: 130px;
+    transform: translate(-50%, 0%);
+    cursor: pointer;
+    text-align: center;
+  }
+}
+
+@keyframes exit-anim {
+  0% {
+    top: 50%;
+  }
+  100% {
+    top: -50%;
   }
 }
 

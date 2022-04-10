@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./rulesModal.module.scss";
 
 function RulesModal({ CloseRulesModal }: any) {
+  const [exitModalActive, setExitModalActive] = useState(false);
   const CloseRullModal = () => {
-    CloseRulesModal(false);
+    setExitModalActive(true);
+    setTimeout(() => CloseRulesModal(false), 250);
   };
 
   return (
     <div className={styles.overlayModal}>
-      <div className={styles.modalContainer}>
+      <div
+        className={
+          exitModalActive ? styles.modalContainerOut : styles.modalContainer
+        }
+      >
         <h1>Reglas</h1>
         <ul className={styles.configUl}>
           <li className={styles.firstLi}>

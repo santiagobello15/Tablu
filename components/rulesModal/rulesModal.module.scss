@@ -41,6 +41,38 @@
     top: 50%;
   }
 }
+.modalContainerOut {
+  background-color: rgb(221, 221, 221);
+  background-image: url("../../media/patternpad.svg");
+  height: 450px;
+  width: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 6px;
+  animation: exit-anim 0.3s ease-out;
+  h1 {
+    position: absolute;
+    font-weight: 400;
+    font-size: 2rem;
+    font-family: "Luckiest Guy", cursive;
+    background-color: #7b2cbf;
+    color: white;
+    left: 50%;
+    top: 10px;
+    transform: translate(-50%, 0%);
+  }
+}
+
+@keyframes exit-anim {
+  0% {
+    top: 50%;
+  }
+  100% {
+    top: -50%;
+  }
+}
 
 .closeBtn {
   width: 40px;
