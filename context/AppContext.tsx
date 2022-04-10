@@ -3,7 +3,33 @@ import { createContext, useState } from "react";
 export const Context = createContext({} as ContextState);
 interface ContextState {
   // set the type of state you want to handle with context e.g.
-  name: string | null;
+
+  darkMode: boolean | null;
+        setDarkMode: boolean | null;
+        showSettingsModal: boolean | null;
+        setShowSettingsModal: boolean | null;
+        showRulesModal: boolean | null;
+        setShowRulesModal: boolean | null;
+        showStartModal: boolean | null;
+        setShowStartModal: boolean | null;
+        showExitModal: boolean | null;
+        setShowExitModal: boolean | null;
+        timeRound: number | null;
+        setTimeRound: number | null;
+        clickedMuletillas: boolean | null;
+        setClickedMuletillas: boolean | null;
+        clickedInsultos: boolean | null;
+        setClickedInsultos: boolean | null;
+        quantityRound: number | null;
+        setQuantityRound: number | null;
+        teamOneColor: string | null;
+        setTeamOneColor: string | null;
+        teamTwoColor: string | null;
+        setTeamTwoColor : string | null;
+        teamOneName: string | null;
+        setTeamOneName: string | null;
+        teamTwoName: string | null;
+        setTeamTwoName: string | null;
 }
 const GameContext = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
