@@ -3,31 +3,31 @@ import { createContext, useState } from "react";
 export const Context = createContext({} as ContextState);
 interface ContextState {
   darkMode: boolean | null;
-        setDarkMode: boolean | null;
-        showSettingsModal: boolean | null;
-        setShowSettingsModal: boolean | null;
-        showRulesModal: boolean | null;
-        setShowRulesModal: boolean | null;
-        showStartModal: boolean | null;
-        setShowStartModal: boolean | null;
-        showExitModal: boolean | null;
-        setShowExitModal: boolean | null;
-        timeRound: number | null;
-        setTimeRound: number | null;
-        clickedMuletillas: boolean | null;
-        setClickedMuletillas: boolean | null;
-        clickedInsultos: boolean | null;
-        setClickedInsultos: boolean | null;
-        quantityRound: number | null;
-        setQuantityRound: number | null;
-        teamOneColor: string | null;
-        setTeamOneColor: string | null;
-        teamTwoColor: string | null;
-        setTeamTwoColor : string | null;
-        teamOneName: string | null;
-        setTeamOneName: string | null;
-        teamTwoName: string | null;
-        setTeamTwoName: string | null;
+  setDarkMode: any | null;
+  showSettingsModal: boolean | null;
+  setShowSettingsModal: any | null;
+  showRulesModal: boolean | null;
+  setShowRulesModal: any | null;
+  showStartModal: boolean | null;
+  setShowStartModal: any | null;
+  showExitModal: boolean | null;
+  setShowExitModal: any | null;
+  timeRound: number | null;
+  setTimeRound: any | null;
+  clickedMuletillas: boolean | null;
+  setClickedMuletillas: any | null;
+  clickedInsultos: boolean | null;
+  setClickedInsultos: any | null;
+  quantityRound: number | null;
+  setQuantityRound: any | null;
+  teamOneColor: string | null;
+  setTeamOneColor: any | null;
+  teamTwoColor: string | null;
+  setTeamTwoColor: any | null;
+  teamOneName: string | null;
+  setTeamOneName: any | null;
+  teamTwoName: string | null;
+  setTeamTwoName: any | null;
 }
 const GameContext = ({ children }: any) => {
   const [darkMode, setDarkMode] = useState(false);
@@ -46,7 +46,7 @@ const GameContext = ({ children }: any) => {
   return (
     <Context.Provider
       value={{
-        darkMode
+        darkMode,
         setDarkMode,
         showSettingsModal,
         setShowSettingsModal,

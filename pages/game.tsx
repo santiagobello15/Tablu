@@ -10,7 +10,7 @@ import Image from "next/image";
 import clapsImg from "../media/clapsImg.png";
 import { Context } from "../context/AppContext";
 
-const Game: NextPage = ({ data }) => {
+const Game: NextPage = ({ data }: any) => {
   const {
     showSettingsModal,
     setShowSettingsModal,
@@ -35,7 +35,7 @@ const Game: NextPage = ({ data }) => {
   } = useContext<any>(Context);
 
   const [centerDivOpacity, setCenterDivOpacity] = useState<Number>(1);
-  const [countDownGame, setCountDownGame] = useState<Number>(60);
+  const [countDownGame, setCountDownGame] = useState<any>(60);
   const [startCounter, setStartCounter] = useState(false);
   const [currentRonda, setCurrentRonda] = useState(1);
   const [activeTeamOne, setActiveTeamOne] = useState(true);
@@ -87,7 +87,7 @@ const Game: NextPage = ({ data }) => {
     updateCardsTable("wordSix", data.CardsArray[currentCard].word6);
   };
   useEffect(() => {
-    CardsData(data);
+    CardsData();
   }, [currentCard]);
 
   useEffect(() => {
@@ -190,7 +190,7 @@ const Game: NextPage = ({ data }) => {
             </div>
 
             <div className={styles.gameCard}>
-              {BlurAndText("+1")}
+              {BlurAndText()}
               <h1>{cardsTable.cardName}</h1>
               <h2>{cardsTable.cardLastName}</h2>
               <ul className={styles.cardsUL1}>
@@ -339,7 +339,7 @@ const Game: NextPage = ({ data }) => {
   };
   const CounterFunction = () => {
     setStartCounter(true);
-    CardsData(data);
+    CardsData();
     if (countDownGame == 1.5) {
       setCountDownGame(timeRound);
     }

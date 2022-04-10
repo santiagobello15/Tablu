@@ -21,12 +21,7 @@ import {
 } from "../components/Functions/functions";
 
 const Home: NextPage = () => {
-  interface DarkModeInterface {
-    darkMode: boolean;
-    setDarkMode: boolean;
-  }
-
-  const { darkMode, setDarkMode } = useContext<DarkModeInterface>(Context);
+  const { darkMode, setDarkMode } = useContext(Context);
   const changeDarkMode = () => {
     if (darkMode == false) {
       setDarkMode(true);
