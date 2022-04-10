@@ -2,8 +2,6 @@ import { createContext, useState } from "react";
 
 export const Context = createContext({} as ContextState);
 interface ContextState {
-  // set the type of state you want to handle with context e.g.
-
   darkMode: boolean | null;
         setDarkMode: boolean | null;
         showSettingsModal: boolean | null;

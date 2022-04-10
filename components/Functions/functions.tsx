@@ -7,7 +7,7 @@ interface DarkModeInterface {
 }
 
 export const FunctionDarkModeToggle = () => {
-  const { darkMode } = useContext<DarkModeInterface>(Context);
+  const { darkMode } = useContext(Context);
   if (darkMode == false) {
     return styles.toggleLight;
   } else {
