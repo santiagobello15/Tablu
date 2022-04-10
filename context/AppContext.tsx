@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-export const Context = createContext(null);
+export const Context = createContext<firebase.app.App | null>(null);
 
 const GameContext = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
@@ -19,7 +19,7 @@ const GameContext = ({ children }) => {
   return (
     <Context.Provider
       value={{
-        darkMode,
+        darkMode
         setDarkMode,
         showSettingsModal,
         setShowSettingsModal,
