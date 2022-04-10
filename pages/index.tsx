@@ -2,86 +2,31 @@ import Link from "next/link";
 import type { NextPage } from "next";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
-import { useState } from "react";
-import iphone from "./media/iphone-front-transparent.png";
-import iosBadge from "./media/badge-ios.svg";
-import androidBadge from "./media/badge-android.svg";
+import { useState, useContext } from "react";
+import iphone from "../media/iphone-front-transparent.png";
+import iosBadge from "../media/badge-ios.svg";
+import androidBadge from "../media/badge-android.svg";
 import { AspectRatio } from "@chakra-ui/layout";
+import { Context } from "../context/AppContext";
+import {
+  FunctionDarkModeToggle,
+  FunctionH1DarkMode,
+  FunctionH1DarkModeClass,
+  FunctionDarkModeFooter,
+  FunctionDarkModeHeader,
+  FunctionDarkModeBodyDiv,
+  FunctionDarkModeBodyText,
+  FunctionDarkModeBodySubtText,
+  FunctionDarkModeBodyDownload,
+} from "../components/Functions/functions";
 
 const Home: NextPage = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  interface DarkModeInterface {
+    darkMode: boolean;
+    setDarkMode: boolean;
+  }
 
-  const functionDarkModeToggle = () => {
-    if (darkMode == false) {
-      return styles.toggleLight;
-    } else {
-      return styles.toggleDark;
-    }
-  };
-  const functionDarkModeHeader = () => {
-    if (darkMode == false) {
-      return styles.appHeaderLight;
-    } else {
-      return styles.appHeaderDark;
-    }
-  };
-  const functionDarkModeBodyDiv = () => {
-    if (darkMode == false) {
-      return styles.bodyDivLight;
-    } else {
-      return styles.bodyDivDark;
-    }
-  };
-  const functionDarkModeBodyText = () => {
-    if (darkMode == false) {
-      return styles.bodyTextLight;
-    } else {
-      return styles.bodyTextDark;
-    }
-  };
-  const functionDarkModeBodySubtText = () => {
-    if (darkMode == false) {
-      return styles.bodyTextSubtLight;
-    } else {
-      return styles.bodyTextSubtDark;
-    }
-  };
-  const functionDarkModeWebVersion = () => {
-    if (darkMode == false) {
-      return styles.WebVersionLight;
-    } else {
-      return styles.bodyTextWebVersionDark;
-    }
-  };
-  const functionDarkModeBodyDownload = () => {
-    if (darkMode == false) {
-      return styles.bodyTextWebVersionLight;
-    } else {
-      return styles.bodyTextWebVersionDark;
-    }
-  };
-  const functionH1DarkMode = () => {
-    if (darkMode == false) {
-      return "Light";
-    } else {
-      return "Dark";
-    }
-  };
-  const functionH1DarkModeClass = () => {
-    if (darkMode == false) {
-      return styles.h1LightMode;
-    } else {
-      return styles.h1DarkMode;
-    }
-  };
-  const functionDarkModeFooter = () => {
-    if (darkMode == false) {
-      return styles.footerLight;
-    } else {
-      return styles.footerDark;
-    }
-  };
-
+  const { darkMode, setDarkMode } = useContext<DarkModeInterface>(Context);
   const changeDarkMode = () => {
     if (darkMode == false) {
       setDarkMode(true);
@@ -89,35 +34,36 @@ const Home: NextPage = () => {
       setDarkMode(false);
     }
   };
+
   return (
     <div className="App">
-      <div className={functionDarkModeHeader()}>
+      <div className={FunctionDarkModeHeader()}>
         <h1 className={styles.headerTitle}>TABLÚ FAMOSOS</h1>
         <div onClick={changeDarkMode} className={styles.toggleButton}>
           <div
-            className={functionDarkModeToggle()}
+            className={FunctionDarkModeToggle()}
             onClick={changeDarkMode}
           ></div>
-          <h1 className={functionH1DarkModeClass()}>{functionH1DarkMode()}</h1>
+          <h1 className={FunctionH1DarkModeClass()}>{FunctionH1DarkMode()}</h1>
         </div>
       </div>
-      <div className={functionDarkModeBodyDiv()}>
+      <div className={FunctionDarkModeBodyDiv()}>
         <div className={styles.iphoneContainer}>
           <Image className={styles.iphonePic} src={iphone}></Image>
         </div>
         <div className={styles.bodyTextContainer}>
           <div className={styles.bodyTextFirstRow}>
-            <h2 className={functionDarkModeBodyText()}>JUGÁ </h2>
+            <h2 className={FunctionDarkModeBodyText()}>JUGÁ </h2>
             <h2 className={styles.bodyTextTablu}>TABLÚ FAMOSOS </h2>
           </div>
 
           <div className={styles.bodyTextSecondRow}>
-            <h2 className={functionDarkModeBodySubtText()}>
+            <h2 className={FunctionDarkModeBodySubtText()}>
               Divertite con amigos
             </h2>
           </div>
           <div className={styles.bodyTextThirdRow}>
-            <p className={functionDarkModeBodyDownload()}>
+            <p className={FunctionDarkModeBodyDownload()}>
               Descargá la app en tu smartphone
             </p>
           </div>
@@ -126,7 +72,6 @@ const Home: NextPage = () => {
               <div className={styles.buttonsStores} />
               <Image layout="fill" alt="iosbadge" src={iosBadge}></Image>
             </div>
-
             <div className={styles.absDivAndroid}>
               <div className={styles.buttonsStores} />
               <Image
@@ -138,7 +83,7 @@ const Home: NextPage = () => {
           </div>
         </div>
         <div className={styles.bodyTextFifth}>
-          <h1 className={functionDarkModeBodyDownload()}>
+          <h1 className={FunctionDarkModeBodyDownload()}>
             Ó usá la versión web
           </h1>
           <Link href="/game">
@@ -154,8 +99,7 @@ const Home: NextPage = () => {
           />
         </AspectRatio>
       </div>
-
-      <div className={functionDarkModeFooter()}></div>
+      <div className={FunctionDarkModeFooter()}></div>
     </div>
   );
 };

@@ -1,96 +1,75 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import styles from "./startModal.module.scss";
+import { Context } from "../../context/AppContext";
 
-function StartModal({
-  GetColorsFromStartTeamOne,
-  GetColorsFromStartTeamTwo,
-  GetNameFromStartTeamOne,
-  GetNameFromStartTeamTwo,
-  GetOpacityfromStart,
-  CloseStartModal,
-}: any) {
-  const [pickedColor1stRow, setPickedColor1stRow] = useState("Red");
-  const [pickedColor2ndRow, setPickedColor2ndRow] = useState("Blue");
-  const [teamOneName, setTeamOneName] = useState("Equipo 1");
-  const [teamTwoName, setTeamTwoName] = useState("Equipo 2");
+function StartModal({ GetOpacityfromStart, CloseStartModal }: any) {
+  const {
+    teamOneColor,
+    setTeamOneColor,
+    teamTwoColor,
+    setTeamTwoColor,
+    setTeamOneName,
+    setTeamTwoName,
+  } = useContext(Context);
+
   const CloseStModal = () => {
-    SendColorTeamOnetoGame();
-    SendColorTeamTwotoGame();
-    SendNameTeamOnetoGame();
-    SendNameTeamTwotoGame();
     CloseStartModal(false);
   };
   const PlayBtn = () => {
-    SendColorTeamOnetoGame();
-    SendColorTeamTwotoGame();
-    SendNameTeamOnetoGame();
-    SendNameTeamTwotoGame();
     CloseStartModal(false);
     SendOpacitytoGame();
   };
 
-  const SendColorTeamOnetoGame = () => {
-    GetColorsFromStartTeamOne(pickedColor1stRow);
-  };
-  const SendColorTeamTwotoGame = () => {
-    GetColorsFromStartTeamTwo(pickedColor2ndRow);
-  };
-  const SendNameTeamOnetoGame = () => {
-    GetNameFromStartTeamOne(teamOneName);
-  };
-  const SendNameTeamTwotoGame = () => {
-    GetNameFromStartTeamTwo(teamTwoName);
-  };
   const SendOpacitytoGame = () => {
     GetOpacityfromStart(0);
   };
 
   const pickedRed1 = () => {
-    setPickedColor1stRow("Red");
+    setTeamOneColor("Red");
   };
   const pickedBlue1 = () => {
-    setPickedColor1stRow("Blue");
+    setTeamOneColor("Blue");
   };
   const pickedGreen1 = () => {
-    setPickedColor1stRow("Green");
+    setTeamOneColor("Green");
   };
   const pickedYellow1 = () => {
-    setPickedColor1stRow("Yellow");
+    setTeamOneColor("Yellow");
   };
   const pickedRed2 = () => {
-    setPickedColor2ndRow("Red");
+    setTeamTwoColor("Red");
   };
   const pickedBlue2 = () => {
-    setPickedColor2ndRow("Blue");
+    setTeamTwoColor("Blue");
   };
   const pickedGreen2 = () => {
-    setPickedColor2ndRow("Green");
+    setTeamTwoColor("Green");
   };
   const pickedYellow2 = () => {
-    setPickedColor2ndRow("Yellow");
+    setTeamTwoColor("Yellow");
   };
 
   const picked1stRowFunction = () => {
-    if (pickedColor1stRow == "Red") {
+    if (teamOneColor == "Red") {
       return styles.firstRowRed;
     }
-    if (pickedColor1stRow == "Green") {
+    if (teamOneColor == "Green") {
       return styles.firstRowGreen;
     }
-    if (pickedColor1stRow == "Blue") {
+    if (teamOneColor == "Blue") {
       return styles.firstRowBlue;
     } else {
       return styles.firstRowYellow;
     }
   };
   const picked2ndRowFunction = () => {
-    if (pickedColor2ndRow == "Red") {
+    if (teamTwoColor == "Red") {
       return styles.secondRowRed;
     }
-    if (pickedColor2ndRow == "Green") {
+    if (teamTwoColor == "Green") {
       return styles.secondRowGreen;
     }
-    if (pickedColor2ndRow == "Blue") {
+    if (teamTwoColor == "Blue") {
       return styles.secondRowBlue;
     } else {
       return styles.secondRowYellow;

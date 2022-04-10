@@ -8,7 +8,7 @@ import {
   SliderMark,
   Checkbox,
 } from "@chakra-ui/react";
-import { Context } from "../../../context/AppContext";
+import { Context } from "../../context/AppContext";
 
 function SettingsModal({ CloseSettingsModal }: any) {
   const {

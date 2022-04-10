@@ -1,13 +1,13 @@
 import type { NextPage } from "next";
 import styles from "../styles/game.module.scss";
 import claps from "../styles/claps.module.scss";
-import SettingsModal from "./components/settingsModal";
-import RulesModal from "./components/rulesModal";
-import StartModal from "./components/startModal";
-import ExitModal from "./components/exitModal";
+import SettingsModal from "../components/settingsModal";
+import RulesModal from "../components/rulesModal";
+import StartModal from "../components/startModal";
+import ExitModal from "../components/exitModal";
 import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
-import clapsImg from "./media/clapsImg.png";
+import clapsImg from "../media/clapsImg.png";
 import { Context } from "../context/AppContext";
 
 const Game: NextPage = ({ data }) => {
@@ -24,13 +24,17 @@ const Game: NextPage = ({ data }) => {
     clickedMuletillas,
     clickedInsultos,
     quantityRound,
-  } = useContext(Context);
+    teamOneColor,
+    setTeamOneColor,
+    teamTwoColor,
+    setTeamTwoColor,
+    teamOneName,
+    setTeamOneName,
+    teamTwoName,
+    setTeamTwoName,
+  } = useContext<any>(Context);
 
-  const [teamOneColor, setTeamOneColor] = useState("Red");
-  const [teamTwoColor, setTeamTwoColor] = useState("Blue");
-  const [teamOneName, setTeamOneName] = useState("Team 1");
-  const [teamTwoName, setTeamTwoName] = useState<string>("Team 2");
-  const [centerDivOpacity, setCenterDivOpacity] = useState(1); // set back to one
+  const [centerDivOpacity, setCenterDivOpacity] = useState<Number>(1);
   const [countDownGame, setCountDownGame] = useState<Number>(60);
   const [startCounter, setStartCounter] = useState(false);
   const [currentRonda, setCurrentRonda] = useState(1);
@@ -42,7 +46,7 @@ const Game: NextPage = ({ data }) => {
   const [drawGame, setDrawGame] = useState(false);
   const [restartCounterBoolean, setRestartCounterBoolean] = useState(false);
 
-  interface CardsTableType {
+  interface CardsTableInterface {
     cardName: string;
     cardLastName: string;
     wordOne: string;
@@ -52,7 +56,7 @@ const Game: NextPage = ({ data }) => {
     wordFive: string;
     wordSix: string;
   }
-  const [cardsTable, setCardsTable] = useState<CardsTableType>({
+  const [cardsTable, setCardsTable] = useState<CardsTableInterface>({
     cardName: "Nombre",
     cardLastName: "Apellido",
     wordOne: "Palabra 1",
@@ -81,9 +85,9 @@ const Game: NextPage = ({ data }) => {
     updateCardsTable("wordFive", data.CardsArray[currentCard].word5);
     updateCardsTable("wordSix", data.CardsArray[currentCard].word6);
   };
-  // useEffect(() => {
-  //   CardsData(data);
-  // }, [currentCard]);
+  useEffect(() => {
+    CardsData(data);
+  }, [currentCard]);
 
   const cancelCounterQuitting = () => {
     if (restartCounterBoolean == true) {
@@ -93,19 +97,6 @@ const Game: NextPage = ({ data }) => {
     }
   };
   cancelCounterQuitting();
-
-  const renderexitModal = () => {
-    if (showexitModal == true) {
-      return (
-        <ExitModal
-          CloseExitModal={setShowExitModal}
-          GetCounterFromExit={setStartCounter}
-          GetOpacityfromExit={setCenterDivOpacity}
-          GetRestarter={setRestartCounterBoolean}
-        />
-      );
-    }
-  };
 
   const settModalShow = () => {
     setShowSettingsModal(true);
@@ -352,9 +343,9 @@ const Game: NextPage = ({ data }) => {
     }
   });
   const AddPoints = () => {
-    setPointsTeamOne(pointsTeamOne + 1);
+    setCurrentCard(currentCard + 1);
     if (activeTeamOne == true) {
-      setCurrentCard(currentCard + 1);
+      setPointsTeamOne(pointsTeamOne + 1);
     } else {
       setPointsTeamTwo(pointsTeamTwo + 1);
     }
@@ -504,10 +495,6 @@ const Game: NextPage = ({ data }) => {
       {showRulesModal && <RulesModal CloseRulesModal={setShowRulesModal} />}
       {showStartModal && (
         <StartModal
-          GetColorsFromStartTeamOne={setTeamOneColor}
-          GetColorsFromStartTeamTwo={setTeamTwoColor}
-          GetNameFromStartTeamOne={setTeamOneName}
-          GetNameFromStartTeamTwo={setTeamTwoName}
           CloseStartModal={setShowStartModal}
           GetOpacityfromStart={setCenterDivOpacity}
         />
