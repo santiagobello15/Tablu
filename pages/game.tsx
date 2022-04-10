@@ -66,14 +66,12 @@ const Game: NextPage = ({ data }) => {
     wordFive: "Palabra 5",
     wordSix: "Palabra 6",
   });
-
+  const [currentCard, setCurrentCard] = useState(0);
   // agregar switches inplay paused, etc...
 
   const updateCardsTable = (key: string, value: string): void => {
     setCardsTable((prev) => ({ ...prev, [key]: value }));
   };
-
-  const [currentCard, setCurrentCard] = useState(0);
 
   const CardsData = async () => {
     updateCardsTable("cardName", data.CardsArray[currentCard].firstname);
@@ -88,6 +86,13 @@ const Game: NextPage = ({ data }) => {
   useEffect(() => {
     CardsData(data);
   }, [currentCard]);
+
+  const pivot4dev = () => {
+    if (currentCard == Object.keys(data.CardsArray).length - 1) {
+      setCurrentCard(0);
+    }
+  };
+  pivot4dev();
 
   const cancelCounterQuitting = () => {
     if (restartCounterBoolean == true) {
@@ -135,6 +140,15 @@ const Game: NextPage = ({ data }) => {
       return "Penalización por insultos";
     }
   };
+
+  const BlurAndText = (scenario: string) => {
+    return (
+      <div className={styles.gameCardBlur}>
+        <h1>{scenario}</h1>
+      </div>
+    );
+  };
+
   const PlayingDiv = () => {
     if (centerDivOpacity == 0) {
       return (
@@ -151,6 +165,7 @@ const Game: NextPage = ({ data }) => {
                 </p>
               </div>
             </div>
+
             <div className={styles.gameCard}>
               <h1>{cardsTable.cardName}</h1>
               <h2>{cardsTable.cardLastName}</h2>
@@ -165,6 +180,7 @@ const Game: NextPage = ({ data }) => {
                 <li>{cardsTable.wordSix}</li>
               </ul>
             </div>
+
             <div className={styles.gameCardRight}>
               <div className={styles.answerOk} onClick={AddPoints}>
                 <p>+1 Punto</p>
@@ -344,6 +360,7 @@ const Game: NextPage = ({ data }) => {
   });
   const AddPoints = () => {
     setCurrentCard(currentCard + 1);
+    BlurAndText("Ganaste");
     if (activeTeamOne == true) {
       setPointsTeamOne(pointsTeamOne + 1);
     } else {

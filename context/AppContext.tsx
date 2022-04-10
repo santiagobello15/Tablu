@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 
 export const Context = createContext(null);
 
-const GameContext = ({ children }) => {
+const GameContext = ({ children }: any) => {
   const [darkMode, setDarkMode] = useState(false);
   const [showSettingsModal, setShowSettingsModal] = useState(false);
   const [showRulesModal, setShowRulesModal] = useState(false);
