@@ -567,7 +567,7 @@ const Game: NextPage = ({ data }: any) => {
 };
 
 export async function getServerSideProps() {
-  const response = await fetch(`${API_URL}/api/cards`);
+  const response = await fetch(`${API_URL}/game/api/cards`);
   const data = await response.json();
 
   return {
