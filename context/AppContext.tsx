@@ -29,7 +29,7 @@ interface ContextState {
         teamTwoName: string | null;
         setTeamTwoName: string | null;
 }
-const GameContext = ({ children }) => {
+const GameContext = ({ children }: any) => {
   const [darkMode, setDarkMode] = useState(false);
   const [showSettingsModal, setShowSettingsModal] = useState(false);
   const [showRulesModal, setShowRulesModal] = useState(false);
