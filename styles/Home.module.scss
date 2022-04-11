@@ -477,6 +477,24 @@
     top: 50px;
   }
 }
+@media all and (max-width: 885px) {
+  .mainContainer {
+    width: 650px;
+  }
+  .iphoneContainer {
+    width: 220px;
+    left: -20px;
+    top: 50px;
+  }
+  .bodyTextContainer {
+    width: 450px;
+    left: 200px;
+  }
+  .bodyTextFifth {
+    left: 200px;
+    width: 450px;
+  }
+}
 @media all and (max-width: 700px) {
   .mainContainer {
     width: 500px;
