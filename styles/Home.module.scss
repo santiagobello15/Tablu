@@ -15,18 +15,6 @@
   );
 }
 
-.videoframe {
-  display: flex;
-  margin-left: auto;
-  margin-right: 100px;
-  margin-bottom: auto;
-  margin-top: 84px;
-  border-width: 0px;
-}
-.videonoframes {
-  border-width: 0px;
-}
-
 .appHeaderDark {
   top: 0px;
   left: 0px;
@@ -206,21 +194,21 @@
   animation: fade-in-body-text 0.5s linear forwards;
   animation-delay: 1s;
   opacity: 0;
-  width: 500px;
+  width: 100%;
   height: 75px;
 }
 .bodyTextSecondRow {
   animation: fade-in-body-text 0.5s linear forwards;
   animation-delay: 1s;
   opacity: 0;
-  width: 500px;
+  width: 100%;
   height: 75px;
 }
 .bodyTextThirdRow {
   animation: fade-in-body-text 0.5s linear forwards;
   animation-delay: 1.5s;
   opacity: 0;
-  width: 500px;
+  width: 100%;
   height: 25px;
   top: 180px;
   position: absolute;
@@ -364,5 +352,88 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+
+.videoIndex {
+  width: 520px;
+  height: 360px;
+  position: absolute;
+  right: 100px;
+  top: 300px;
+}
+
+@media all and (max-width: 1500px) {
+  .videoIndex {
+    width: 460px;
+    right: 50px;
+    top: 320px;
+  }
+}
+@media all and (max-width: 1200px) {
+  .videoIndex {
+    width: 460px;
+    top: 770px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
+  .footerLight {
+    position: absolute;
+    top: 1120px;
+    height: 300px;
+    width: 100%;
+    background-color: #140620;
+  }
+  .footerDark {
+    position: absolute;
+    top: 1120px;
+    height: 300px;
+    width: 100%;
+    background-color: aqua;
+  }
+}
+@media all and (max-width: 830px) {
+  .appHeaderLight {
+    height: 180px;
+  }
+  .headerTitle {
+    font-size: 4rem;
+  }
+  .bodyTextFirstRow {
+    left: 280px;
+    top: 140px;
+    h1 {
+      font-size: 2.5rem;
+    }
+    h2 {
+      font-size: 2.5rem;
+    }
+  }
+  .bodyTextContainer {
+    width: 440px;
+    left: 280px;
+    height: 350px;
+  }
+  .bodyTextFifth {
+    width: 440px;
+    height: 80px;
+    left: 280px;
+    top: 300px;
+  }
+  .iphoneContainer {
+    width: 230px;
+  }
+  .bodyDivLight {
+    top: 180px;
+  }
+  .bodyDivDark {
+    top: 180px;
+  }
+  .bodyTextThirdRow {
+    top: 150px;
+  }
+  .bodyTextFourthRow {
+    top: 180px;
   }
 }

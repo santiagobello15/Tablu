@@ -91,6 +91,9 @@ const Home: NextPage = () => {
             <h1 className={styles.onlineVersion}>Jugar Online</h1>
           </Link>
         </div>
+      </div>
+      <div className={FunctionDarkModeFooter()}></div>
+      <div className={styles.videoIndex}>
         <AspectRatio className={styles.videoframe} maxW="520px" ratio={9 / 6}>
           <iframe
             className={styles.videonoframes}
@@ -100,7 +103,6 @@ const Home: NextPage = () => {
           />
         </AspectRatio>
       </div>
-      <div className={FunctionDarkModeFooter()}></div>
     </div>
   );
 };
