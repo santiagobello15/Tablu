@@ -691,3 +691,63 @@ $CardColorYellow: hsl(43, 82%, 89%);
     text-align: center;
   }
 }
+
+@media all and (max-width: 850px) {
+  .centerDiv {
+    width: 500px;
+  }
+  .headerTitle {
+    font-size: 3rem;
+    white-space: nowrap;
+  }
+  .timerView {
+    width: 80px;
+    height: 80px;
+    left: 60px;
+    p {
+      font-size: 2rem;
+    }
+
+    a {
+      font-size: 0.8rem;
+    }
+  }
+  .roundsView {
+    width: 80px;
+    height: 80px;
+    left: 160px;
+    p {
+      font-size: 2rem;
+    }
+
+    a {
+      font-size: 0.8rem;
+    }
+  }
+  .muletillaView {
+    width: 80px;
+    height: 80px;
+    left: auto;
+    right: 160px;
+    p {
+      font-size: 0.6rem;
+    }
+
+    a {
+      font-size: 0.8rem;
+    }
+  }
+  .insultosView {
+    width: 80px;
+    height: 80px;
+    left: auto;
+    right: 60px;
+    p {
+      font-size: 0.6rem;
+    }
+
+    a {
+      font-size: 0.8rem;
+    }
+  }
+}
