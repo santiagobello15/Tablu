@@ -750,4 +750,81 @@ $CardColorYellow: hsl(43, 82%, 89%);
       font-size: 0.8rem;
     }
   }
+
+  .btnsContainer {
+    width: 100px;
+    div {
+      width: 100%;
+    }
+    p {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media all and (max-width: 550px) {
+  .centerDiv {
+    width: 350px;
+  }
+  .headerTitle {
+    font-size: 2rem;
+    white-space: nowrap;
+  }
+  .timerView {
+    width: 70px;
+    height: 70px;
+    left: 25px;
+    p {
+      font-size: 1.5rem;
+    }
+    a {
+      font-size: 0.6rem;
+    }
+  }
+  .roundsView {
+    width: 70px;
+    height: 70px;
+    left: 101.66px;
+    p {
+      font-size: 1.5rem;
+    }
+    a {
+      font-size: 0.6rem;
+    }
+  }
+  .muletillaView {
+    width: 70px;
+    height: 70px;
+    left: auto;
+    right: 101.66px;
+    p {
+      font-size: 0.5rem;
+    }
+    a {
+      font-size: 0.6rem;
+      width: 90%;
+    }
+  }
+  .insultosView {
+    width: 70px;
+    height: 70px;
+    left: auto;
+    right: 25px;
+    p {
+      font-size: 0.5rem;
+    }
+    a {
+      font-size: 0.6rem;
+      width: 90%;
+    }
+  }
+  .btnsContainer {
+    width: 100px;
+    div {
+      width: 100%;
+    }
+    p {
+      font-size: 0.8rem;
+    }
+  }
 }
