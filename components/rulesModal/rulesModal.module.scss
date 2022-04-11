@@ -136,3 +136,46 @@
 .fourthLi {
   top: 220px;
 }
+
+@media all and (max-width: 550px) {
+  .modalContainer {
+    height: 400px;
+    width: 350px;
+    h1 {
+      font-size: 1.8rem;
+    }
+    ul {
+      li {
+        p {
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+  .modalContainerOut {
+    height: 400px;
+    width: 350px;
+    h1 {
+      font-size: 1.8rem;
+    }
+    ul {
+      li {
+        p {
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+  .firstLi {
+    top: 30px;
+  }
+  .secondLi {
+    top: 100px;
+  }
+  .thirdLi {
+    top: 160px;
+  }
+  .fourthLi {
+    top: 220px;
+  }
+}

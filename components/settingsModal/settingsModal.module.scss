@@ -164,3 +164,63 @@
     font-size: 0.8rem;
   }
 }
+
+@media all and (max-width: 550px) {
+  .modalContainer {
+    height: 400px;
+    width: 350px;
+    h1 {
+      font-size: 1.8rem;
+    }
+    ul {
+      height: 260px;
+
+      li {
+        height: 30px;
+        p {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+  .modalContainerOut {
+    height: 400px;
+    width: 350px;
+    h1 {
+      font-size: 1.8rem;
+    }
+    ul {
+      height: 260px;
+
+      li {
+        height: 30px;
+        p {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+
+  .firstLi {
+    top: 40px;
+  }
+  .secondLi {
+    top: 70px;
+  }
+  .thirdLi {
+    top: 110px;
+  }
+  .fourthLi {
+    top: 150px;
+  }
+  .fifthLi {
+    top: 190px;
+  }
+  .sixthLi {
+    top: 230px;
+    font-size: 0.3rem;
+    a {
+      font-size: 0.7rem;
+    }
+  }
+}
