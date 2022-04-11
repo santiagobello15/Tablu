@@ -695,6 +695,7 @@ $CardColorYellow: hsl(43, 82%, 89%);
 @media all and (max-width: 850px) {
   .centerDiv {
     width: 500px;
+    height: 560px;
   }
   .headerTitle {
     font-size: 3rem;
@@ -758,6 +759,87 @@ $CardColorYellow: hsl(43, 82%, 89%);
     }
     p {
       font-size: 0.8rem;
+    }
+  }
+
+  .answerOk,
+  .answerWrong,
+  .answerPass {
+    left: 60%;
+    width: 93.2px;
+    height: 40px;
+    p {
+      font-size: 1rem;
+    }
+  }
+  .roundsDiv {
+    left: 50%;
+    transform: translate(-60%, -0%);
+    p {
+      font-size: 1.2rem;
+    }
+  }
+  .startRound {
+    transform: translate(-65%, -33%);
+    width: 80px;
+    height: 80px;
+    p {
+      font-size: 3rem;
+    }
+  }
+  .gameCard {
+    h1 {
+      font-size: 1rem;
+    }
+    h2 {
+      font-size: 1rem;
+    }
+    li {
+      font-size: 0.6rem;
+      padding-top: 10px;
+    }
+  }
+  .cardsUL1 {
+    top: 70px;
+    left: 10px;
+  }
+  .cardsUL2 {
+    top: 70px;
+    right: 10px;
+  }
+  .roundOfTeam {
+    p {
+      font-size: 1.4rem;
+    }
+    top: -75px;
+  }
+  .gameCounter {
+    height: 70px;
+  }
+  .cardRedTeamTwo,
+  .cardRedTeamOne,
+  .cardYellowTeamOne,
+  .cardYellowTeamTwo,
+  .cardBlueTeamOne,
+  .cardBlueTeamTwo,
+  .cardGreenTeamOne,
+  .cardGreenTeamTwo {
+    width: 140px;
+    p {
+      font-size: 1.2rem;
+    }
+    a {
+      font-size: 1.8rem;
+      top: 28px;
+    }
+  }
+  .startRoundBtn,
+  .restartBtn,
+  .pauseBtn {
+    width: 80px;
+    height: 26.66px;
+    p {
+      font-size: 1rem;
     }
   }
 }
