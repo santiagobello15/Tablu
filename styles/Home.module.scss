@@ -453,11 +453,12 @@
   }
   .videoIndex {
     width: 500px;
-    top: 770px;
+    top: 820px;
     left: 50%;
     transform: translate(-50%, 0%);
   }
-  .appHeaderLight {
+  .appHeaderLight,
+  .appHeaderDark {
     height: 180px;
   }
   .headerTitle {
@@ -481,6 +482,13 @@
     width: 500px;
     left: 50%;
     transform: translate(-50%, 0%);
+  }
+  .headerTitle {
+    left: 20px;
+  }
+  .appHeaderLight,
+  .appHeaderDark {
+    height: 150px;
   }
   .bodyTextContainer {
     width: 300px;
@@ -522,9 +530,93 @@
   .bodyTextFifth {
     top: 50%;
     transform: translate(0%, -80%);
+  }
 
-    .onlineVersion {
-      font-size: 2rem;
-    }
+  .onlineVersion {
+    font-size: 2rem;
+  }
+
+  .videoIndex {
+    width: 65vw;
+    top: 680px;
+  }
+  .bodyDivLight,
+  .bodyDivDark {
+    height: 400px;
+  }
+  .footerLight,
+  .footerDark {
+    top: 880px;
+    height: 220px;
+  }
+}
+@media all and (max-width: 500px) {
+  .mainContainer {
+    top: 30px;
+    width: 300px;
+  }
+  .appHeaderLight,
+  .appHeaderDark {
+    height: 120px;
+  }
+  .headerTitle {
+    font-size: 2rem;
+  }
+  .iphoneContainer {
+    width: 150px;
+    left: -45px;
+    top: 20px;
+  }
+  .bodyTextContainer {
+    width: 230px;
+    left: 100px;
+    top: 30px;
+  }
+  .bodyTextFifth {
+    left: 100px;
+    width: 230px;
+    transform: translate(0%, -150%);
+  }
+  .onlineVersion {
+    font-size: 1.5rem;
+  }
+  .bodyTextLight,
+  .bodyTextDark {
+    font-size: 1.3rem;
+    padding-right: 1px;
+  }
+  .bodyTextTablu {
+    font-size: 1.3em;
+  }
+  .bodyTextSubtLight,
+  .bodyTextSubtDark {
+    font-size: 1.2rem;
+    top: 40px;
+  }
+  .bodyTextThirdRow {
+    top: 100px;
+    width: 220px;
+  }
+  .bodyTextFourthRow {
+    top: 110px;
+    width: 200px;
+  }
+  .bodyTextWebVersionLight,
+  .bodyTextWebVersionDark {
+    font-size: 0.7rem;
+  }
+  .bodyDivLight,
+  .bodyDivDark {
+    height: 330px;
+    top: 120px;
+  }
+  .footerLight,
+  .footerDark {
+    top: 650px;
+    height: 150px;
+  }
+  .videoIndex {
+    /*     width: 65vw; */
+    top: 530px;
   }
 }
