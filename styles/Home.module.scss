@@ -108,6 +108,7 @@
   position: absolute;
   top: 30px;
   left: 40px;
+  white-space: nowrap;
 }
 
 .bodyDivLight {
@@ -123,6 +124,12 @@
   height: 500px;
   width: 100%;
   background-color: #141215;
+}
+
+.mainContainer {
+  height: 100%;
+  position: absolute;
+  width: 850px;
 }
 
 .footerLight {
@@ -188,6 +195,7 @@
   color: white;
   padding-right: 5px;
   padding-left: 5px;
+  white-space: nowrap;
 }
 
 .bodyTextFirstRow {
@@ -370,13 +378,58 @@
     top: 320px;
   }
 }
-@media all and (max-width: 1200px) {
+
+@media all and (max-width: 1350px) {
   .videoIndex {
     width: 460px;
-    top: 770px;
-    position: absolute;
+    right: 50px;
+    top: 280px;
+  }
+  .iphoneContainer {
+    width: 230px;
+  }
+  .bodyDivLight {
+    top: 180px;
+  }
+  .bodyDivDark {
+    top: 180px;
+  }
+  .bodyTextThirdRow {
+    top: 150px;
+  }
+  .bodyTextFourthRow {
+    top: 180px;
+  }
+  .bodyTextContainer {
+    width: 440px;
+    left: 280px;
+    height: 350px;
+  }
+  .bodyTextLight,
+  .bodyTextDark {
+    font-size: 2.5rem;
+  }
+  .bodyTextTablu {
+    font-size: 2.5rem;
+  }
+  .bodyTextFourthRow {
+    width: 300px;
+  }
+  .bodyTextFifth {
+    left: 280px;
+    top: 50%;
+    transform: translate(-0%, -47%);
+    width: 400px;
+  }
+}
+
+@media all and (max-width: 1230px) {
+  .videoIndex {
+    width: 300px;
+    top: 320px;
+    /*     position: absolute;
     left: 50%;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%)  */
   }
   .footerLight {
     position: absolute;
@@ -393,47 +446,85 @@
     background-color: aqua;
   }
 }
-@media all and (max-width: 830px) {
+@media all and (max-width: 1100px) {
+  .mainContainer {
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
+  .videoIndex {
+    width: 500px;
+    top: 770px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
   .appHeaderLight {
     height: 180px;
   }
   .headerTitle {
     font-size: 4rem;
   }
-  .bodyTextFirstRow {
-    left: 280px;
-    top: 140px;
-    h1 {
-      font-size: 2.5rem;
-    }
-    h2 {
-      font-size: 2.5rem;
-    }
-  }
   .bodyTextContainer {
     width: 440px;
-    left: 280px;
-    height: 350px;
+    left: 320px;
   }
   .bodyTextFifth {
-    width: 440px;
-    height: 80px;
-    left: 280px;
-    top: 300px;
+    left: 320px;
   }
   .iphoneContainer {
-    width: 230px;
+    width: 250px;
+    left: 60px;
+    top: 50px;
   }
-  .bodyDivLight {
-    top: 180px;
+}
+@media all and (max-width: 700px) {
+  .mainContainer {
+    width: 500px;
+    left: 50%;
+    transform: translate(-50%, 0%);
   }
-  .bodyDivDark {
-    top: 180px;
+  .bodyTextContainer {
+    width: 300px;
+    left: 170px;
   }
+  .bodyTextFifth {
+    left: 170px;
+    width: 300px;
+  }
+  .iphoneContainer {
+    width: 200px;
+    left: -10px;
+    top: 50px;
+  }
+  .bodyTextLight,
+  .bodyTextDark {
+    font-size: 1.8rem;
+  }
+  .bodyTextTablu {
+    font-size: 1.8em;
+  }
+  .headerTitle {
+    font-size: 3rem;
+  }
+  .bodyTextSubtLight,
+  .bodyTextSubtDark {
+    font-size: 1.5rem;
+    top: 55px;
+  }
+
   .bodyTextThirdRow {
-    top: 150px;
+    top: 120px;
+    width: 240px;
   }
   .bodyTextFourthRow {
-    top: 180px;
+    top: 140px;
+    width: 240px;
+  }
+  .bodyTextFifth {
+    top: 50%;
+    transform: translate(0%, -80%);
+
+    .onlineVersion {
+      font-size: 2rem;
+    }
   }
 }

@@ -49,50 +49,52 @@ const Home: NextPage = () => {
         </div>
       </div>
       <div className={FunctionDarkModeBodyDiv()}>
-        <div className={styles.iphoneContainer}>
-          <Image className={styles.iphonePic} src={iphone}></Image>
-        </div>
-        <div className={styles.bodyTextContainer}>
-          <div className={styles.bodyTextFirstRow}>
-            <h2 className={FunctionDarkModeBodyText()}>JUGÁ </h2>
-            <h2 className={styles.bodyTextTablu}>TABLÚ FAMOSOS </h2>
+        <div className={styles.mainContainer}>
+          <div className={styles.iphoneContainer}>
+            <Image className={styles.iphonePic} src={iphone}></Image>
           </div>
+          <div className={styles.bodyTextContainer}>
+            <div className={styles.bodyTextFirstRow}>
+              <h2 className={FunctionDarkModeBodyText()}>JUGÁ </h2>
+              <h2 className={styles.bodyTextTablu}>TABLÚ FAMOSOS </h2>
+            </div>
 
-          <div className={styles.bodyTextSecondRow}>
-            <h2 className={FunctionDarkModeBodySubtText()}>
-              Divertite con amigos
-            </h2>
-          </div>
-          <div className={styles.bodyTextThirdRow}>
-            <p className={FunctionDarkModeBodyDownload()}>
-              Descargá la app en tu smartphone
-            </p>
-          </div>
-          <div className={styles.bodyTextFourthRow}>
-            <div className={styles.absDivIos}>
-              <div className={styles.buttonsStores} />
-              <Image layout="fill" alt="iosbadge" src={iosBadge}></Image>
+            <div className={styles.bodyTextSecondRow}>
+              <h2 className={FunctionDarkModeBodySubtText()}>
+                Divertite con amigos
+              </h2>
             </div>
-            <div className={styles.absDivAndroid}>
-              <div className={styles.buttonsStores} />
-              <Image
-                layout="fill"
-                alt="androidbadge"
-                src={androidBadge}
-              ></Image>
+            <div className={styles.bodyTextThirdRow}>
+              <p className={FunctionDarkModeBodyDownload()}>
+                Descargá la app en tu smartphone
+              </p>
             </div>
+            <div className={styles.bodyTextFourthRow}>
+              <div className={styles.absDivIos}>
+                <div className={styles.buttonsStores} />
+                <Image layout="fill" alt="iosbadge" src={iosBadge}></Image>
+              </div>
+              <div className={styles.absDivAndroid}>
+                <div className={styles.buttonsStores} />
+                <Image
+                  layout="fill"
+                  alt="androidbadge"
+                  src={androidBadge}
+                ></Image>
+              </div>
+            </div>
+          </div>
+          <div className={styles.bodyTextFifth}>
+            <h1 className={FunctionDarkModeBodyDownload()}>
+              Ó usá la versión web
+            </h1>
+            <Link href="/game">
+              <h1 className={styles.onlineVersion}>Jugar Online</h1>
+            </Link>
           </div>
         </div>
-        <div className={styles.bodyTextFifth}>
-          <h1 className={FunctionDarkModeBodyDownload()}>
-            Ó usá la versión web
-          </h1>
-          <Link href="/game">
-            <h1 className={styles.onlineVersion}>Jugar Online</h1>
-          </Link>
-        </div>
+        <div className={FunctionDarkModeFooter()}></div>
       </div>
-      <div className={FunctionDarkModeFooter()}></div>
       <div className={styles.videoIndex}>
         <AspectRatio className={styles.videoframe} maxW="520px" ratio={9 / 6}>
           <iframe
