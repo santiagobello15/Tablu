@@ -842,6 +842,21 @@ $CardColorYellow: hsl(43, 82%, 89%);
       font-size: 1rem;
     }
   }
+
+  .victoryH1 {
+    width: 300px;
+    top: 250px;
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+  .closeBtn {
+    width: 80px;
+    height: 26.66px;
+    p {
+      font-size: 1.2rem;
+    }
+  }
 }
 
 @media all and (max-width: 550px) {
@@ -980,5 +995,19 @@ $CardColorYellow: hsl(43, 82%, 89%);
   }
   .gameCounter {
     width: 88%;
+  }
+  .victoryH1 {
+    width: 200px;
+    top: 230px;
+    h1 {
+      font-size: 1rem;
+    }
+  }
+  .closeBtn {
+    width: 60px;
+    height: 20px;
+    p {
+      font-size: 1rem;
+    }
   }
 }
