@@ -9,6 +9,8 @@ import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import clapsImg from "../media/clapsImg.png";
 import { Context } from "../context/AppContext";
+import { TwitterShareButton } from "react-twitter-embed";
+import { timeEnd } from "console";
 
 const ENVIRONMENT = process.env.REACT_APP_ENVIRONMENT;
 const API_URL =
@@ -315,6 +317,26 @@ const Game: NextPage = ({ data }: any) => {
           <div className={claps.clapsBtn} onClick={clapsBtn}>
             <p>Aplaudir</p>
           </div>
+          <div className={styles.gameCounter}>
+            <div className={TeamOneCardColorEnd()}>
+              <p>{teamOneName}</p>
+              <a>{pointsTeamOne}</a>
+            </div>
+            <div className={TeamTwoCardColorEnd()}>
+              <p>{teamTwoName}</p>
+              <a>{pointsTeamTwo}</a>
+            </div>
+            <div className={styles.twitterBtn}>
+              <TwitterShareButton
+                url={"https://tablu.vercel.app/"}
+                options={{
+                  text: "Ganador de la partida: " + renderGameResult(),
+                  via: "TabluFamosos",
+                  hashtags: "TabluFamosos",
+                }}
+              />
+            </div>
+          </div>
           <div
             className={styles.closeBtn}
             onClick={() => {
@@ -361,6 +383,30 @@ const Game: NextPage = ({ data }: any) => {
       return styles.cardGreenTeamTwo;
     }
     return styles.cardYellowTeamTwo;
+  };
+  const TeamOneCardColorEnd = () => {
+    if (teamOneColor == "Red") {
+      return styles.cardRedTeamOneEnd;
+    }
+    if (teamOneColor == "Blue") {
+      return styles.cardBlueTeamOneEnd;
+    }
+    if (teamOneColor == "Green") {
+      return styles.cardGreenTeamOneEnd;
+    }
+    return styles.cardYellowTeamOneEnd;
+  };
+  const TeamTwoCardColorEnd = () => {
+    if (teamTwoColor == "Red") {
+      return styles.cardRedTeamTwoEnd;
+    }
+    if (teamTwoColor == "Blue") {
+      return styles.cardBlueTeamTwoEnd;
+    }
+    if (teamTwoColor == "Green") {
+      return styles.cardGreenTeamTwoEnd;
+    }
+    return styles.cardYellowTeamTwoEnd;
   };
   const CounterFunction = () => {
     setStartCounter(true);

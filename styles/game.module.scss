@@ -665,6 +665,86 @@ $CardColorYellow: hsl(43, 82%, 89%);
   border-radius: 10px;
   box-shadow: 1px 1px #525252;
 }
+.cardRedTeamOneEnd {
+  background-color: $CardColorRed;
+  position: absolute;
+  width: 180px;
+  height: 100%;
+  left: 120px;
+  top: -180px;
+  border-radius: 10px;
+  box-shadow: 1px 1px #525252;
+}
+.cardBlueTeamOneEnd {
+  background-color: $CardColorBlue;
+  position: absolute;
+  width: 180px;
+  height: 100%;
+  left: 120px;
+  border-radius: 10px;
+  top: -180px;
+  box-shadow: 1px 1px #525252;
+}
+.cardGreenTeamOneEnd {
+  background-color: $CardColorGreen;
+  position: absolute;
+  width: 180px;
+  top: -180px;
+  height: 100%;
+  left: 120px;
+  border-radius: 10px;
+  box-shadow: 1px 1px #525252;
+}
+.cardYellowTeamOneEnd {
+  background-color: $CardColorYellow;
+  position: absolute;
+  width: 180px;
+  height: 100%;
+  left: 120px;
+  top: -180px;
+  border-radius: 10px;
+  box-shadow: 1px 1px #525252;
+}
+.cardRedTeamTwoEnd {
+  background-color: $CardColorRed;
+  position: absolute;
+  width: 180px;
+  height: 100%;
+  top: -180px;
+  right: 120px;
+  border-radius: 10px;
+  box-shadow: 1px 1px #525252;
+}
+.cardBlueTeamTwoEnd {
+  background-color: $CardColorBlue;
+  position: absolute;
+  width: 180px;
+  top: -180px;
+  height: 100%;
+  right: 120px;
+  border-radius: 10px;
+  box-shadow: 1px 1px #525252;
+}
+.cardGreenTeamTwoEnd {
+  background-color: $CardColorGreen;
+  position: absolute;
+  width: 180px;
+  height: 100%;
+  top: -180px;
+  right: 120px;
+  border-radius: 10px;
+  box-shadow: 1px 1px #525252;
+}
+.cardYellowTeamTwoEnd {
+  background-color: $CardColorYellow;
+  position: absolute;
+  width: 180px;
+  height: 100%;
+  top: -180px;
+  right: 120px;
+  border-radius: 10px;
+  box-shadow: 1px 1px #525252;
+}
 
 .startRound {
   position: absolute;
@@ -775,7 +855,7 @@ $CardColorYellow: hsl(43, 82%, 89%);
   position: absolute;
   height: 50px;
   width: 450px;
-  top: 300px;
+  top: 200px;
   left: 50%;
   transform: translate(-50%, 0%);
   background-color: $AppColor;
@@ -791,6 +871,10 @@ $CardColorYellow: hsl(43, 82%, 89%);
     width: 100%;
     text-align: center;
   }
+}
+
+#b {
+  background-color: #295b16;
 }
 
 @media all and (max-width: 850px) {
@@ -945,6 +1029,39 @@ $CardColorYellow: hsl(43, 82%, 89%);
       top: 28px;
     }
   }
+  .cardRedTeamTwoEnd,
+  .cardRedTeamOneEnd,
+  .cardYellowTeamOneEnd,
+  .cardYellowTeamTwoEnd,
+  .cardBlueTeamOneEnd,
+  .cardBlueTeamTwoEnd,
+  .cardGreenTeamOneEnd,
+  .cardGreenTeamTwoEnd {
+    width: 140px;
+    p {
+      font-size: 1.2rem;
+    }
+    a {
+      font-size: 1.8rem;
+      top: 28px;
+    }
+  }
+
+  .cardGreenTeamOneEnd,
+  .cardBlueTeamOneEnd,
+  .cardRedTeamOneEnd,
+  .cardYellowTeamOneEnd {
+    top: -190px;
+    left: 50px;
+  }
+  .cardGreenTeamTwoEnd,
+  .cardBlueTeamTwoEnd,
+  .cardRedTeamTwoEnd,
+  .cardYellowTeamTwoEnd {
+    top: -190px;
+    right: 50px;
+  }
+
   .startRoundBtn,
   .restartBtn,
   .pauseBtn {
@@ -957,18 +1074,12 @@ $CardColorYellow: hsl(43, 82%, 89%);
 
   .victoryH1 {
     width: 300px;
-    top: 250px;
+    top: 180px;
     h1 {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
     }
   }
-  .closeBtn {
-    width: 80px;
-    height: 26.66px;
-    p {
-      font-size: 1.2rem;
-    }
-  }
+
   .startRound {
     p {
       font-size: 2.2rem;
@@ -1114,17 +1225,27 @@ $CardColorYellow: hsl(43, 82%, 89%);
     width: 88%;
   }
   .victoryH1 {
-    width: 200px;
-    top: 230px;
+    width: 230px;
+    top: 130px;
     h1 {
       font-size: 1rem;
     }
   }
-  .closeBtn {
-    width: 60px;
-    height: 20px;
-    p {
-      font-size: 1rem;
-    }
+
+  .cardGreenTeamOneEnd,
+  .cardBlueTeamOneEnd,
+  .cardRedTeamOneEnd,
+  .cardYellowTeamOneEnd {
+    top: -190px;
+    left: 20px;
+    width: 120px;
+  }
+  .cardGreenTeamTwoEnd,
+  .cardBlueTeamTwoEnd,
+  .cardRedTeamTwoEnd,
+  .cardYellowTeamTwoEnd {
+    top: -190px;
+    right: 20px;
+    width: 120px;
   }
 }

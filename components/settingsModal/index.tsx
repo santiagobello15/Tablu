@@ -41,11 +41,14 @@ function SettingsModal({ CloseSettingsModal }: any) {
               onChange={(val: number) => setQuantityRound(val)}
               aria-label="slider-ex-1"
               defaultValue={15}
-              min={5}
+              min={1}
               max={25}
               step={5}
               colorScheme="purple"
             >
+              <SliderMark value={1} mt="1" ml="-2.5" fontSize="sm">
+                1
+              </SliderMark>
               <SliderMark value={5} mt="1" ml="-2.5" fontSize="sm">
                 5
               </SliderMark>
