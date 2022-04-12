@@ -491,6 +491,107 @@ $CardColorYellow: hsl(43, 82%, 89%);
     top: 38px;
   }
 }
+.answerOkBlock {
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 140px;
+  height: 60px;
+  background-color: #295b16;
+  border-radius: 10px;
+  cursor: pointer;
+  p {
+    color: white;
+    font-size: 1.4rem;
+    font-family: "Luckiest Guy", cursive;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+  }
+}
+.answerWrongBlock {
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 140px;
+  height: 60px;
+  background-color: #ba0000;
+  border-radius: 10px;
+  cursor: pointer;
+
+  p {
+    color: white;
+    font-size: 1.4rem;
+    font-family: "Luckiest Guy", cursive;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.answerPassBlock {
+  pointer-events: none;
+  background-color: #30392d;
+  position: absolute;
+  left: 50%;
+  bottom: 0%;
+  transform: translate(-50%, 0%);
+  width: 140px;
+  height: 60px;
+  border-radius: 10px;
+  cursor: pointer;
+  p {
+    color: white;
+    font-size: 1.4rem;
+    font-family: "Luckiest Guy", cursive;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.gameCounter {
+  position: absolute;
+  width: 80%;
+  height: 100px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  bottom: 30px;
+
+  p {
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-family: "Mukta Malar", sans-serif;
+    color: black;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    top: 5px;
+  }
+
+  a {
+    font-weight: 600;
+    font-size: 2.5rem;
+    font-family: "Mukta Malar", sans-serif;
+    color: black;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    top: 38px;
+  }
+}
 
 .cardRedTeamOne {
   background-color: $CardColorRed;
@@ -765,6 +866,17 @@ $CardColorYellow: hsl(43, 82%, 89%);
   .answerOk,
   .answerWrong,
   .answerPass {
+    left: 60%;
+    width: 93.2px;
+    height: 40px;
+    p {
+      font-size: 1rem;
+    }
+  }
+  .answerOkBlock,
+  .answerWrongBlock,
+  .answerPassBlock {
+    pointer-events: none;
     left: 60%;
     width: 93.2px;
     height: 40px;

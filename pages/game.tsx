@@ -54,6 +54,9 @@ const Game: NextPage = ({ data }: any) => {
   const [plusPoint, setPlusPoint] = useState(false);
   const [minusPoint, setMinusPoint] = useState(false);
   const [passPoint, setPassPoint] = useState(false);
+  const [blockPass, setBlockPass] = useState(false);
+  const [blockAdd, setBlockAdd] = useState(false);
+  const [blockSubstract, setBlockSubstract] = useState(false);
 
   interface CardsTableInterface {
     cardName: string;
@@ -101,7 +104,7 @@ const Game: NextPage = ({ data }: any) => {
   });
 
   const pivot4dev = () => {
-    if (currentCard == Object.keys(data.CardsArray).length - 1) {
+    if (currentCard == Object.keys(data.CardsArray).length) {
       setCurrentCard(0);
     }
   };
@@ -178,6 +181,22 @@ const Game: NextPage = ({ data }: any) => {
     }
   };
 
+  const AddBlock = () => {
+    if (blockAdd == true) {
+      return styles.answerOkBlock;
+    } else return styles.answerOk;
+  };
+  const SubstractBlock = () => {
+    if (blockSubstract == true) {
+      return styles.answerWrongBlock;
+    } else return styles.answerWrong;
+  };
+  const PassBlock = () => {
+    if (blockPass == true) {
+      return styles.answerPassBlock;
+    } else return styles.answerPass;
+  };
+
   const PlayingDiv = () => {
     if (centerDivOpacity == 0) {
       return (
@@ -212,13 +231,13 @@ const Game: NextPage = ({ data }: any) => {
             </div>
 
             <div className={styles.gameCardRight}>
-              <div className={styles.answerOk} onClick={AddPoints}>
+              <div className={AddBlock()} onClick={AddPoints}>
                 <p>+1 Punto</p>
               </div>
-              <div className={styles.answerPass} onClick={Pass}>
+              <div className={PassBlock()} onClick={Pass}>
                 <p>Pasar</p>
               </div>
-              <div className={styles.answerWrong} onClick={DeductPoints}>
+              <div className={SubstractBlock()} onClick={DeductPoints}>
                 <p>-1 Punto</p>
               </div>
             </div>
@@ -389,9 +408,11 @@ const Game: NextPage = ({ data }: any) => {
     }
   });
   const AddPoints = () => {
+    setBlockAdd(true);
     setCurrentCard(currentCard + 1);
     setPlusPoint(true);
     setTimeout(() => setPlusPoint(false), 1000);
+    setTimeout(() => setBlockAdd(false), 1000);
     if (activeTeamOne == true) {
       setPointsTeamOne(pointsTeamOne + 1);
     } else {
@@ -399,9 +420,11 @@ const Game: NextPage = ({ data }: any) => {
     }
   };
   const DeductPoints = () => {
+    setBlockSubstract(true);
     setCurrentCard(currentCard + 1);
     setMinusPoint(true);
     setTimeout(() => setMinusPoint(false), 1000);
+    setTimeout(() => setBlockSubstract(false), 1000);
     if (activeTeamOne == true) {
       setPointsTeamOne(pointsTeamOne - 1);
     } else {
@@ -410,9 +433,11 @@ const Game: NextPage = ({ data }: any) => {
   };
 
   const Pass = () => {
+    setBlockPass(true);
     setCurrentCard(currentCard + 1);
     setPassPoint(true);
     setTimeout(() => setPassPoint(false), 1000);
+    setTimeout(() => setBlockPass(false), 1000);
   };
 
   const CurrTeamShow = () => {
