@@ -268,3 +268,55 @@ $CardColorYellowTransp: hsl(43, 82%, 89%, 0.7);
     transform: scale(1);
   }
 }
+
+@media all and (max-width: 550px) {
+  .modalContainer {
+    height: 400px;
+    width: 350px;
+    h1 {
+      font-size: 1.8rem;
+    }
+    ul {
+      li {
+        p {
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+  .modalContainerOut {
+    height: 400px;
+    width: 350px;
+    h1 {
+      font-size: 1.8rem;
+    }
+    ul {
+      li {
+        p {
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+  .configUl {
+    width: 70%;
+    height: 255px;
+    top: 75px;
+  }
+
+  .firstRowRed,
+  .firstRowBlue,
+  .firstRowGreen,
+  .firstRowYellow {
+    top: 18px;
+  }
+  .secondRowRed,
+  .secondRowBlue,
+  .secondRowGreen,
+  .secondRowYellow {
+    top: 134px;
+  }
+  .play {
+    font-size: 1.7rem;
+  }
+}
