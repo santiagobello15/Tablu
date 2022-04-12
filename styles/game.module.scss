@@ -847,10 +847,14 @@ $CardColorYellow: hsl(43, 82%, 89%);
 @media all and (max-width: 550px) {
   .centerDiv {
     width: 350px;
+    height: 500px;
   }
   .headerTitle {
     font-size: 2rem;
     white-space: nowrap;
+  }
+  .gamingPad {
+    top: 130px;
   }
   .timerView {
     width: 70px;
@@ -908,5 +912,64 @@ $CardColorYellow: hsl(43, 82%, 89%);
     p {
       font-size: 0.8rem;
     }
+  }
+  .cardsUL1 {
+    top: 55px;
+    left: 50%;
+    transform: translate(-50%, -0%);
+    width: 100%;
+    text-align: center;
+  }
+  .cardsUL2 {
+    top: 123px;
+    left: 50%;
+    transform: translate(-50%, -0%);
+    width: 100%;
+    text-align: center;
+  }
+  .gameCard {
+    h1 {
+      font-size: 0.9rem;
+    }
+    h2 {
+      font-size: 0.9rem;
+    }
+    li {
+      font-size: 0.5rem;
+      padding-top: 4px;
+      white-space: nowrap;
+    }
+  }
+  .cardRedTeamTwo,
+  .cardRedTeamOne,
+  .cardYellowTeamOne,
+  .cardYellowTeamTwo,
+  .cardBlueTeamOne,
+  .cardBlueTeamTwo,
+  .cardGreenTeamOne,
+  .cardGreenTeamTwo {
+    width: 100px;
+    p {
+      font-size: 1rem;
+    }
+    a {
+      font-size: 1.6rem;
+      top: 28px;
+    }
+  }
+  .startRoundBtn,
+  .restartBtn,
+  .pauseBtn {
+    width: 60px;
+    height: 20x;
+    p {
+      font-size: 0.8rem;
+    }
+  }
+  .roundOfTeam {
+    p {
+      font-size: 1.1rem;
+    }
+    top: -63px;
   }
 }
