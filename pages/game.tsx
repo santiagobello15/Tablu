@@ -408,10 +408,14 @@ const Game: NextPage = ({ data }: any) => {
     }
   });
   const AddPoints = () => {
+    setBlockSubstract(true);
     setBlockAdd(true);
+    setBlockPass(true);
     setCurrentCard(currentCard + 1);
     setPlusPoint(true);
     setTimeout(() => setPlusPoint(false), 1000);
+    setTimeout(() => setBlockPass(false), 1000);
+    setTimeout(() => setBlockSubstract(false), 1000);
     setTimeout(() => setBlockAdd(false), 1000);
     if (activeTeamOne == true) {
       setPointsTeamOne(pointsTeamOne + 1);
@@ -421,10 +425,14 @@ const Game: NextPage = ({ data }: any) => {
   };
   const DeductPoints = () => {
     setBlockSubstract(true);
+    setBlockAdd(true);
+    setBlockPass(true);
     setCurrentCard(currentCard + 1);
     setMinusPoint(true);
     setTimeout(() => setMinusPoint(false), 1000);
+    setTimeout(() => setBlockPass(false), 1000);
     setTimeout(() => setBlockSubstract(false), 1000);
+    setTimeout(() => setBlockAdd(false), 1000);
     if (activeTeamOne == true) {
       setPointsTeamOne(pointsTeamOne - 1);
     } else {
@@ -433,11 +441,15 @@ const Game: NextPage = ({ data }: any) => {
   };
 
   const Pass = () => {
+    setBlockSubstract(true);
+    setBlockAdd(true);
     setBlockPass(true);
     setCurrentCard(currentCard + 1);
     setPassPoint(true);
     setTimeout(() => setPassPoint(false), 1000);
     setTimeout(() => setBlockPass(false), 1000);
+    setTimeout(() => setBlockSubstract(false), 1000);
+    setTimeout(() => setBlockAdd(false), 1000);
   };
 
   const CurrTeamShow = () => {
