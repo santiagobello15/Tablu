@@ -158,21 +158,21 @@ const Game: NextPage = ({ data }: any) => {
     if (plusPoint == true) {
       return (
         <div className={styles.gameCardBlur}>
-          <h1>+1</h1>
+          <h3>+1</h3>
         </div>
       );
     }
     if (minusPoint == true) {
       return (
         <div className={styles.gameCardBlur}>
-          <h1>-1</h1>
+          <h3>-1</h3>
         </div>
       );
     }
     if (passPoint == true) {
       return (
         <div className={styles.gameCardBlur}>
-          <h1>Pasar</h1>
+          <h3>Pasar</h3>
         </div>
       );
     }
