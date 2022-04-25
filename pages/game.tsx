@@ -40,6 +40,8 @@ const Game: NextPage = ({ data }: any) => {
     teamTwoName,
     setTeamTwoName,
     timeRound,
+    indexOnShuffled,
+    setIndexOnShuffled,
   } = useContext<any>(Context);
 
   const [centerDivOpacity, setCenterDivOpacity] = useState<Number>(1);
@@ -105,9 +107,28 @@ const Game: NextPage = ({ data }: any) => {
     BlurAndText();
   });
 
-  const pivot4dev = () => {
+  /*   const pivot4dev = () => {
     if (currentCard == Object.keys(data.CardsArray).length) {
       setCurrentCard(0);
+    }
+  };
+  pivot4dev();
+ */
+
+  const pivot4dev = () => {
+    if (data.CardsArray !== undefined) {
+      if (
+        indexOnShuffled ==
+        Object.keys(
+          Array.from(
+            { length: Object.keys(data.CardsArray).length },
+            (v, k) => k + 1
+          )
+        ).length -
+          2
+      ) {
+        setIndexOnShuffled(0);
+      }
     }
   };
   pivot4dev();
@@ -128,6 +149,7 @@ const Game: NextPage = ({ data }: any) => {
     setShowRulesModal(true);
   };
   const startModalShow = () => {
+    data.CardsArray.sort(() => 0.5 - Math.random());
     setShowStartModal(true);
     RestartCounter();
     setActiveTeamOne(true);
@@ -458,6 +480,7 @@ const Game: NextPage = ({ data }: any) => {
     setBlockAdd(true);
     setBlockPass(true);
     setCurrentCard(currentCard + 1);
+
     setPlusPoint(true);
     setTimeout(() => setPlusPoint(false), 1000);
     setTimeout(() => setBlockPass(false), 1000);

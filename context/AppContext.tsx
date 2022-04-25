@@ -28,6 +28,8 @@ interface ContextState {
   setTeamOneName: any | null;
   teamTwoName: string | null;
   setTeamTwoName: any | null;
+  indexOnShuffled: number | null;
+  setIndexOnShuffled: any | null;
 }
 const GameContext = ({ children }: any) => {
   const [darkMode, setDarkMode] = useState(false);
@@ -39,6 +41,7 @@ const GameContext = ({ children }: any) => {
   const [clickedMuletillas, setClickedMuletillas] = useState(false);
   const [clickedInsultos, setClickedInsultos] = useState(false);
   const [quantityRound, setQuantityRound] = useState(15);
+  const [indexOnShuffled, setIndexOnShuffled] = useState(0);
   const [teamOneColor, setTeamOneColor] = useState<string>("Red");
   const [teamTwoColor, setTeamTwoColor] = useState<string>("Blue");
   const [teamOneName, setTeamOneName] = useState<string>("Team 1");
@@ -72,6 +75,8 @@ const GameContext = ({ children }: any) => {
         setTeamOneName,
         teamTwoName,
         setTeamTwoName,
+        indexOnShuffled,
+        setIndexOnShuffled,
       }}
     >
       {children}
