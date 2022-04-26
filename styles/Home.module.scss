@@ -152,7 +152,7 @@
 }
 
 .footerComment {
-  top: 10%;
+  top: 15%;
   left: 2.5%;
   position: absolute;
 
@@ -163,7 +163,7 @@
   }
 }
 .footerMadeBy {
-  top: 45%;
+  top: 70%;
   left: 2.5%;
   position: absolute;
 
@@ -593,6 +593,13 @@
       left: 200px;
       width: 450px;
     }
+    .footerComment {
+      p {
+        color: #fafafa;
+        font-family: "Mukta Malar", sans-serif;
+        font-size: 0.8rem;
+      }
+    }
   }
   @media all and (max-width: 700px) {
     .gameplay {
@@ -670,82 +677,115 @@
       top: 880px;
       height: 220px;
     }
-  }
-  @media all and (max-width: 500px) {
-    .gameplay {
-      top: 460px;
+    .footerMadeBy {
+      top: 60%;
+      left: 2.5%;
+      position: absolute;
 
       p {
-        font-size: 1.5rem;
+        color: #fafafa;
+        font-family: "Mukta Malar", sans-serif;
+        font-size: 1rem;
       }
     }
-    .mainContainer {
-      top: 30px;
-      width: 300px;
-    }
-    .appHeaderLight,
-    .appHeaderDark {
-      height: 120px;
-    }
-    .headerTitle {
-      font-size: 2rem;
-    }
-    .iphoneContainer {
-      width: 150px;
-      left: -45px;
-      top: 20px;
-    }
-    .bodyTextContainer {
-      width: 230px;
-      left: 100px;
-      top: 30px;
-    }
-    .bodyTextFifth {
-      left: 100px;
-      width: 230px;
-      transform: translate(0%, -150%);
-    }
-    .onlineVersion {
-      font-size: 1.5rem;
-    }
-    .bodyTextLight,
-    .bodyTextDark {
-      font-size: 1.3rem;
-      padding-right: 1px;
-    }
-    .bodyTextTablu {
-      font-size: 1.3em;
-    }
-    .bodyTextSubtLight,
-    .bodyTextSubtDark {
-      font-size: 1.2rem;
-      top: 40px;
-    }
-    .bodyTextThirdRow {
-      top: 100px;
-      width: 220px;
-    }
-    .bodyTextFourthRow {
-      top: 110px;
-      width: 200px;
-    }
-    .bodyTextWebVersionLight,
-    .bodyTextWebVersionDark {
-      font-size: 0.7rem;
-    }
-    .bodyDivLight,
-    .bodyDivDark {
-      height: 330px;
-      top: 120px;
-    }
-    .footerLight,
-    .footerDark {
-      top: 630px;
-      height: 150px;
-    }
-    .videoIndex {
-      /*     width: 65vw; */
-      top: 500px;
+    @media all and (max-width: 500px) {
+      .gameplay {
+        top: 460px;
+
+        p {
+          font-size: 1.5rem;
+        }
+      }
+      .mainContainer {
+        top: 30px;
+        width: 300px;
+      }
+      .appHeaderLight,
+      .appHeaderDark {
+        height: 120px;
+      }
+      .headerTitle {
+        font-size: 2rem;
+      }
+      .iphoneContainer {
+        width: 150px;
+        left: -45px;
+        top: 20px;
+      }
+      .bodyTextContainer {
+        width: 230px;
+        left: 100px;
+        top: 30px;
+      }
+      .bodyTextFifth {
+        left: 100px;
+        width: 230px;
+        transform: translate(0%, -150%);
+      }
+      .onlineVersion {
+        font-size: 1.5rem;
+      }
+      .bodyTextLight,
+      .bodyTextDark {
+        font-size: 1.3rem;
+        padding-right: 1px;
+      }
+      .bodyTextTablu {
+        font-size: 1.3em;
+      }
+      .bodyTextSubtLight,
+      .bodyTextSubtDark {
+        font-size: 1.2rem;
+        top: 40px;
+      }
+      .bodyTextThirdRow {
+        top: 100px;
+        width: 220px;
+      }
+      .bodyTextFourthRow {
+        top: 110px;
+        width: 200px;
+      }
+      .bodyTextWebVersionLight,
+      .bodyTextWebVersionDark {
+        font-size: 0.7rem;
+      }
+      .bodyDivLight,
+      .bodyDivDark {
+        height: 330px;
+        top: 120px;
+      }
+      .footerLight,
+      .footerDark {
+        top: 630px;
+        height: 150px;
+      }
+      .videoIndex {
+        /*     width: 65vw; */
+        top: 500px;
+      }
+      .footerComment {
+        p {
+          font-size: 0.7rem;
+        }
+      }
+      .footerMadeBy {
+        top: 60%;
+        left: 2.5%;
+        position: absolute;
+
+        div {
+          width: 20px;
+          height: 20px;
+          top: 20px;
+        }
+
+        p {
+          color: #fafafa;
+          font-family: "Mukta Malar", sans-serif;
+          font-size: 0.7rem;
+        }
+      }
     }
   }
 }
