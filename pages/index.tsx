@@ -6,6 +6,7 @@ import { useState, useContext } from "react";
 import iphone from "../media/iphone-front-transparent.png";
 import iosBadge from "../media/badge-ios.svg";
 import androidBadge from "../media/badge-android.svg";
+import linkedBadge from "../media/badge-linked.svg";
 import { AspectRatio } from "@chakra-ui/layout";
 import { Context } from "../context/AppContext";
 import {
@@ -28,6 +29,7 @@ const API_URL =
 
 const Home: NextPage = () => {
   const { darkMode, setDarkMode } = useContext(Context);
+  const [comSoonAlert, setComSoonAlert] = useState(false);
   const changeDarkMode = () => {
     if (darkMode == false) {
       setDarkMode(true);
@@ -36,8 +38,24 @@ const Home: NextPage = () => {
     }
   };
 
+  const commingSoon = () => {
+    setComSoonAlert(true);
+  };
+
+  const commSoonAlert = () => {
+    if (comSoonAlert == true) {
+      setTimeout(() => setComSoonAlert(false), 2500);
+      return (
+        <div className={styles.comSoon}>
+          <p>¡Muy pronto!</p>
+        </div>
+      );
+    }
+  };
+
   return (
     <div className="App">
+      {commSoonAlert()}
       <div className={FunctionDarkModeHeader()}>
         <h1 className={styles.headerTitle}>TABLÚ FAMOSOS</h1>
         <div onClick={changeDarkMode} className={styles.toggleButton}>
@@ -51,7 +69,11 @@ const Home: NextPage = () => {
       <div className={FunctionDarkModeBodyDiv()}>
         <div className={styles.mainContainer}>
           <div className={styles.iphoneContainer}>
-            <Image className={styles.iphonePic} src={iphone}></Image>
+            <Image
+              alt="iphonepic"
+              className={styles.iphonePic}
+              src={iphone}
+            ></Image>
           </div>
           <div className={styles.bodyTextContainer}>
             <div className={styles.bodyTextFirstRow}>
@@ -70,11 +92,21 @@ const Home: NextPage = () => {
               </p>
             </div>
             <div className={styles.bodyTextFourthRow}>
-              <div className={styles.absDivIos}>
+              <div
+                className={styles.absDivIos}
+                onClick={() => {
+                  commingSoon();
+                }}
+              >
                 <div className={styles.buttonsStores} />
                 <Image layout="fill" alt="iosbadge" src={iosBadge}></Image>
               </div>
-              <div className={styles.absDivAndroid}>
+              <div
+                className={styles.absDivAndroid}
+                onClick={() => {
+                  commingSoon();
+                }}
+              >
                 <div className={styles.buttonsStores} />
                 <Image
                   layout="fill"
@@ -93,7 +125,31 @@ const Home: NextPage = () => {
             </Link>
           </div>
         </div>
-        <div className={FunctionDarkModeFooter()}></div>
+        <div className={FunctionDarkModeFooter()}>
+          <div className={styles.footerComment}>
+            <p>
+              Tablu Famosos fue desarrollado para divertir al usuario, sin
+              intención de ofender a ninguna persona.
+            </p>
+            <p>
+              Repotar cualquier situación considerada ofensiva a info@tablu.io.
+            </p>
+          </div>
+          <div className={styles.footerMadeBy}>
+            <p>Desarrollado por Santiago Bello</p>
+            <div
+              onClick={() => {
+                window.location.href =
+                  "https://www.linkedin.com/in/bellosantiagoariel/";
+              }}
+            >
+              <Image layout="fill" alt="linkedbadge" src={linkedBadge}></Image>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.gameplay}>
+        <p>Gameplay</p>
       </div>
       <div className={styles.videoIndex}>
         <AspectRatio className={styles.videoframe} maxW="520px" ratio={9 / 6}>

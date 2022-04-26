@@ -1,12 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@200;300;400;500;600;700;800&display=swap");
 
+.App {
+  width: 100%;
+  height: 100%;
+}
 .appHeaderLight {
   top: 0px;
   left: 0px;
   position: absolute;
   width: 100%;
-  height: 220px;
+  height: 221px;
   background: #7b2cbf;
   background: linear-gradient(
     90deg,
@@ -20,7 +24,7 @@
   left: 0px;
   position: absolute;
   width: 100%;
-  height: 220px;
+  height: 221px;
   background: rgb(33, 29, 36);
   background: linear-gradient(
     90deg,
@@ -114,14 +118,14 @@
 .bodyDivLight {
   position: absolute;
   top: 220px;
-  height: 500px;
+  height: 501px;
   width: 100%;
   background-color: #fafafa;
 }
 .bodyDivDark {
   position: absolute;
   top: 220px;
-  height: 500px;
+  height: 501px;
   width: 100%;
   background-color: #141215;
 }
@@ -134,17 +138,49 @@
 
 .footerLight {
   position: absolute;
-  top: 720px;
+  top: 500px;
   height: 300px;
   width: 100%;
   background-color: #140620;
 }
 .footerDark {
   position: absolute;
-  top: 720px;
+  top: 500px;
   height: 300px;
   width: 100%;
-  background-color: aqua;
+  background-color: #242027;
+}
+
+.footerComment {
+  top: 10%;
+  left: 2.5%;
+  position: absolute;
+
+  p {
+    color: #fafafa;
+    font-family: "Mukta Malar", sans-serif;
+    font-size: 1.2rem;
+  }
+}
+.footerMadeBy {
+  top: 45%;
+  left: 2.5%;
+  position: absolute;
+
+  p {
+    color: #fafafa;
+    font-family: "Mukta Malar", sans-serif;
+    font-size: 1rem;
+  }
+
+  div {
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    top: 30px;
+    left: 0px;
+    position: absolute;
+  }
 }
 
 .iphoneContainer {
@@ -259,12 +295,14 @@
   width: 45%;
   height: 100%;
   right: 0px;
+  cursor: pointer;
 }
 .absDivAndroid {
   position: absolute;
   width: 45%;
   height: 100%;
   left: 0px;
+  cursor: pointer;
 }
 
 .buttonsStores {
@@ -371,6 +409,61 @@
   top: 300px;
 }
 
+.comSoon {
+  position: absolute;
+  background-color: #9f0005;
+  font-weight: 400;
+  top: 50vh;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  z-index: 99999;
+  animation: alertSoon 2.5s ease-in-out;
+  opacity: 0;
+
+  p {
+    font-family: "Luckiest Guy", cursive;
+    font-size: 3rem;
+    text-align: center;
+    color: white;
+  }
+}
+
+@keyframes alertSoon {
+  0% {
+    top: 120vh;
+    opacity: 0.3;
+  }
+
+  40% {
+    top: 50vh;
+    opacity: 0.9;
+  }
+  60% {
+    top: 50vh;
+    opacity: 0.9;
+  }
+
+  100% {
+    top: -20vh;
+    opacity: 0.3;
+  }
+}
+
+.gameplay {
+  opacity: 0;
+  top: 720px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  position: absolute;
+  p {
+    font-family: "Luckiest Guy", cursive;
+    font-size: 3rem;
+    text-align: center;
+    color: #9d4edd;
+    opacity: 0;
+  }
+}
+
 @media all and (max-width: 1500px) {
   .videoIndex {
     width: 460px;
@@ -443,198 +536,216 @@
     top: 1120px;
     height: 300px;
     width: 100%;
-    background-color: aqua;
-  }
-}
-@media all and (max-width: 1100px) {
-  .mainContainer {
-    left: 50%;
-    transform: translate(-50%, 0%);
-  }
-  .videoIndex {
-    width: 500px;
-    top: 820px;
-    left: 50%;
-    transform: translate(-50%, 0%);
-  }
-  .appHeaderLight,
-  .appHeaderDark {
-    height: 180px;
-  }
-  .headerTitle {
-    font-size: 4rem;
-  }
-  .bodyTextContainer {
-    width: 440px;
-    left: 320px;
-  }
-  .bodyTextFifth {
-    left: 320px;
-  }
-  .iphoneContainer {
-    width: 250px;
-    left: 60px;
-    top: 50px;
-  }
-}
-@media all and (max-width: 885px) {
-  .mainContainer {
-    width: 650px;
-  }
-  .iphoneContainer {
-    width: 220px;
-    left: -20px;
-    top: 50px;
-  }
-  .bodyTextContainer {
-    width: 450px;
-    left: 200px;
-  }
-  .bodyTextFifth {
-    left: 200px;
-    width: 450px;
-  }
-}
-@media all and (max-width: 700px) {
-  .mainContainer {
-    width: 500px;
-    left: 50%;
-    transform: translate(-50%, 0%);
-  }
-  .headerTitle {
-    left: 20px;
-  }
-  .appHeaderLight,
-  .appHeaderDark {
-    height: 150px;
-  }
-  .bodyTextContainer {
-    width: 300px;
-    left: 170px;
-  }
-  .bodyTextFifth {
-    left: 170px;
-    width: 300px;
-  }
-  .iphoneContainer {
-    width: 200px;
-    left: -10px;
-    top: 50px;
-  }
-  .bodyTextLight,
-  .bodyTextDark {
-    font-size: 1.8rem;
-  }
-  .bodyTextTablu {
-    font-size: 1.8em;
-  }
-  .headerTitle {
-    font-size: 3rem;
-  }
-  .bodyTextSubtLight,
-  .bodyTextSubtDark {
-    font-size: 1.5rem;
-    top: 55px;
+    background-color: #242027;
   }
 
-  .bodyTextThirdRow {
-    top: 120px;
-    width: 240px;
+  @media all and (max-width: 1100px) {
+    .mainContainer {
+      left: 50%;
+      transform: translate(-50%, 0%);
+    }
+    .videoIndex {
+      width: 500px;
+      top: 820px;
+      left: 50%;
+      transform: translate(-50%, 0%);
+    }
+    .appHeaderLight,
+    .appHeaderDark {
+      height: 180px;
+    }
+    .headerTitle {
+      font-size: 4rem;
+    }
+    .bodyTextContainer {
+      width: 440px;
+      left: 320px;
+    }
+    .bodyTextFifth {
+      left: 320px;
+    }
+    .iphoneContainer {
+      width: 250px;
+      left: 60px;
+      top: 50px;
+    }
+    .gameplay {
+      opacity: 1;
+      p {
+        opacity: 1;
+      }
+    }
   }
-  .bodyTextFourthRow {
-    top: 140px;
-    width: 240px;
+  @media all and (max-width: 885px) {
+    .mainContainer {
+      width: 650px;
+    }
+    .iphoneContainer {
+      width: 220px;
+      left: -20px;
+      top: 50px;
+    }
+    .bodyTextContainer {
+      width: 450px;
+      left: 200px;
+    }
+    .bodyTextFifth {
+      left: 200px;
+      width: 450px;
+    }
   }
-  .bodyTextFifth {
-    top: 50%;
-    transform: translate(0%, -80%);
-  }
+  @media all and (max-width: 700px) {
+    .gameplay {
+      top: 580px;
+    }
+    .mainContainer {
+      width: 500px;
+      left: 50%;
+      transform: translate(-50%, 0%);
+    }
+    .headerTitle {
+      left: 20px;
+    }
+    .appHeaderLight,
+    .appHeaderDark {
+      height: 150px;
+    }
+    .bodyTextContainer {
+      width: 300px;
+      left: 170px;
+    }
+    .bodyTextFifth {
+      left: 170px;
+      width: 300px;
+    }
+    .iphoneContainer {
+      width: 200px;
+      left: -10px;
+      top: 50px;
+    }
+    .bodyTextLight,
+    .bodyTextDark {
+      font-size: 1.8rem;
+    }
+    .bodyTextTablu {
+      font-size: 1.8em;
+    }
+    .headerTitle {
+      font-size: 3rem;
+    }
+    .bodyTextSubtLight,
+    .bodyTextSubtDark {
+      font-size: 1.5rem;
+      top: 55px;
+    }
 
-  .onlineVersion {
-    font-size: 2rem;
-  }
+    .bodyTextThirdRow {
+      top: 120px;
+      width: 240px;
+    }
+    .bodyTextFourthRow {
+      top: 140px;
+      width: 240px;
+    }
+    .bodyTextFifth {
+      top: 50%;
+      transform: translate(0%, -80%);
+    }
 
-  .videoIndex {
-    width: 65vw;
-    top: 680px;
+    .onlineVersion {
+      font-size: 2rem;
+    }
+
+    .videoIndex {
+      width: 65vw;
+      top: 680px;
+    }
+    .bodyDivLight,
+    .bodyDivDark {
+      height: 400px;
+      top: 150px;
+    }
+    .footerLight,
+    .footerDark {
+      top: 880px;
+      height: 220px;
+    }
   }
-  .bodyDivLight,
-  .bodyDivDark {
-    height: 400px;
-  }
-  .footerLight,
-  .footerDark {
-    top: 880px;
-    height: 220px;
-  }
-}
-@media all and (max-width: 500px) {
-  .mainContainer {
-    top: 30px;
-    width: 300px;
-  }
-  .appHeaderLight,
-  .appHeaderDark {
-    height: 120px;
-  }
-  .headerTitle {
-    font-size: 2rem;
-  }
-  .iphoneContainer {
-    width: 150px;
-    left: -45px;
-    top: 20px;
-  }
-  .bodyTextContainer {
-    width: 230px;
-    left: 100px;
-    top: 30px;
-  }
-  .bodyTextFifth {
-    left: 100px;
-    width: 230px;
-    transform: translate(0%, -150%);
-  }
-  .onlineVersion {
-    font-size: 1.5rem;
-  }
-  .bodyTextLight,
-  .bodyTextDark {
-    font-size: 1.3rem;
-    padding-right: 1px;
-  }
-  .bodyTextTablu {
-    font-size: 1.3em;
-  }
-  .bodyTextSubtLight,
-  .bodyTextSubtDark {
-    font-size: 1.2rem;
-    top: 40px;
-  }
-  .bodyTextThirdRow {
-    top: 100px;
-    width: 220px;
-  }
-  .bodyTextFourthRow {
-    top: 110px;
-    width: 200px;
-  }
-  .bodyTextWebVersionLight,
-  .bodyTextWebVersionDark {
-    font-size: 0.7rem;
-  }
-  .bodyDivLight,
-  .bodyDivDark {
-    height: 330px;
-    top: 120px;
-  }
-  .footerLight,
-  .footerDark {
-    top: 630px;
-    height: 150px;
-  }
-  .videoIndex {
-    /*     width: 65vw; */
-    top: 500px;
+  @media all and (max-width: 500px) {
+    .gameplay {
+      top: 460px;
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+    .mainContainer {
+      top: 30px;
+      width: 300px;
+    }
+    .appHeaderLight,
+    .appHeaderDark {
+      height: 120px;
+    }
+    .headerTitle {
+      font-size: 2rem;
+    }
+    .iphoneContainer {
+      width: 150px;
+      left: -45px;
+      top: 20px;
+    }
+    .bodyTextContainer {
+      width: 230px;
+      left: 100px;
+      top: 30px;
+    }
+    .bodyTextFifth {
+      left: 100px;
+      width: 230px;
+      transform: translate(0%, -150%);
+    }
+    .onlineVersion {
+      font-size: 1.5rem;
+    }
+    .bodyTextLight,
+    .bodyTextDark {
+      font-size: 1.3rem;
+      padding-right: 1px;
+    }
+    .bodyTextTablu {
+      font-size: 1.3em;
+    }
+    .bodyTextSubtLight,
+    .bodyTextSubtDark {
+      font-size: 1.2rem;
+      top: 40px;
+    }
+    .bodyTextThirdRow {
+      top: 100px;
+      width: 220px;
+    }
+    .bodyTextFourthRow {
+      top: 110px;
+      width: 200px;
+    }
+    .bodyTextWebVersionLight,
+    .bodyTextWebVersionDark {
+      font-size: 0.7rem;
+    }
+    .bodyDivLight,
+    .bodyDivDark {
+      height: 330px;
+      top: 120px;
+    }
+    .footerLight,
+    .footerDark {
+      top: 630px;
+      height: 150px;
+    }
+    .videoIndex {
+      /*     width: 65vw; */
+      top: 500px;
+    }
   }
 }
