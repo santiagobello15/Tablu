@@ -84,3 +84,11 @@ export const FunctionDarkModeFooter = () => {
     return styles.footerDark;
   }
 };
+export const FunctionMiddleContainer = () => {
+  const { darkMode } = useContext(Context);
+  if (darkMode == false) {
+    return styles.middleContainerLight;
+  } else {
+    return styles.middleContainerDark;
+  }
+};

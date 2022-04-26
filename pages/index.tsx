@@ -19,6 +19,7 @@ import {
   FunctionDarkModeBodyText,
   FunctionDarkModeBodySubtText,
   FunctionDarkModeBodyDownload,
+  FunctionMiddleContainer,
 } from "../components/Functions/functions";
 
 const ENVIRONMENT = process.env.REACT_APP_ENVIRONMENT;
@@ -55,6 +56,7 @@ const Home: NextPage = () => {
 
   return (
     <div className="App">
+      <div className={FunctionMiddleContainer()}></div>
       {commSoonAlert()}
       <div className={FunctionDarkModeHeader()}>
         <h1 className={styles.headerTitle}>TABLÚ FAMOSOS</h1>
@@ -125,29 +127,8 @@ const Home: NextPage = () => {
             </Link>
           </div>
         </div>
-        <div className={FunctionDarkModeFooter()}>
-          <div className={styles.footerComment}>
-            <p>
-              Tablu Famosos fue desarrollado para divertir al usuario, sin
-              intención de ofender a ninguna persona.
-            </p>
-            <p>
-              Repotar cualquier situación considerada ofensiva a info@tablu.io.
-            </p>
-          </div>
-          <div className={styles.footerMadeBy}>
-            <p>Desarrollado por Santiago Bello</p>
-            <div
-              onClick={() => {
-                window.location.href =
-                  "https://www.linkedin.com/in/bellosantiagoariel/";
-              }}
-            >
-              <Image layout="fill" alt="linkedbadge" src={linkedBadge}></Image>
-            </div>
-          </div>
-        </div>
       </div>
+
       <div className={styles.gameplay}>
         <p>Gameplay</p>
       </div>
@@ -160,6 +141,29 @@ const Home: NextPage = () => {
             allowFullScreen
           />
         </AspectRatio>
+      </div>
+
+      <div className={FunctionDarkModeFooter()}>
+        <div className={styles.footerComment}>
+          <p>
+            Tablu Famosos fue desarrollado para divertir al usuario, sin
+            intención de ofender a ninguna persona.
+          </p>
+          <p>
+            Repotar cualquier situación considerada ofensiva a info@tablu.io.
+          </p>
+        </div>
+        <div className={styles.footerMadeBy}>
+          <p>Desarrollado por Santiago Bello</p>
+          <div
+            onClick={() => {
+              window.location.href =
+                "https://www.linkedin.com/in/bellosantiagoariel/";
+            }}
+          >
+            <Image layout="fill" alt="linkedbadge" src={linkedBadge}></Image>
+          </div>
+        </div>
       </div>
     </div>
   );
