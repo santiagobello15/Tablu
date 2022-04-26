@@ -447,6 +447,7 @@
 }
 
 .gameplay {
+  text-shadow: 2px 1px black;
   opacity: 0;
   top: 720px;
   left: 50%;
@@ -655,7 +656,7 @@
   }
   .iphoneContainer {
     width: 200px;
-    left: -10px;
+    left: -40px;
     top: 50px;
   }
   .bodyTextLight,
@@ -742,7 +743,7 @@
     }
     .iphoneContainer {
       width: 150px;
-      left: -45px;
+      left: -60px;
       top: 20px;
     }
     .bodyTextContainer {
