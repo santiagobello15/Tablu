@@ -8,6 +8,7 @@ import iosBadge from "../media/badge-ios.svg";
 import androidBadge from "../media/badge-android.svg";
 import linkedBadge from "../media/badge-linked.svg";
 import { AspectRatio } from "@chakra-ui/layout";
+import Head from "next/head";
 import { Context } from "../context/AppContext";
 import {
   FunctionDarkModeToggle,
@@ -56,6 +57,10 @@ const Home: NextPage = () => {
 
   return (
     <div className="App">
+      <Head>
+        <title>Tablu Games</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div className={FunctionMiddleContainer()}></div>
       {commSoonAlert()}
       <div className={FunctionDarkModeHeader()}>
