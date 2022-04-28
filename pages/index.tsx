@@ -20,7 +20,7 @@ import {
   FunctionDarkModeBodySubtText,
   FunctionDarkModeBodyDownload,
   FunctionMiddleContainer,
-} from "../components/Functions/functions";
+} from "../componentsFamosos/Functions/functions";
 
 const ENVIRONMENT = process.env.REACT_APP_ENVIRONMENT;
 const API_URL =

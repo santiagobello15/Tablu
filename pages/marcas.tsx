@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
-import styles from "../styles/famosos.module.scss";
+import styles from "../styles/marcas.module.scss";
 import claps from "../styles/claps.module.scss";
-import SettingsModal from "../componentsFamosos/settingsModal";
-import RulesModal from "../componentsFamosos/rulesModal";
-import StartModal from "../componentsFamosos/startModal";
-import ExitModal from "../componentsFamosos/exitModal";
+import SettingsModal from "../componentsMarcas/settingsModal";
+import RulesModal from "../componentsMarcas/rulesModal";
+import StartModal from "../componentsMarcas/startModal";
+import ExitModal from "../componentsMarcas/exitModal";
 import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import clapsImg from "../media/clapsImg.png";
@@ -224,7 +224,7 @@ const Game: NextPage = ({ data }: any) => {
     if (centerDivOpacity == 0) {
       return (
         <div className={styles.centerDiv}>
-          <h1 className={styles.headerTitle}>TABLÚ FAMOSOS</h1>
+          <h1 className={styles.headerTitle}>TABLÚ MARCAS</h1>
           <div className={styles.gamingPad}>
             <div className={styles.gameCardLeft}>
               <div className={styles.startRound}>
@@ -291,7 +291,7 @@ const Game: NextPage = ({ data }: any) => {
     if (centerDivOpacity == 1) {
       return (
         <div className={styles.centerDiv}>
-          <h1 className={styles.headerTitle}>TABLÚ FAMOSOS</h1>
+          <h1 className={styles.headerTitle}>TABLÚ MARCAS</h1>
           <div className={styles.btnsContainer}>
             <div className={styles.configButton} onClick={settModalShow}>
               <p>Configuración</p>
@@ -330,7 +330,7 @@ const Game: NextPage = ({ data }: any) => {
     if (centerDivOpacity == 2) {
       return (
         <div className={styles.centerDiv}>
-          <h1 className={styles.headerTitle}>TABLÚ FAMOSOS</h1>
+          <h1 className={styles.headerTitle}>TABLÚ MARCAs</h1>
           {ClapsCelebration()}
           <div className={styles.victoryH1}>
             <h1>Ganador: {renderGameResult()}</h1>
@@ -352,8 +352,8 @@ const Game: NextPage = ({ data }: any) => {
                 url={"https://tablu.vercel.app/"}
                 options={{
                   text: "Ganador de la partida: " + renderGameResult(),
-                  via: "TabluFamosos",
-                  hashtags: "TabluFamosos",
+                  via: "TabluMarcas",
+                  hashtags: "TabluMarcas",
                 }}
               />
             </div>

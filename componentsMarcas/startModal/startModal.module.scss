@@ -1,4 +1,4 @@
-$AppColor: #7b2cbf;
+$AppColor: #ff6d00;
 $CardColorRed: hsl(356, 81%, 88%);
 $CardColorGreen: hsl(167, 33%, 84%);
 $CardColorBlue: hsl(207, 61%, 86%);
@@ -18,7 +18,7 @@ $CardColorYellowTransp: hsl(43, 82%, 89%, 0.7);
 
 .modalContainer {
   background-color: rgb(221, 221, 221);
-  background-image: url("../../media/patternpad.svg");
+  background-image: url("../../media/patternpadMarcas.svg");
   height: 450px;
   width: 400px;
   position: absolute;
@@ -53,7 +53,7 @@ $CardColorYellowTransp: hsl(43, 82%, 89%, 0.7);
 }
 .modalContainerOut {
   background-color: rgb(221, 221, 221);
-  background-image: url("../../media/patternpad.svg");
+  background-image: url("../../media/patternpadMarcas.svg");
   height: 450px;
   width: 400px;
   position: absolute;

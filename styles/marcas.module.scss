@@ -1,5 +1,5 @@
-$AppColor: #7b2cbf;
-$AppColorLight: #9e51dd;
+$AppColor: #ff6d00;
+$AppColorLight: #ff8500;
 $CardColorRed: hsl(356, 81%, 88%);
 $CardColorGreen: hsl(167, 33%, 84%);
 $CardColorBlue: hsl(207, 61%, 86%);
@@ -10,7 +10,7 @@ $CardColorYellow: hsl(43, 82%, 89%);
   width: 100%;
   height: 800px;
   background-color: #dfdbe5;
-  background-image: url("../media/patternpadFamosos.svg");
+  background-image: url("../media/patternpadMarcas.svg");
 }
 .centerDiv {
   position: absolute;
@@ -124,13 +124,13 @@ $CardColorYellow: hsl(43, 82%, 89%);
 }
 
 .startButton:hover {
-  background-color: green;
+  background-color: red;
 }
 .rulesButton:hover {
-  background-color: green;
+  background-color: red;
 }
 .configButton:hover {
-  background-color: green;
+  background-color: red;
 }
 
 .timerView {

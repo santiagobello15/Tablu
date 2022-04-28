@@ -1,0 +1,182 @@
+$AppColor: #ff6d00;
+.overlayModal {
+  height: 100%;
+  width: 100%;
+  background: rgba(49, 49, 49, 0.945);
+  position: absolute;
+  z-index: 999999999;
+}
+
+.modalContainer {
+  background-color: rgb(221, 221, 221);
+  background-image: url("../../media/patternpadMarcas.svg");
+  height: 450px;
+  width: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 6px;
+  animation: initial-anim 0.3s ease-out;
+  h1 {
+    position: absolute;
+    font-weight: 400;
+    font-size: 2rem;
+    font-family: "Luckiest Guy", cursive;
+    background-color: $AppColor;
+    color: white;
+    left: 50%;
+    top: 10px;
+    transform: translate(-50%, 0%);
+  }
+}
+
+@keyframes initial-anim {
+  0% {
+    top: 0%;
+  }
+  75% {
+    top: 52%;
+  }
+  100% {
+    top: 50%;
+  }
+}
+.modalContainerOut {
+  background-color: rgb(221, 221, 221);
+  background-image: url("../../media/patternpadMarcas.svg");
+  height: 450px;
+  width: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 6px;
+  animation: exit-anim 0.3s ease-out;
+  h1 {
+    position: absolute;
+    font-weight: 400;
+    font-size: 2rem;
+    font-family: "Luckiest Guy", cursive;
+    background-color: $AppColor;
+    color: white;
+    left: 50%;
+    top: 10px;
+    transform: translate(-50%, 0%);
+  }
+}
+
+@keyframes exit-anim {
+  0% {
+    top: 50%;
+  }
+  100% {
+    top: -50%;
+  }
+}
+
+.closeBtn {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: red;
+  cursor: pointer;
+
+  p {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 700;
+    color: white;
+  }
+}
+
+.configUl {
+  list-style-type: none;
+  position: absolute;
+  height: 290px;
+  width: 60%;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%, -0%);
+  background-color: #fafafa;
+  height: 280px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: $AppColor;
+  border-radius: 5px;
+
+  li {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -0%);
+    width: 80%;
+    height: 40px;
+
+    p {
+      font-weight: 600;
+      font-size: 0.7rem;
+      font-family: "Mukta Malar", sans-serif;
+      color: #232323;
+    }
+  }
+}
+
+.firstLi {
+  top: 20px;
+}
+.secondLi {
+  top: 100px;
+}
+.thirdLi {
+  top: 160px;
+}
+.fourthLi {
+  top: 220px;
+}
+
+@media all and (max-width: 550px) {
+  .modalContainer {
+    height: 400px;
+    width: 350px;
+    h1 {
+      font-size: 1.8rem;
+    }
+    ul {
+      li {
+        p {
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+  .modalContainerOut {
+    height: 400px;
+    width: 350px;
+    h1 {
+      font-size: 1.8rem;
+    }
+    ul {
+      li {
+        p {
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+  .firstLi {
+    top: 30px;
+  }
+  .secondLi {
+    top: 100px;
+  }
+  .thirdLi {
+    top: 160px;
+  }
+  .fourthLi {
+    top: 220px;
+  }
+}
