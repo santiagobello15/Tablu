@@ -513,8 +513,7 @@ const Game: NextPage = ({ data }: any) => {
     setBlockSubstract(true);
     setBlockAdd(true);
     setBlockPass(true);
-    setIndexOnShuffled(indexOnShuffled + 1);
-    setCurrentCard(indexOnShuffled);
+    setCurrentCard(currentCard + 1);
     setPassPoint(true);
     setTimeout(() => setPassPoint(false), 1000);
     setTimeout(() => setBlockPass(false), 1000);
