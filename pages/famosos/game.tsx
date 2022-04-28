@@ -7,7 +7,7 @@ import StartModal from "../../components/startModal";
 import ExitModal from "../../components/exitModal";
 import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
-import clapsImg from "../media/clapsImg.png";
+import clapsImg from "../../media/clapsImg.png";
 import { Context } from "../../context/AppContext";
 import { TwitterShareButton } from "react-twitter-embed";
 
