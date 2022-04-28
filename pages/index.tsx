@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.scss";
 import { useState, useContext } from "react";
 import iphone from "../media/iphone-front-transparent.png";
+import iphoneMarcas from "../media/iphone-front-transparent-marcas.png";
 import iosBadge from "../media/badge-ios.svg";
 import androidBadge from "../media/badge-android.svg";
 import linkedBadge from "../media/badge-linked.svg";
@@ -74,14 +75,17 @@ const Home: NextPage = () => {
         </div>
       </div>
       <div className={FunctionDarkModeBodyDiv()}>
+        <div
+          className={styles.iphoneContainer}
+          id={styles.iphoneContainerRightId}
+        >
+          <Image
+            alt="iphonepic"
+            className={styles.iphonePic}
+            src={iphoneMarcas}
+          ></Image>
+        </div>
         <div className={styles.mainContainerLeft}>
-          <div className={styles.iphoneContainer}>
-            <Image
-              alt="iphonepic"
-              className={styles.iphonePic}
-              src={iphone}
-            ></Image>
-          </div>
           <div className={styles.bodyTextContainer}>
             <div className={styles.bodyTextFirstRow}>
               <h2 className={FunctionDarkModeBodyText()}>JUGÁ </h2>
@@ -132,17 +136,17 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
+        <div className={styles.iphoneContainer}>
+          <Image
+            alt="iphonepic"
+            className={styles.iphonePic}
+            src={iphone}
+          ></Image>
+        </div>
         <div
           className={styles.mainContainerRight}
           id={styles.mainContainerRightID}
         >
-          <div className={styles.iphoneContainer}>
-            <Image
-              alt="iphonepic"
-              className={styles.iphonePic}
-              src={iphone}
-            ></Image>
-          </div>
           <div className={styles.bodyTextContainer}>
             <div className={styles.bodyTextFirstRow}>
               <h2 className={FunctionDarkModeBodyText()}>JUGÁ </h2>
