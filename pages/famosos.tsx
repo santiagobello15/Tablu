@@ -120,7 +120,7 @@ const Game: NextPage = ({ data }: any) => {
         indexOnShuffled ==
         Object.keys(
           Array.from(
-            { length: Object.keys(data.CardsArray).length },
+            { length: Object.keys(data.CardsArray).length + 2 },
             (v, k) => k + 1
           )
         ).length -
@@ -478,8 +478,8 @@ const Game: NextPage = ({ data }: any) => {
     setBlockSubstract(true);
     setBlockAdd(true);
     setBlockPass(true);
-    setCurrentCard(currentCard + 1);
-
+    setIndexOnShuffled(indexOnShuffled + 1);
+    setCurrentCard(indexOnShuffled);
     setPlusPoint(true);
     setTimeout(() => setPlusPoint(false), 1000);
     setTimeout(() => setBlockPass(false), 1000);
@@ -495,7 +495,8 @@ const Game: NextPage = ({ data }: any) => {
     setBlockSubstract(true);
     setBlockAdd(true);
     setBlockPass(true);
-    setCurrentCard(currentCard + 1);
+    setIndexOnShuffled(indexOnShuffled + 1);
+    setCurrentCard(indexOnShuffled);
     setMinusPoint(true);
     setTimeout(() => setMinusPoint(false), 1000);
     setTimeout(() => setBlockPass(false), 1000);
@@ -512,7 +513,8 @@ const Game: NextPage = ({ data }: any) => {
     setBlockSubstract(true);
     setBlockAdd(true);
     setBlockPass(true);
-    setCurrentCard(currentCard + 1);
+    setIndexOnShuffled(indexOnShuffled + 1);
+    setCurrentCard(indexOnShuffled);
     setPassPoint(true);
     setTimeout(() => setPassPoint(false), 1000);
     setTimeout(() => setBlockPass(false), 1000);
@@ -672,7 +674,7 @@ const Game: NextPage = ({ data }: any) => {
 };
 
 export async function getServerSideProps() {
-  const response = await fetch(`${API_URL}/api/cards`);
+  const response = await fetch(`${API_URL}/api/cardsFamosos`);
   const data = await response.json();
 
   return {

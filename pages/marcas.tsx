@@ -62,8 +62,8 @@ const Game: NextPage = ({ data }: any) => {
   const [blockSubstract, setBlockSubstract] = useState(false);
 
   interface CardsTableInterface {
-    cardName: string;
-    cardLastName: string;
+    marca1: string;
+    marca2: string;
     wordOne: string;
     wordTwo: string;
     wordThree: string;
@@ -72,8 +72,8 @@ const Game: NextPage = ({ data }: any) => {
     wordSix: string;
   }
   const [cardsTable, setCardsTable] = useState<CardsTableInterface>({
-    cardName: "Nombre",
-    cardLastName: "Apellido",
+    marca1: "Nombre",
+    marca2: "Apellido",
     wordOne: "Palabra 1",
     wordTwo: "Palabra 2",
     wordThree: "Palabra 3",
@@ -89,8 +89,8 @@ const Game: NextPage = ({ data }: any) => {
   };
 
   const CardsData = async () => {
-    updateCardsTable("cardName", data.CardsArray[currentCard].firstname);
-    updateCardsTable("cardLastName", data.CardsArray[currentCard].lastname);
+    updateCardsTable("marca1", data.CardsArray[currentCard].marca1);
+    updateCardsTable("marca2", data.CardsArray[currentCard].marca2);
     updateCardsTable("wordOne", data.CardsArray[currentCard].word1);
     updateCardsTable("wordTwo", data.CardsArray[currentCard].word2);
     updateCardsTable("wordThree", data.CardsArray[currentCard].word3);
@@ -120,7 +120,7 @@ const Game: NextPage = ({ data }: any) => {
         indexOnShuffled ==
         Object.keys(
           Array.from(
-            { length: Object.keys(data.CardsArray).length },
+            { length: Object.keys(data.CardsArray).length + 2 },
             (v, k) => k + 1
           )
         ).length -
@@ -239,8 +239,8 @@ const Game: NextPage = ({ data }: any) => {
 
             <div className={styles.gameCard}>
               {BlurAndText()}
-              <h1>{cardsTable.cardName}</h1>
-              <h2>{cardsTable.cardLastName}</h2>
+              <h1>{cardsTable.marca1}</h1>
+              <h2>{cardsTable.marca2}</h2>
               <ul className={styles.cardsUL1}>
                 <li>{cardsTable.wordOne}</li>
                 <li>{cardsTable.wordTwo}</li>
@@ -478,8 +478,8 @@ const Game: NextPage = ({ data }: any) => {
     setBlockSubstract(true);
     setBlockAdd(true);
     setBlockPass(true);
-    setCurrentCard(currentCard + 1);
-
+    setIndexOnShuffled(indexOnShuffled + 1);
+    setCurrentCard(indexOnShuffled);
     setPlusPoint(true);
     setTimeout(() => setPlusPoint(false), 1000);
     setTimeout(() => setBlockPass(false), 1000);
@@ -495,7 +495,8 @@ const Game: NextPage = ({ data }: any) => {
     setBlockSubstract(true);
     setBlockAdd(true);
     setBlockPass(true);
-    setCurrentCard(currentCard + 1);
+    setIndexOnShuffled(indexOnShuffled + 1);
+    setCurrentCard(indexOnShuffled);
     setMinusPoint(true);
     setTimeout(() => setMinusPoint(false), 1000);
     setTimeout(() => setBlockPass(false), 1000);
@@ -512,7 +513,8 @@ const Game: NextPage = ({ data }: any) => {
     setBlockSubstract(true);
     setBlockAdd(true);
     setBlockPass(true);
-    setCurrentCard(currentCard + 1);
+    setIndexOnShuffled(indexOnShuffled + 1);
+    setCurrentCard(indexOnShuffled);
     setPassPoint(true);
     setTimeout(() => setPassPoint(false), 1000);
     setTimeout(() => setBlockPass(false), 1000);
@@ -672,7 +674,7 @@ const Game: NextPage = ({ data }: any) => {
 };
 
 export async function getServerSideProps() {
-  const response = await fetch(`${API_URL}/api/cards`);
+  const response = await fetch(`${API_URL}/api/cardsMarcas`);
   const data = await response.json();
 
   return {
