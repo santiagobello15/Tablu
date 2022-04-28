@@ -1,16 +1,15 @@
 import type { NextPage } from "next";
-import styles from "../styles/game.module.scss";
+import styles from "./game.module.scss";
 import claps from "../styles/claps.module.scss";
-import SettingsModal from "../components/settingsModal";
-import RulesModal from "../components/rulesModal";
-import StartModal from "../components/startModal";
-import ExitModal from "../components/exitModal";
+import SettingsModal from "../../components/settingsModal";
+import RulesModal from "../../components/rulesModal";
+import StartModal from "../../components/startModal";
+import ExitModal from "../../components/exitModal";
 import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import clapsImg from "../media/clapsImg.png";
-import { Context } from "../context/AppContext";
+import { Context } from "../../context/AppContext";
 import { TwitterShareButton } from "react-twitter-embed";
-import { timeEnd } from "console";
 
 const ENVIRONMENT = process.env.REACT_APP_ENVIRONMENT;
 const API_URL =

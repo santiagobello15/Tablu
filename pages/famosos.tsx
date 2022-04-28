@@ -59,7 +59,7 @@ const Home: NextPage = () => {
       <div className={FunctionMiddleContainer()}></div>
       {commSoonAlert()}
       <div className={FunctionDarkModeHeader()}>
-        <h1 className={styles.headerTitle}>TABLÚ GAMES</h1>
+        <h1 className={styles.headerTitle}>TABLÚ FAMOSOS</h1>
         <div onClick={changeDarkMode} className={styles.toggleButton}>
           <div
             className={FunctionDarkModeToggle()}
@@ -69,7 +69,7 @@ const Home: NextPage = () => {
         </div>
       </div>
       <div className={FunctionDarkModeBodyDiv()}>
-        <div className={styles.mainContainerLeft}>
+        <div className={styles.mainContainer}>
           <div className={styles.iphoneContainer}>
             <Image
               alt="iphonepic"
@@ -122,88 +122,32 @@ const Home: NextPage = () => {
             <h1 className={FunctionDarkModeBodyDownload()}>
               Ó usá la versión web
             </h1>
-            <Link href="/famosos">
+            <Link href="/game">
               <h1 className={styles.onlineVersion}>Jugar Online</h1>
             </Link>
           </div>
         </div>
-        <div
-          className={styles.mainContainerRight}
-          id={styles.mainContainerRightID}
-        >
-          <div className={styles.iphoneContainer}>
-            <Image
-              alt="iphonepic"
-              className={styles.iphonePic}
-              src={iphone}
-            ></Image>
-          </div>
-          <div className={styles.bodyTextContainer}>
-            <div className={styles.bodyTextFirstRow}>
-              <h2 className={FunctionDarkModeBodyText()}>JUGÁ </h2>
-              <h2
-                className={styles.bodyTextTablu}
-                id={styles.bodyTextTabluRight}
-              >
-                TABLÚ MARCAS{" "}
-              </h2>
-            </div>
-
-            <div className={styles.bodyTextSecondRow}>
-              <h2 className={FunctionDarkModeBodySubtText()}>
-                Divertite con amigos
-              </h2>
-            </div>
-            <div className={styles.bodyTextThirdRow}>
-              <p className={FunctionDarkModeBodyDownload()}>
-                Descargá la app en tu smartphone
-              </p>
-            </div>
-            <div className={styles.bodyTextFourthRow}>
-              <div
-                className={styles.absDivIos}
-                onClick={() => {
-                  commingSoon();
-                }}
-              >
-                <div className={styles.buttonsStores} />
-                <Image layout="fill" alt="iosbadge" src={iosBadge}></Image>
-              </div>
-              <div
-                className={styles.absDivAndroid}
-                onClick={() => {
-                  commingSoon();
-                }}
-              >
-                <div className={styles.buttonsStores} />
-                <Image
-                  layout="fill"
-                  alt="androidbadge"
-                  src={androidBadge}
-                ></Image>
-              </div>
-            </div>
-          </div>
-          <div className={styles.bodyTextFifth}>
-            <h1 className={FunctionDarkModeBodyDownload()}>
-              Ó usá la versión web
-            </h1>
-            <Link href="/marcas">
-              <h1
-                className={styles.onlineVersion}
-                id={styles.onlineVersionRight}
-              >
-                Jugar Online
-              </h1>
-            </Link>
-          </div>
-        </div>
       </div>
+
+      <div className={styles.gameplay}>
+        <p>Gameplay</p>
+      </div>
+      <div className={styles.videoIndex}>
+        <AspectRatio className={styles.videoframe} maxW="520px" ratio={9 / 6}>
+          <iframe
+            className={styles.videonoframes}
+            title="video"
+            src="https://www.youtube.com/embed/QhBnZ6NPOY0"
+            allowFullScreen
+          />
+        </AspectRatio>
+      </div>
+
       <div className={FunctionDarkModeFooter()}>
         <div className={styles.footerComment}>
           <p>
-            Tablu Games fue desarrollado para divertir al usuario, sin intención
-            de ofender a ninguna persona.
+            Tablu Famosos fue desarrollado para divertir al usuario, sin
+            intención de ofender a ninguna persona.
           </p>
           <p>
             Repotar cualquier situación considerada ofensiva a info@tablu.io.
