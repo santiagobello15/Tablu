@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import styles from "./game.module.scss";
-import claps from "../styles/claps.module.scss";
+import claps from "../../styles/claps.module.scss";
 import SettingsModal from "../../components/settingsModal";
 import RulesModal from "../../components/rulesModal";
 import StartModal from "../../components/startModal";
