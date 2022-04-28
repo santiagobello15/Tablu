@@ -569,8 +569,7 @@
   }
 
   .iphoneContainer {
-    top: 50%;
-    transform: translate(0%, -45%);
+    top: 15%;
     left: -15%;
     width: 50%;
   }
@@ -639,6 +638,9 @@
   .bodyTextFourthRow {
     top: 125px;
   }
+  .iphoneContainer {
+    top: 10%;
+  }
 }
 @media all and (max-width: 700px) {
   .appHeaderLight,
@@ -688,6 +690,14 @@
   .middleContainerDark {
     top: 550px;
     height: 451px;
+  }
+  .iphoneContainer {
+    top: 15%;
+  }
+}
+@media all and (max-width: 580px) {
+  .iphoneContainer {
+    top: 20%;
   }
 }
 @media all and (max-width: 500px) {
