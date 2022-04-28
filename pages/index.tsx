@@ -117,14 +117,14 @@ const Home: NextPage = () => {
                 ></Image>
               </div>
             </div>
-          </div>
-          <div className={styles.bodyTextFifth}>
-            <h1 className={FunctionDarkModeBodyDownload()}>
-              Ó usá la versión web
-            </h1>
-            <Link href="/famosos">
-              <h1 className={styles.onlineVersion}>Jugar Online</h1>
-            </Link>
+            <div className={styles.bodyTextFifth}>
+              <h1 className={FunctionDarkModeBodyDownload()}>
+                Ó usá la versión web
+              </h1>
+              <Link href="/famosos">
+                <h1 className={styles.onlineVersion}>Jugar Online</h1>
+              </Link>
+            </div>
           </div>
         </div>
         <div
@@ -183,19 +183,19 @@ const Home: NextPage = () => {
                 ></Image>
               </div>
             </div>
-          </div>
-          <div className={styles.bodyTextFifth}>
-            <h1 className={FunctionDarkModeBodyDownload()}>
-              Ó usá la versión web
-            </h1>
-            <Link href="/marcas">
-              <h1
-                className={styles.onlineVersion}
-                id={styles.onlineVersionRight}
-              >
-                Jugar Online
+            <div className={styles.bodyTextFifth}>
+              <h1 className={FunctionDarkModeBodyDownload()}>
+                Ó usá la versión web
               </h1>
-            </Link>
+              <Link href="/marcas">
+                <h1
+                  className={styles.onlineVersion}
+                  id={styles.onlineVersionRight}
+                >
+                  Jugar Online
+                </h1>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
