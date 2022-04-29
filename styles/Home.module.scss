@@ -661,6 +661,9 @@
 }
 
 @media all and (max-width: 700px) {
+  .headerTitle {
+    font-size: 3rem;
+  }
   .bodyDivDark,
   .bodyDivLight {
     height: 800px;
@@ -755,5 +758,122 @@
   .footerDark {
     top: 1700px;
     height: 200px;
+  }
+}
+@media all and (max-width: 450px) {
+  .headerTitle {
+    font-size: 2.5rem;
+  }
+}
+@media all and (max-width: 350px) {
+  .headerTitle {
+    font-size: 2rem;
+  }
+  .appHeaderLight,
+  .appHeaderDark {
+    height: 120px;
+  }
+  .bodyDivDark,
+  .bodyDivLight {
+    height: 800px;
+  }
+  .middleContainerLight,
+  .middleContainerDark {
+    top: 950px;
+    height: 750px;
+  }
+  .mainContainerRight,
+  .mainContainerLeft {
+    left: 0%;
+    transform: translate(-0%, 0%);
+    width: 100%;
+  }
+  #mainContainerRightID {
+    top: 750px;
+  }
+  .bodyTextContainer {
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 100%;
+  }
+  .bodyTextFirstRow {
+    text-align: center;
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+  .bodyTextSecondRow {
+    text-align: center;
+    h2 {
+      position: relative;
+      font-size: 1.5rem;
+    }
+  }
+  .bodyTextThirdRow {
+    top: 80%;
+    p {
+      font-size: 0.7rem;
+    }
+  }
+  .bodyTextFourthRow {
+    top: 85%;
+    width: 100%;
+  }
+  .bodyTextFifth {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 92%;
+    h1 {
+      position: relative;
+    }
+  }
+  .absDivAndroid {
+    left: 15%;
+    top: 0;
+    right: auto;
+  }
+  .absDivIos {
+    right: 15%;
+    left: auto;
+  }
+  .bodyTextWebVersionDark,
+  .bodyTextWebVersionLight {
+    font-size: 0.7rem;
+    top: 20%;
+  }
+  .onlineVersion {
+    font-size: 2rem;
+  }
+  .iphoneContainer {
+    top: 20%;
+    width: 250px;
+  }
+  #iphoneContainerRightId {
+    top: 115%;
+
+    width: 250px;
+  }
+  .footerComment {
+    p {
+      font-size: 0.7rem;
+    }
+  }
+  .footerMadeBy {
+    p {
+      font-size: 0.8rem;
+    }
+  }
+  .toggleButton {
+    width: 30px;
+    height: 15px;
+    right: 12px;
+    bottom: 12px;
+  }
+  .toggleDark,
+  .toggleLight {
+    height: 12px;
+    width: 12px;
   }
 }
