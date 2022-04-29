@@ -775,12 +775,12 @@
   }
   .bodyDivDark,
   .bodyDivLight {
-    height: 800px;
+    height: 700px;
   }
   .middleContainerLight,
   .middleContainerDark {
-    top: 950px;
-    height: 750px;
+    top: 850px;
+    height: 650px;
   }
   .mainContainerRight,
   .mainContainerLeft {
@@ -789,10 +789,10 @@
     width: 100%;
   }
   #mainContainerRightID {
-    top: 750px;
+    top: 650px;
   }
   .bodyTextContainer {
-    top: 8%;
+    top: 5%;
     left: 50%;
     transform: translate(-50%, 0%);
     width: 100%;
@@ -847,22 +847,25 @@
     font-size: 2rem;
   }
   .iphoneContainer {
-    top: 20%;
+    top: 15%;
     width: 250px;
   }
   #iphoneContainerRightId {
-    top: 115%;
+    top: 110%;
 
     width: 250px;
   }
   .footerComment {
     p {
-      font-size: 0.7rem;
+      font-size: 0.5rem;
     }
   }
   .footerMadeBy {
+    div {
+      top: 20px;
+    }
     p {
-      font-size: 0.8rem;
+      font-size: 0.5rem;
     }
   }
   .toggleButton {
@@ -875,5 +878,13 @@
   .toggleLight {
     height: 12px;
     width: 12px;
+  }
+  .footerLight {
+    top: 1450px;
+    height: 150px;
+  }
+  .footerDark {
+    top: 1450px;
+    height: 150px;
   }
 }
