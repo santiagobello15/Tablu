@@ -492,6 +492,33 @@
   background-color: #19171a;
 }
 @media all and (min-width: 1705px) {
+  .headerTitle {
+    font-size: 5vw;
+  }
+  .bodyTextWebVersionDark,
+  .bodyTextWebVersionLight {
+    font-size: 1vw;
+  }
+  .footerComment {
+    p {
+      font-size: 0.7vw;
+    }
+  }
+  .footerMadeBy {
+    p {
+      font-size: 0.7vw;
+    }
+    top: 50%;
+    div {
+      width: 2vw;
+      height: 2vw;
+      top: 90%;
+    }
+  }
+  .bodyTextFourthRow {
+    height: 5vw;
+    width: 20vw;
+  }
   .appHeaderDark,
   .appHeaderLight {
     height: 15vh;
