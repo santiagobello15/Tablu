@@ -888,3 +888,40 @@
     height: 150px;
   }
 }
+@media all and (max-width: 250px) {
+  .headerTitle {
+    font-size: 1rem;
+  }
+  .bodyTextFirstRow {
+    text-align: center;
+    h2 {
+      font-size: 1rem;
+    }
+  }
+  .bodyTextSecondRow {
+    text-align: center;
+    h2 {
+      position: relative;
+      font-size: 1rem;
+    }
+  }
+  .bodyTextThirdRow {
+    top: 80%;
+    p {
+      font-size: 0.4rem;
+    }
+  }
+  .bodyTextFourthRow {
+    top: 85%;
+    width: 100%;
+  }
+  .onlineVersion {
+    font-size: 1rem;
+  }
+  .iphoneContainer {
+    width: 90%;
+  }
+  #iphoneContainerRightId {
+    width: 90%;
+  }
+}
