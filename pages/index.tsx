@@ -159,9 +159,7 @@ const Home: NextPage = () => {
             </div>
 
             <div className={styles.bodyTextSecondRow}>
-              <h2 className={FunctionDarkModeBodySubtText()}>
-                Divertite con amigos
-              </h2>
+              <h2 className={FunctionDarkModeBodySubtText()}>Probá lo nuevo</h2>
             </div>
             <div className={styles.bodyTextThirdRow}>
               <p className={FunctionDarkModeBodyDownload()}>
