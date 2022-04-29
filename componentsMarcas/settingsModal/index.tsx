@@ -108,7 +108,7 @@ function SettingsModal({ CloseSettingsModal }: any) {
             <div className={styles.checkbtn1}>
               <Checkbox
                 onChange={(e) => setClickedMuletillas(e.target.checked)}
-                colorScheme="purple"
+                colorScheme="orage"
               >
                 <a>Sin muletillas</a>
               </Checkbox>
@@ -116,7 +116,7 @@ function SettingsModal({ CloseSettingsModal }: any) {
             <div className={styles.checkbtn2}>
               <Checkbox
                 onChange={(e) => setClickedInsultos(e.target.checked)}
-                colorScheme="purple"
+                colorScheme="orage"
               >
                 <a>Sin insultos</a>
               </Checkbox>

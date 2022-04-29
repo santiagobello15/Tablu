@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import styles from "../styles/marcas.module.scss";
-import claps from "../styles/claps.module.scss";
+import claps from "../styles/clapsMarcas.module.scss";
 import SettingsModal from "../componentsMarcas/settingsModal";
 import RulesModal from "../componentsMarcas/rulesModal";
 import StartModal from "../componentsMarcas/startModal";
@@ -13,9 +13,7 @@ import { TwitterShareButton } from "react-twitter-embed";
 
 const ENVIRONMENT = process.env.REACT_APP_ENVIRONMENT;
 const API_URL =
-  ENVIRONMENT === "local"
-    ? "http://localhost:3000"
-    : "https://tablu.vercel.app";
+  ENVIRONMENT === "local" ? "http://localhost:3000" : "https://tablugames.com/";
 
 const Game: NextPage = ({ data }: any) => {
   const {
@@ -349,7 +347,7 @@ const Game: NextPage = ({ data }: any) => {
             </div>
             <div className={styles.twitterBtn}>
               <TwitterShareButton
-                url={"https://tablu.vercel.app/"}
+                url={"https://tablugames.com/"}
                 options={{
                   text: "Ganador de la partida: " + renderGameResult(),
                   via: "TabluMarcas",
@@ -430,6 +428,7 @@ const Game: NextPage = ({ data }: any) => {
     return styles.cardYellowTeamTwoEnd;
   };
   const CounterFunction = () => {
+    setIndexOnShuffled(indexOnShuffled + 1);
     setStartCounter(true);
     CardsData();
     if (countDownGame == 1.5) {

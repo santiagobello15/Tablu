@@ -13,9 +13,7 @@ import { TwitterShareButton } from "react-twitter-embed";
 
 const ENVIRONMENT = process.env.REACT_APP_ENVIRONMENT;
 const API_URL =
-  ENVIRONMENT === "local"
-    ? "http://localhost:3000"
-    : "https://tablu.vercel.app";
+  ENVIRONMENT === "local" ? "http://localhost:3000" : "https://tablugames.com/";
 
 const Game: NextPage = ({ data }: any) => {
   const {
@@ -430,6 +428,7 @@ const Game: NextPage = ({ data }: any) => {
     return styles.cardYellowTeamTwoEnd;
   };
   const CounterFunction = () => {
+    setIndexOnShuffled(indexOnShuffled + 1);
     setStartCounter(true);
     CardsData();
     if (countDownGame == 1.5) {

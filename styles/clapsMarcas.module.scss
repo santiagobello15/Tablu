@@ -1,0 +1,368 @@
+$AppColor: #ff6d00;
+.clapsContainer {
+  height: 25px;
+  width: 100%;
+  bottom: 0px;
+  position: absolute;
+  z-index: 99999;
+  div {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+  }
+}
+
+.clapsBtn {
+  width: 120px;
+  height: 40px;
+  position: absolute;
+  bottom: 150px;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: black 3px 3px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background-color: $AppColor;
+
+  p {
+    color: white;
+    font-size: 1.4rem;
+    font-family: "Luckiest Guy", cursive;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.claps1 {
+  bottom: 0px;
+  left: 5%;
+  animation: claps-up-1 0.6s linear forwards;
+  opacity: 1;
+}
+@keyframes claps-up-1 {
+  0% {
+    bottom: 0px;
+  }
+  100% {
+    bottom: 300px;
+    opacity: 0;
+  }
+}
+.claps2 {
+  bottom: 15px;
+  left: 10%;
+  animation: claps-up-2 0.8s linear forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+@keyframes claps-up-2 {
+  0% {
+    bottom: 15px;
+    opacity: 1;
+  }
+  100% {
+    bottom: 300px;
+    opacity: 0;
+  }
+}
+.claps3 {
+  bottom: 3px;
+  left: 15%;
+  animation: claps-up-3 0.8s linear forwards;
+  opacity: 0;
+}
+@keyframes claps-up-3 {
+  0% {
+    bottom: 35px;
+    opacity: 1;
+  }
+  100% {
+    bottom: 300px;
+    opacity: 0;
+  }
+}
+.claps4 {
+  bottom: 15px;
+  left: 20%;
+  animation: claps-up-4 0.8s linear forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+@keyframes claps-up-4 {
+  0% {
+    bottom: 15px;
+    opacity: 1;
+  }
+  100% {
+    bottom: 300px;
+    opacity: 0;
+  }
+}
+.claps5 {
+  bottom: 45px;
+  left: 25%;
+  animation: claps-up-5 0.6s linear forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+@keyframes claps-up-5 {
+  0% {
+    bottom: 45px;
+    opacity: 1;
+  }
+  100% {
+    bottom: 300px;
+    opacity: 0;
+  }
+}
+.claps6 {
+  bottom: 15px;
+  left: 30%;
+  animation: claps-up-6 0.5s linear forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+@keyframes claps-up-6 {
+  0% {
+    bottom: 15px;
+    opacity: 1;
+  }
+  100% {
+    bottom: 300px;
+    opacity: 0;
+  }
+}
+.claps7 {
+  bottom: 1px;
+  left: 35%;
+  animation: claps-up-7 0.8s linear forwards;
+  opacity: 0;
+}
+@keyframes claps-up-7 {
+  0% {
+    bottom: 1px;
+    opacity: 1;
+  }
+  100% {
+    bottom: 300px;
+    opacity: 0;
+  }
+}
+.claps8 {
+  bottom: 15px;
+  left: 40%;
+  animation: claps-up-8 0.7s linear forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+@keyframes claps-up-8 {
+  0% {
+    bottom: 15px;
+    opacity: 1;
+  }
+  100% {
+    bottom: 300px;
+    opacity: 0;
+  }
+}
+.claps9 {
+  bottom: 0px;
+  left: 45%;
+  animation: claps-up-9 0.6s linear forwards;
+  opacity: 1;
+}
+@keyframes claps-up-9 {
+  0% {
+    bottom: 0px;
+  }
+  100% {
+    bottom: 300px;
+    opacity: 0;
+  }
+}
+.claps10 {
+  bottom: 15px;
+  left: 50%;
+  animation: claps-up-10 0.6s linear forwards;
+  opacity: 1;
+}
+@keyframes claps-up-10 {
+  0% {
+    bottom: 15px;
+  }
+  100% {
+    bottom: 340px;
+    opacity: 0;
+  }
+}
+.claps11 {
+  bottom: 3px;
+  left: 55%;
+  animation: claps-up-11 0.9s linear forwards;
+  opacity: 1;
+}
+@keyframes claps-up-11 {
+  0% {
+    bottom: 35px;
+  }
+  100% {
+    bottom: 280px;
+    opacity: 0;
+  }
+}
+.claps12 {
+  bottom: 20px;
+  left: 60%;
+  animation: claps-up-12 0.7s linear forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+@keyframes claps-up-12 {
+  0% {
+    bottom: 20px;
+    opacity: 1;
+  }
+  100% {
+    bottom: 300px;
+    opacity: 0;
+  }
+}
+.claps13 {
+  bottom: 18px;
+  left: 65%;
+  animation: claps-up-13 0.8s linear forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+@keyframes claps-up-13 {
+  0% {
+    bottom: 18px;
+    opacity: 1;
+  }
+  100% {
+    bottom: 300px;
+    opacity: 0;
+  }
+}
+.claps14 {
+  bottom: 15px;
+  left: 70%;
+  animation: claps-up-14 0.7s linear forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+@keyframes claps-up-14 {
+  0% {
+    bottom: 15px;
+    opacity: 1;
+  }
+  100% {
+    bottom: 300px;
+    opacity: 0;
+  }
+}
+.claps15 {
+  bottom: 15px;
+  left: 75%;
+  animation: claps-up-15 0.5s linear forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+@keyframes claps-up-15 {
+  0% {
+    bottom: 15px;
+    opacity: 1;
+  }
+  100% {
+    bottom: 300px;
+    opacity: 0;
+  }
+}
+.claps16 {
+  bottom: 15px;
+  left: 80%;
+  animation: claps-up-16 0.4s linear forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+@keyframes claps-up-16 {
+  0% {
+    bottom: 35px;
+    opacity: 1;
+  }
+  100% {
+    bottom: 300px;
+    opacity: 0;
+  }
+}
+.claps17 {
+  bottom: 1px;
+  left: 85%;
+  animation: claps-up-17 0.65s linear forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+@keyframes claps-up-17 {
+  0% {
+    bottom: 15px;
+    opacity: 1;
+  }
+  100% {
+    bottom: 300px;
+    opacity: 0;
+  }
+}
+.claps18 {
+  bottom: 25px;
+  left: 90%;
+  animation: claps-up-18 0.5s linear forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+@keyframes claps-up-18 {
+  0% {
+    bottom: 25px;
+    opacity: 1;
+  }
+  100% {
+    bottom: 300px;
+    opacity: 0;
+  }
+}
+.claps19 {
+  bottom: 1px;
+  left: 92%;
+  animation: claps-up-19 0.8s linear forwards;
+  opacity: 0;
+}
+@keyframes claps-up-19 {
+  0% {
+    bottom: 1px;
+    opacity: 1;
+  }
+  100% {
+    bottom: 300px;
+    opacity: 0;
+  }
+}
+.claps20 {
+  bottom: 35px;
+  left: 86%;
+  animation: claps-up-20 0.7s linear forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+@keyframes claps-up-20 {
+  0% {
+    bottom: 15px;
+    opacity: 1;
+  }
+  100% {
+    bottom: 300px;
+    opacity: 0;
+  }
+}
