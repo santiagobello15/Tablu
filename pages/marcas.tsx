@@ -375,7 +375,7 @@ const Game: NextPage = ({ data }: any) => {
             className={styles.twitterShare}
             onClick={() => {
               window.open(
-                "https://twitter.com/intent/tweet?text=¡Qué%20divertidos%20jugar%20%23TabluGames!%0AProb%C3%A1%20jugando%20con%20amigos.%0Awww.tablugames.com",
+                "https://twitter.com/intent/tweet?text=¡Qué%20divertido%20jugar%20%23TabluGames!%0AProb%C3%A1%20jugando%20con%20amigos.%0Awww.tablugames.com",
                 "_blank"
               );
             }}
