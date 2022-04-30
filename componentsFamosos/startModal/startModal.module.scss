@@ -320,3 +320,77 @@ $CardColorYellowTransp: hsl(43, 82%, 89%, 0.7);
     font-size: 1.7rem;
   }
 }
+@media all and (min-width: 1705px) {
+  .modalContainer {
+    height: 45vh;
+    width: 18vw;
+    ul {
+      top: 22%;
+      height: 62%;
+      width: 70%;
+
+      li {
+        height: 38%;
+        input {
+          font-size: 1vw;
+          top: 10%;
+        }
+      }
+    }
+    h1 {
+      font-size: 1.5vw;
+      top: 1vh;
+    }
+  }
+  .closeBtn {
+    width: 2vw;
+    height: 2vw;
+  }
+  .playContainer {
+    bottom: 1vh;
+    height: auto;
+    h2 {
+      font-size: 1.5vw;
+    }
+  }
+  .firstRowRed,
+  .firstRowBlue,
+  .firstRowGreen,
+  .firstRowYellow {
+    border-radius: 1vh;
+    top: 8%;
+  }
+  .secondRowRed,
+  .secondRowBlue,
+  .secondRowGreen,
+  .secondRowYellow {
+    border-radius: 1vh;
+    top: 53%;
+  }
+  .colorsDiv {
+    border-radius: 0.8vh;
+    width: 50%;
+    height: 25%;
+    bottom: 10%;
+    right: 6%;
+    div {
+      width: 20%;
+      height: 75%;
+    }
+  }
+
+  .colorRed {
+    left: 4%;
+  }
+  .colorBlue {
+    left: 28%;
+  }
+  .colorGreen {
+    right: 28%;
+    left: auto;
+  }
+  .colorYellow {
+    right: 4%;
+    left: auto;
+  }
+}
