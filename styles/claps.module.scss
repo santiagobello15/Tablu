@@ -366,3 +366,223 @@ $AppColor: #7b2cbf;
     opacity: 0;
   }
 }
+
+@media all and (min-width: 1705px) {
+  .clapsBtn {
+    width: 20%;
+    aspect-ratio: 3.5;
+    height: auto;
+    bottom: 10%;
+    z-index: 99999999999;
+    p {
+      font-size: 1.5vw;
+    }
+  }
+  .clapsContainer {
+    div {
+      width: 1.5vw;
+      height: auto;
+      aspect-ratio: 1;
+    }
+  }
+  @keyframes claps-up-1 {
+    0% {
+      bottom: 0vh;
+      opacity: 1;
+    }
+    100% {
+      bottom: 50vh;
+      opacity: 0;
+    }
+  }
+  @keyframes claps-up-2 {
+    0% {
+      bottom: 3vh;
+      opacity: 1;
+    }
+    100% {
+      bottom: 55vh;
+      opacity: 0;
+    }
+  }
+  @keyframes claps-up-3 {
+    0% {
+      bottom: 4vh;
+      opacity: 1;
+    }
+    100% {
+      bottom: 44vh;
+      opacity: 0;
+    }
+  }
+  @keyframes claps-up-4 {
+    0% {
+      bottom: 0vh;
+      opacity: 1;
+    }
+    100% {
+      bottom: 40vh;
+      opacity: 0;
+    }
+  }
+  @keyframes claps-up-5 {
+    0% {
+      bottom: 3vh;
+      opacity: 1;
+    }
+    100% {
+      bottom: 52vh;
+      opacity: 0;
+    }
+  }
+  @keyframes claps-up-6 {
+    0% {
+      bottom: 0vh;
+      opacity: 1;
+    }
+    100% {
+      bottom: 38vh;
+      opacity: 0;
+    }
+  }
+  @keyframes claps-up-7 {
+    0% {
+      bottom: 0vh;
+      opacity: 1;
+    }
+    100% {
+      bottom: 49vh;
+      opacity: 0;
+    }
+  }
+  @keyframes claps-up-8 {
+    0% {
+      bottom: 3vh;
+      opacity: 1;
+    }
+    100% {
+      bottom: 52vh;
+      opacity: 0;
+    }
+  }
+  @keyframes claps-up-9 {
+    0% {
+      bottom: 5vh;
+      opacity: 1;
+    }
+    100% {
+      bottom: 32vh;
+      opacity: 0;
+    }
+  }
+  @keyframes claps-up-10 {
+    0% {
+      bottom: 3vh;
+      opacity: 1;
+    }
+    100% {
+      bottom: 44vh;
+      opacity: 0;
+    }
+  }
+  @keyframes claps-up-11 {
+    0% {
+      bottom: 5vh;
+      opacity: 1;
+    }
+    100% {
+      bottom: 44vh;
+      opacity: 0;
+    }
+  }
+  @keyframes claps-up-12 {
+    0% {
+      bottom: 0vh;
+      opacity: 1;
+    }
+    100% {
+      bottom: 47vh;
+      opacity: 0;
+    }
+  }
+  @keyframes claps-up-13 {
+    0% {
+      bottom: 4vh;
+      opacity: 1;
+    }
+    100% {
+      bottom: 62vh;
+      opacity: 0;
+    }
+  }
+  @keyframes claps-up-14 {
+    0% {
+      bottom: 3vh;
+      opacity: 1;
+    }
+    100% {
+      bottom: 66vh;
+      opacity: 0;
+    }
+  }
+  @keyframes claps-up-15 {
+    0% {
+      bottom: 2vh;
+      opacity: 1;
+    }
+    100% {
+      bottom: 33vh;
+      opacity: 0;
+    }
+  }
+  @keyframes claps-up-16 {
+    0% {
+      bottom: 5vh;
+      opacity: 1;
+    }
+    100% {
+      bottom: 60vh;
+      opacity: 0;
+    }
+  }
+  @keyframes claps-up-17 {
+    0% {
+      bottom: 0vh;
+      opacity: 1;
+    }
+    100% {
+      bottom: 42vh;
+      opacity: 0;
+    }
+  }
+  @keyframes claps-up-18 {
+    0% {
+      bottom: 10vh;
+      opacity: 1;
+    }
+    100% {
+      bottom: 70vh;
+      opacity: 0;
+    }
+  }
+  @keyframes claps-up-19 {
+    0% {
+      bottom: 2vh;
+      opacity: 1;
+    }
+    100% {
+      bottom: 44vh;
+      opacity: 0;
+    }
+  }
+  @keyframes claps-up-20 {
+    0% {
+      bottom: 4vh;
+      opacity: 1;
+    }
+    100% {
+      bottom: 47.5vh;
+      opacity: 0;
+    }
+  }
+}

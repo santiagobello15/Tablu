@@ -9,7 +9,6 @@ import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import clapsImg from "../media/clapsImg.png";
 import { Context } from "../context/AppContext";
-import { TwitterShareButton } from "react-twitter-embed";
 import Head from "next/head";
 
 const ENVIRONMENT = process.env.REACT_APP_ENVIRONMENT;
@@ -346,16 +345,7 @@ const Game: NextPage = ({ data }: any) => {
               <p>{teamTwoName}</p>
               <a>{pointsTeamTwo}</a>
             </div>
-            <div className={styles.twitterBtn}>
-              <TwitterShareButton
-                url={"https://tablu.vercel.app/"}
-                options={{
-                  text: "Ganador de la partida: " + renderGameResult(),
-                  via: "TabluFamosos",
-                  hashtags: "TabluFamosos",
-                }}
-              />
-            </div>
+            <div className={styles.twitterBtn}></div>
           </div>
           <div
             className={styles.closeBtn}
@@ -581,64 +571,64 @@ const Game: NextPage = ({ data }: any) => {
       return (
         <div className={claps.clapsContainer}>
           <div className={claps.claps1}>
-            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" src={clapsImg} />
           </div>
           <div className={claps.claps2}>
-            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" src={clapsImg} />
           </div>
           <div className={claps.claps3}>
-            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" src={clapsImg} />
           </div>
           <div className={claps.claps4}>
-            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" src={clapsImg} />
           </div>
           <div className={claps.claps5}>
-            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" src={clapsImg} />
           </div>
           <div className={claps.claps6}>
-            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" src={clapsImg} />
           </div>
           <div className={claps.claps7}>
-            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" src={clapsImg} />
           </div>
           <div className={claps.claps8}>
-            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" src={clapsImg} />
           </div>
           <div className={claps.claps9}>
-            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" src={clapsImg} />
           </div>
           <div className={claps.claps10}>
-            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" src={clapsImg} />
           </div>
           <div className={claps.claps11}>
-            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" src={clapsImg} />
           </div>
           <div className={claps.claps12}>
-            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" src={clapsImg} />
           </div>
           <div className={claps.claps13}>
-            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" src={clapsImg} />
           </div>
           <div className={claps.claps14}>
-            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" src={clapsImg} />
           </div>
           <div className={claps.claps15}>
-            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" src={clapsImg} />
           </div>
           <div className={claps.claps16}>
-            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" src={clapsImg} />
           </div>
           <div className={claps.claps17}>
-            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" src={clapsImg} />
           </div>
           <div className={claps.claps18}>
-            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" src={clapsImg} />
           </div>
           <div className={claps.claps19}>
-            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" src={clapsImg} />
           </div>
           <div className={claps.claps20}>
-            <Image alt="claps" width="25px" height="25px" src={clapsImg} />
+            <Image alt="claps" src={clapsImg} />
           </div>
         </div>
       );
