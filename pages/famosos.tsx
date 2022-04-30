@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Link from "next/link";
 import styles from "../styles/famosos.module.scss";
 import claps from "../styles/claps.module.scss";
 import SettingsModal from "../componentsFamosos/settingsModal";
@@ -8,6 +9,7 @@ import ExitModal from "../componentsFamosos/exitModal";
 import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import clapsImg from "../media/clapsImg.png";
+import twitterImg from "../media/twitter.png";
 import { Context } from "../context/AppContext";
 import Head from "next/head";
 
@@ -320,6 +322,11 @@ const Game: NextPage = ({ data }: any) => {
             <a>Modificador #2</a>
             <p>{insultosFunction()}</p>
           </div>
+          <Link href="/">
+            <div className={styles.closeBtn}>
+              <p>X</p>
+            </div>
+          </Link>
         </div>
       );
     }
@@ -364,6 +371,17 @@ const Game: NextPage = ({ data }: any) => {
             }}
           >
             <p>X</p>
+          </div>
+          <div
+            className={styles.twitterShare}
+            onClick={() => {
+              window.open(
+                "https://twitter.com/intent/tweet?text=¡Qué%20divertidos%20jugar%20%23TabluGames!%0AProb%C3%A1%20jugando%20con%20amigos.%0Awww.tablugames.com",
+                "_blank"
+              );
+            }}
+          >
+            <Image layout="fill" alt="linkedbadge" src={twitterImg}></Image>
           </div>
         </div>
       );

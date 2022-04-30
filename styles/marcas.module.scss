@@ -132,6 +132,14 @@ $CardColorYellow: hsl(43, 82%, 89%);
 .configButton:hover {
   background-color: red;
 }
+.twitterShare {
+  width: 5%;
+  aspect-ratio: 1;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  cursor: pointer;
+}
 
 .timerView {
   position: absolute;
