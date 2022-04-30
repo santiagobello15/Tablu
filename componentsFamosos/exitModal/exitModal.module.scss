@@ -159,3 +159,33 @@
     color: white;
   }
 }
+
+@media all and (min-width: 1705px) {
+  .closeBtn {
+    width: 2vw;
+    height: 2vw;
+  }
+  .modalContainer {
+    height: 30vh;
+    width: 25vw;
+  }
+  .titlesContainer {
+    top: 15%;
+    height: 35%;
+
+    h1 {
+      top: 10%;
+      height: 50%;
+      font-size: 1.2vw;
+    }
+    h3 {
+      top: 48%;
+      height: 30%;
+      font-size: 0.9vw;
+    }
+    h2 {
+      top: 130%;
+      font-size: 2vw;
+    }
+  }
+}

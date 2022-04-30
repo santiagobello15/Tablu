@@ -1317,4 +1317,104 @@ $CardColorYellow: hsl(43, 82%, 89%);
       font-size: 0.7vw;
     }
   }
+  .closeBtn {
+    width: 2vw;
+    height: 2vw;
+  }
+  .gamingPad {
+    height: 35%;
+    top: 25%;
+  }
+  .gameCardLeft {
+    p {
+      font-size: 1.5vw;
+    }
+  }
+  .startRound {
+    width: auto;
+    aspect-ratio: 1;
+    height: 7vw;
+    top: 40%;
+    p {
+      font-size: 3.5vw;
+    }
+  }
+  .roundsDiv {
+    height: 5vh;
+    top: 10%;
+  }
+  .gameCardRight {
+    div {
+      width: 60%;
+      height: 27%;
+      border-radius: 0.8vh;
+
+      p {
+        font-size: 1.5vw;
+      }
+    }
+  }
+  .gameCard {
+    h1 {
+      font-size: 1.6vw;
+      top: 5%;
+    }
+    h2 {
+      font-size: 1.6vw;
+      top: 18%;
+    }
+    li {
+      font-size: 1vw;
+    }
+    ul {
+      width: 50%;
+      top: 38%;
+      height: 60%;
+    }
+  }
+  .cardsUL1 {
+    left: 0;
+  }
+  .cardsUL2 {
+    right: 0;
+  }
+  .roundOfTeam {
+    top: -75%;
+    height: auto;
+    p {
+      font-size: 1.5vw;
+    }
+  }
+  .gameCounter {
+    height: 16%;
+    bottom: 5%;
+  }
+  .cardRedTeamTwo,
+  .cardRedTeamOne,
+  .cardYellowTeamOne,
+  .cardYellowTeamTwo,
+  .cardBlueTeamOne,
+  .cardBlueTeamTwo,
+  .cardGreenTeamOne,
+  .cardGreenTeamTwo {
+    width: 28%;
+    p {
+      top: 5%;
+      font-size: 1.5vw;
+    }
+    a {
+      top: 35%;
+      font-size: 2.5vw;
+    }
+  }
+  .startRoundBtn,
+  .restartBtn,
+  .pauseBtn {
+    width: 7vw;
+    aspect-ratio: 2.8;
+    height: auto;
+    p {
+      font-size: 1.5vw;
+    }
+  }
 }
