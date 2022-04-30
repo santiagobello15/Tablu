@@ -345,12 +345,16 @@ $CardColorYellowTransp: hsl(43, 82%, 89%, 0.7);
   .closeBtn {
     width: 2vw;
     height: 2vw;
+    p {
+      font-size: 1vw;
+    }
   }
   .playContainer {
     bottom: 1vh;
     height: auto;
     h2 {
       font-size: 1.5vw;
+      text-shadow: 0.05vw 0.1vw black;
     }
   }
   .firstRowRed,
