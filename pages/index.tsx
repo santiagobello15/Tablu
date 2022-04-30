@@ -220,8 +220,10 @@ const Home: NextPage = () => {
           <p>Desarrollado por Santiago Bello</p>
           <div
             onClick={() => {
-              window.location.href =
-                "https://www.linkedin.com/in/bellosantiagoariel/";
+              window.open(
+                "https://www.linkedin.com/in/bellosantiagoariel/",
+                "_blank"
+              );
             }}
           >
             <Image layout="fill" alt="linkedbadge" src={linkedBadge}></Image>
