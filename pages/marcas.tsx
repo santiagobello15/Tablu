@@ -11,6 +11,7 @@ import Image from "next/image";
 import clapsImg from "../media/clapsImg.png";
 import twitterImg from "../media/twitter.png";
 import { Context } from "../context/AppContext";
+import Head from "next/head";
 
 const ENVIRONMENT = process.env.REACT_APP_ENVIRONMENT;
 const API_URL =
@@ -654,6 +655,10 @@ const Game: NextPage = ({ data }: any) => {
 
   return (
     <div className={styles.mainDiv}>
+      <Head>
+        <title>Tablu Famosos</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       {showSettingsModal && (
         <SettingsModal CloseSettingsModal={setShowSettingsModal} />
       )}
