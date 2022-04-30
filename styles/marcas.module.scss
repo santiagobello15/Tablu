@@ -1245,3 +1245,239 @@ $CardColorYellow: hsl(43, 82%, 89%);
     width: 120px;
   }
 }
+
+@media all and (min-width: 1705px) {
+  .mainDiv {
+    height: 100vh;
+  }
+  .centerDiv {
+    height: 80vh;
+    top: 5vh;
+    width: 50vw;
+    h1 {
+      font-size: 3vw;
+      top: 5vh;
+    }
+  }
+  .btnsContainer {
+    top: 20vh;
+    width: 9vw;
+
+    div {
+      width: 100%;
+      height: 6vh;
+      box-shadow: 0.1vw 0.15vw black;
+    }
+    p {
+      font-size: 1vw;
+    }
+  }
+  .configButton {
+    top: 20%;
+  }
+  .rulesButton {
+    top: 50%;
+  }
+  .startButton {
+    top: 80%;
+  }
+  .insultosView,
+  .muletillaView,
+  .roundsView,
+  .timerView {
+    width: 7vw;
+    height: 7vw;
+    bottom: 5vh;
+    top: auto;
+    text-align: center;
+    a {
+      font-size: 1vw;
+    }
+  }
+  .roundsView {
+    left: 15%;
+    p {
+      font-size: 3vw;
+    }
+  }
+  .timerView {
+    left: 33.5%;
+    p {
+      font-size: 3vw;
+    }
+  }
+  .muletillaView {
+    right: 33.5%;
+    left: auto;
+    p {
+      font-size: 0.7vw;
+    }
+  }
+  .insultosView {
+    right: 15%;
+    left: auto;
+    p {
+      font-size: 0.7vw;
+    }
+  }
+  .closeBtn {
+    width: 2vw;
+    height: 2vw;
+    p {
+      font-size: 1vw;
+    }
+  }
+  .gamingPad {
+    height: 35%;
+    top: 25%;
+  }
+  .gameCardLeft {
+    p {
+      font-size: 1.5vw;
+    }
+  }
+  .startRound {
+    width: auto;
+    aspect-ratio: 1;
+    height: 7vw;
+    top: 40%;
+    p {
+      font-size: 3.5vw;
+    }
+  }
+  .roundsDiv {
+    height: 5vh;
+    top: 10%;
+  }
+  .gameCardRight {
+    div {
+      width: 60%;
+      height: 27%;
+      border-radius: 0.8vh;
+
+      p {
+        font-size: 1.5vw;
+      }
+    }
+  }
+  .gameCard {
+    h1 {
+      font-size: 1.6vw;
+      top: 5%;
+    }
+    h2 {
+      font-size: 1.6vw;
+      top: 18%;
+    }
+    li {
+      font-size: 1vw;
+    }
+    ul {
+      width: 50%;
+      top: 38%;
+      height: 60%;
+    }
+  }
+  .cardsUL1 {
+    left: 0;
+  }
+  .cardsUL2 {
+    right: 0;
+  }
+  .roundOfTeam {
+    top: -75%;
+    height: auto;
+    p {
+      font-size: 1.5vw;
+    }
+  }
+  .gameCounter {
+    height: 16%;
+    bottom: 5%;
+  }
+  .cardRedTeamTwoEnd,
+  .cardRedTeamOneEnd,
+  .cardYellowTeamOneEnd,
+  .cardYellowTeamTwoEnd,
+  .cardBlueTeamOneEnd,
+  .cardBlueTeamTwoEnd,
+  .cardGreenTeamOneEnd,
+  .cardGreenTeamTwoEnd,
+  .cardRedTeamTwo,
+  .cardRedTeamOne,
+  .cardYellowTeamOne,
+  .cardYellowTeamTwo,
+  .cardBlueTeamOne,
+  .cardBlueTeamTwo,
+  .cardGreenTeamOne,
+  .cardGreenTeamTwo {
+    border-radius: 0.8vh;
+    box-shadow: 0.05vw 0.05vw gray;
+    width: 28%;
+    p {
+      top: 5%;
+      font-size: 1.5vw;
+    }
+    a {
+      top: 35%;
+      font-size: 2.5vw;
+    }
+  }
+  .startRoundBtn,
+  .restartBtn,
+  .pauseBtn {
+    width: 7vw;
+    aspect-ratio: 2.8;
+    border-radius: 0.8vh;
+    box-shadow: 0.2vw 0.15vw black;
+    height: auto;
+    p {
+      font-size: 1.5vw;
+    }
+  }
+  .gameCardBlur {
+    width: 100%;
+    height: 100%;
+    p {
+      font-size: 2.5vw;
+    }
+  }
+  .gameCardBlur {
+    h3 {
+      font-size: 2vw;
+    }
+  }
+  @keyframes circle-in-txt {
+    0% {
+      font-size: 2vw;
+    }
+    100% {
+      font-size: 0vw;
+    }
+  }
+  .victoryH1 {
+    top: 30%;
+    width: 65%;
+    height: 8%;
+    h1 {
+      top: 50%;
+      font-size: 2vw;
+    }
+  }
+  .cardRedTeamTwoEnd,
+  .cardRedTeamOneEnd,
+  .cardYellowTeamOneEnd,
+  .cardYellowTeamTwoEnd,
+  .cardBlueTeamOneEnd,
+  .cardBlueTeamTwoEnd,
+  .cardGreenTeamOneEnd,
+  .cardGreenTeamTwoEnd {
+    top: -150%;
+  }
+  .btn {
+    position: absolute;
+    width: 5000px;
+    height: 5000px;
+    display: block;
+  }
+}

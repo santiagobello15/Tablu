@@ -180,3 +180,40 @@ $AppColor: #ff6d00;
     top: 220px;
   }
 }
+@media all and (min-width: 1705px) {
+  .modalContainer {
+    height: 45vh;
+    width: 18vw;
+    ul {
+      top: 22%;
+      height: 65%;
+      width: 70%;
+      p {
+        font-size: 0.55vw;
+      }
+    }
+    h1 {
+      font-size: 1.5vw;
+      top: 1vh;
+    }
+  }
+  .firstLi {
+    top: 8%;
+  }
+  .secondLi {
+    top: 38%;
+  }
+  .thirdLi {
+    top: 62%;
+  }
+  .fourthLi {
+    top: 86%;
+  }
+  .closeBtn {
+    width: 2vw;
+    height: 2vw;
+    p {
+      font-size: 1vw;
+    }
+  }
+}

@@ -9,7 +9,6 @@ import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import clapsImg from "../media/clapsImg.png";
 import { Context } from "../context/AppContext";
-import { TwitterShareButton } from "react-twitter-embed";
 
 const ENVIRONMENT = process.env.REACT_APP_ENVIRONMENT;
 const API_URL =
@@ -344,16 +343,6 @@ const Game: NextPage = ({ data }: any) => {
             <div className={TeamTwoCardColorEnd()}>
               <p>{teamTwoName}</p>
               <a>{pointsTeamTwo}</a>
-            </div>
-            <div className={styles.twitterBtn}>
-              <TwitterShareButton
-                url={"https://tablugames.com/"}
-                options={{
-                  text: "Ganador de la partida: " + renderGameResult(),
-                  via: "TabluMarcas",
-                  hashtags: "TabluMarcas",
-                }}
-              />
             </div>
           </div>
           <div
