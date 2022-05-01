@@ -1,12 +1,17 @@
 $AppColor: #ff6d00;
-$CardColorRed: hsl(356, 81%, 88%);
-$CardColorGreen: hsl(167, 33%, 84%);
-$CardColorBlue: hsl(207, 61%, 86%);
-$CardColorYellow: hsl(43, 82%, 89%);
-$CardColorRedTransp: hsl(356, 81%, 88%, 0.7);
-$CardColorGreenTransp: hsl(167, 33%, 84%, 0.7);
-$CardColorBlueTransp: hsl(207, 61%, 86%, 0.7);
-$CardColorYellowTransp: hsl(43, 82%, 89%, 0.7);
+$CardColorRed: hsl(293, 69%, 49%);
+$CardColorGreen: hsl(142, 71%, 45%);
+$CardColorBlue: hsl(221, 83%, 53%);
+$CardColorYellow: hsl(46, 97%, 65%);
+$CardColorRedTransp: hsl(293, 69%, 49%, 0.7);
+$CardColorGreenTransp: hsl(142, 71%, 45%, 0.7);
+$CardColorBlueTransp: hsl(221, 83%, 53%, 0.7);
+$CardColorYellowTransp: hsl(46, 97%, 65%, 0.7);
+
+#inputID::placeholder {
+  color: rgba(255, 255, 255, 0.783);
+  opacity: 1;
+}
 
 .overlayModal {
   height: 100%;

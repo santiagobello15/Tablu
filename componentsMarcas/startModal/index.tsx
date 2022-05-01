@@ -90,6 +90,7 @@ function StartModal({ GetOpacityfromStart, CloseStartModal }: any) {
             <input
               placeholder="Equipo 1..."
               maxLength={15}
+              id={styles.inputID}
               onChange={(evt) => {
                 setTeamOneName(evt.target.value);
               }}
@@ -104,6 +105,7 @@ function StartModal({ GetOpacityfromStart, CloseStartModal }: any) {
           <li className={picked2ndRowFunction()}>
             <input
               placeholder="Equipo 2..."
+              id={styles.inputID}
               maxLength={15}
               onChange={(evt) => {
                 setTeamTwoName(evt.target.value);
