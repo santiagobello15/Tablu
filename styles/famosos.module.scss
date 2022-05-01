@@ -612,9 +612,6 @@ $CardColorYellow: hsl(46, 97%, 65%);
   left: 0px;
   border-radius: 10px;
   box-shadow: 1px 1px #525252;
-  p {
-    white-space: nowrap;
-  }
 }
 .cardBlueTeamOne {
   background-color: $CardColorBlue;
@@ -624,9 +621,6 @@ $CardColorYellow: hsl(46, 97%, 65%);
   left: 0px;
   border-radius: 10px;
   box-shadow: 1px 1px #525252;
-  p {
-    white-space: nowrap;
-  }
 }
 .cardGreenTeamOne {
   background-color: $CardColorGreen;
@@ -636,9 +630,6 @@ $CardColorYellow: hsl(46, 97%, 65%);
   left: 0px;
   border-radius: 10px;
   box-shadow: 1px 1px #525252;
-  p {
-    white-space: nowrap;
-  }
 }
 .cardYellowTeamOne {
   background-color: $CardColorYellow;
@@ -648,9 +639,6 @@ $CardColorYellow: hsl(46, 97%, 65%);
   left: 0px;
   border-radius: 10px;
   box-shadow: 1px 1px #525252;
-  p {
-    white-space: nowrap;
-  }
 }
 .cardRedTeamTwo {
   background-color: $CardColorRed;
@@ -660,9 +648,6 @@ $CardColorYellow: hsl(46, 97%, 65%);
   right: 0px;
   border-radius: 10px;
   box-shadow: 1px 1px #525252;
-  p {
-    white-space: nowrap;
-  }
 }
 .cardBlueTeamTwo {
   background-color: $CardColorBlue;
@@ -672,9 +657,6 @@ $CardColorYellow: hsl(46, 97%, 65%);
   right: 0px;
   border-radius: 10px;
   box-shadow: 1px 1px #525252;
-  p {
-    white-space: nowrap;
-  }
 }
 .cardGreenTeamTwo {
   background-color: $CardColorGreen;
@@ -683,9 +665,6 @@ $CardColorYellow: hsl(46, 97%, 65%);
   height: 100%;
   right: 0px;
   border-radius: 10px;
-  p {
-    white-space: nowrap;
-  }
   box-shadow: 1px 1px #525252;
 }
 .cardYellowTeamTwo {
@@ -693,9 +672,6 @@ $CardColorYellow: hsl(46, 97%, 65%);
   position: absolute;
   width: 180px;
   height: 100%;
-  p {
-    white-space: nowrap;
-  }
   right: 0px;
   border-radius: 10px;
   box-shadow: 1px 1px #525252;
@@ -707,9 +683,6 @@ $CardColorYellow: hsl(46, 97%, 65%);
   height: 100%;
   left: 120px;
   top: -180px;
-  p {
-    white-space: nowrap;
-  }
   border-radius: 10px;
   box-shadow: 1px 1px #525252;
 }
@@ -722,9 +695,6 @@ $CardColorYellow: hsl(46, 97%, 65%);
   border-radius: 10px;
   top: -180px;
   box-shadow: 1px 1px #525252;
-  p {
-    white-space: nowrap;
-  }
 }
 .cardGreenTeamOneEnd {
   background-color: $CardColorGreen;
@@ -732,9 +702,6 @@ $CardColorYellow: hsl(46, 97%, 65%);
   width: 180px;
   top: -180px;
   height: 100%;
-  p {
-    white-space: nowrap;
-  }
   left: 120px;
   border-radius: 10px;
   box-shadow: 1px 1px #525252;
@@ -744,9 +711,6 @@ $CardColorYellow: hsl(46, 97%, 65%);
   position: absolute;
   width: 180px;
   height: 100%;
-  p {
-    white-space: nowrap;
-  }
   left: 120px;
   top: -180px;
   border-radius: 10px;
@@ -757,9 +721,6 @@ $CardColorYellow: hsl(46, 97%, 65%);
   position: absolute;
   width: 180px;
   height: 100%;
-  p {
-    white-space: nowrap;
-  }
   top: -180px;
   right: 120px;
   border-radius: 10px;
@@ -769,9 +730,6 @@ $CardColorYellow: hsl(46, 97%, 65%);
   background-color: $CardColorBlue;
   position: absolute;
   width: 180px;
-  p {
-    white-space: nowrap;
-  }
   top: -180px;
   height: 100%;
   right: 120px;
@@ -781,9 +739,6 @@ $CardColorYellow: hsl(46, 97%, 65%);
 .cardGreenTeamTwoEnd {
   background-color: $CardColorGreen;
   position: absolute;
-  p {
-    white-space: nowrap;
-  }
   width: 180px;
   height: 100%;
   top: -180px;
@@ -794,15 +749,39 @@ $CardColorYellow: hsl(46, 97%, 65%);
 .cardYellowTeamTwoEnd {
   background-color: $CardColorYellow;
   position: absolute;
-  p {
-    white-space: nowrap;
-  }
   width: 180px;
   height: 100%;
   top: -180px;
   right: 120px;
   border-radius: 10px;
   box-shadow: 1px 1px #525252;
+}
+
+.cardRedTeamTwo,
+.cardRedTeamOne,
+.cardYellowTeamOne,
+.cardYellowTeamTwo,
+.cardBlueTeamOne,
+.cardBlueTeamTwo,
+.cardGreenTeamOne,
+.cardGreenTeamTwo,
+.cardRedTeamTwoEnd,
+.cardRedTeamOneEnd,
+.cardYellowTeamOneEnd,
+.cardYellowTeamTwoEnd,
+.cardBlueTeamOneEnd,
+.cardBlueTeamTwoEnd,
+.cardGreenTeamOneEnd,
+.cardGreenTeamTwoEnd {
+  p {
+    white-space: nowrap;
+    color: white;
+    text-shadow: 0.5px 0.5px black;
+  }
+  a {
+    text-shadow: 0.5px 0.5px black;
+    color: white;
+  }
 }
 
 .startRound {

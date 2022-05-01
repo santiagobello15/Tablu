@@ -210,10 +210,8 @@ const Home: NextPage = () => {
         <div className={styles.footerComment}>
           <p>
             Tablu Games fue desarrollado para divertir al usuario, sin intención
-            de ofender a ninguna persona.
-          </p>
-          <p>
-            Repotar cualquier situación considerada ofensiva a info@tablu.io.
+            de ofender a ninguna persona. Repotar cualquier situación
+            considerada ofensiva a info@tablu.io.
           </p>
         </div>
         <div className={styles.footerMadeBy}>

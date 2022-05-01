@@ -754,6 +754,33 @@ $CardColorYellow: hsl(46, 97%, 65%);
   box-shadow: 1px 1px #525252;
 }
 
+.cardRedTeamTwo,
+.cardRedTeamOne,
+.cardYellowTeamOne,
+.cardYellowTeamTwo,
+.cardBlueTeamOne,
+.cardBlueTeamTwo,
+.cardGreenTeamOne,
+.cardGreenTeamTwo,
+.cardRedTeamTwoEnd,
+.cardRedTeamOneEnd,
+.cardYellowTeamOneEnd,
+.cardYellowTeamTwoEnd,
+.cardBlueTeamOneEnd,
+.cardBlueTeamTwoEnd,
+.cardGreenTeamOneEnd,
+.cardGreenTeamTwoEnd {
+  p {
+    white-space: nowrap;
+    color: white;
+    text-shadow: 0.5px 0.5px black;
+  }
+  a {
+    text-shadow: 0.5px 0.5px black;
+    color: white;
+  }
+}
+
 .startRound {
   position: absolute;
   width: 100px;
