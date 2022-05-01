@@ -410,7 +410,7 @@ $CardColorYellow: hsl(43, 82%, 89%);
   transform: translate(-50%, 0%);
   width: 140px;
   height: 60px;
-  background-color: #295b16;
+  background-color: #13e013;
   border-radius: 10px;
   cursor: pointer;
   p {
@@ -432,7 +432,7 @@ $CardColorYellow: hsl(43, 82%, 89%);
   transform: translate(-50%, -50%);
   width: 140px;
   height: 60px;
-  background-color: #ba0000;
+  background-color: red;
   border-radius: 10px;
   cursor: pointer;
 
@@ -816,11 +816,12 @@ $CardColorYellow: hsl(43, 82%, 89%);
   bottom: 25px;
   border-radius: 50%;
   p {
-    font-size: 3.5rem;
-    font-weight: 600;
+    font-size: 2.5rem;
+    font-weight: 100;
     position: absolute;
     left: 50%;
     top: 50%;
+    font-family: "Luckiest Guy", cursive;
     transform: translate(-50%, -50%);
     color: white;
   }
