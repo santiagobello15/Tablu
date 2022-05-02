@@ -249,9 +249,12 @@ $CardColorYellowTransp: hsl(46, 97%, 65%, 0.7);
 
 .play {
   font-size: 2rem;
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+  border-radius: 1vh;
+  box-shadow: 0.1vw 0.1vw black;
   font-family: "Luckiest Guy", cursive;
-  background-color: #ffd100;
-  text-shadow: 2px 2px black;
+  background-color: $AppColor;
   color: white;
   animation: parpadding 1s linear forwards infinite;
   cursor: pointer;

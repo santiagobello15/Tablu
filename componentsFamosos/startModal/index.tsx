@@ -121,7 +121,7 @@ function StartModal({ GetOpacityfromStart, CloseStartModal }: any) {
         </ul>
         <div className={styles.playContainer}>
           <h2 className={styles.play} onClick={PlayBtn}>
-            Jugar Online
+            Jugar
           </h2>
         </div>
         <div className={styles.closeBtn} onClick={CloseStModal}>
