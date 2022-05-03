@@ -10,6 +10,7 @@ import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import clapsImg from "../media/clapsImg.png";
 import twitterImg from "../media/twitter.png";
+import facebookImg from "../media/facebook.png";
 import { Context } from "../context/AppContext";
 import Head from "next/head";
 
@@ -381,6 +382,20 @@ const Game: NextPage = ({ data }: any) => {
             }}
           >
             <Image layout="fill" alt="linkedbadge" src={twitterImg}></Image>
+          </div>
+          <div
+            className={styles.facebookShare}
+            onClick={() => {
+              var url = "https://tablugames.com";
+              window.open(
+                "https://facebook.com/sharer/sharer.php?u=" +
+                  encodeURIComponent(url),
+                "",
+                "left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0"
+              );
+            }}
+          >
+            <Image layout="fill" alt="linkedbadge" src={facebookImg}></Image>
           </div>
         </div>
       );

@@ -7,6 +7,7 @@ import iphone from "../media/iphone-front-transparent.png";
 import iphoneMarcas from "../media/iphone-front-transparent-marcas.png";
 import iosBadge from "../media/badge-ios.svg";
 import androidBadge from "../media/badge-android.svg";
+import back from "../media/923.jpg";
 import linkedBadge from "../media/badge-linked.svg";
 import { AspectRatio } from "@chakra-ui/layout";
 import Head from "next/head";
@@ -66,6 +67,7 @@ const Home: NextPage = () => {
       {commSoonAlert()}
       <div className={FunctionDarkModeHeader()}>
         <h1 className={styles.headerTitle}>TABLÚ GAMES</h1>
+
         <div onClick={changeDarkMode} className={styles.toggleButton}>
           <div
             className={FunctionDarkModeToggle()}
