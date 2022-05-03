@@ -7,9 +7,7 @@ import iphone from "../media/iphone-front-transparent.png";
 import iphoneMarcas from "../media/iphone-front-transparent-marcas.png";
 import iosBadge from "../media/badge-ios.svg";
 import androidBadge from "../media/badge-android.svg";
-import back from "../media/923.jpg";
 import linkedBadge from "../media/badge-linked.svg";
-import { AspectRatio } from "@chakra-ui/layout";
 import Head from "next/head";
 import { Context } from "../context/AppContext";
 import {
