@@ -37,7 +37,10 @@ function RulesModal({ CloseRulesModal }: any) {
             </p>
           </li>
           <li className={styles.fourthLi}>
-            <p>4) Prohibido gritar</p>
+            <p>
+              4) No se permiten mímicas, ni usar otro idioma para decir una
+              palabra restringida
+            </p>
           </li>
         </ul>
         {}
