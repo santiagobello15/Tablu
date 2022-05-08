@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
 import { useState, useContext } from "react";
-import iphone from "../media/iphone-front-transparent.png";
+import iphone from "../media/phone1.png";
 import iphoneMarcas from "../media/iphone-front-transparent-marcas.png";
 import iosBadge from "../media/badge-ios.svg";
 import androidBadge from "../media/badge-android.svg";
