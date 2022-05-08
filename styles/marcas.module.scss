@@ -1200,14 +1200,14 @@ $CardColorYellow: hsl(46, 97%, 65%);
     }
   }
   .cardsUL1 {
-    top: 55px;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -0%);
     width: 100%;
     text-align: center;
   }
   .cardsUL2 {
-    top: 123px;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -0%);
     width: 100%;
@@ -1216,9 +1216,11 @@ $CardColorYellow: hsl(46, 97%, 65%);
   .gameCard {
     h1 {
       font-size: 0.9rem;
+      top: 5%;
     }
     h2 {
       font-size: 0.9rem;
+      top: 15%;
     }
     li {
       font-size: 0.5rem;
