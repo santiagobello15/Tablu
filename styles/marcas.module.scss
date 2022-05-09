@@ -14,11 +14,11 @@ $CardColorYellow: hsl(46, 97%, 65%);
 }
 .centerDiv {
   position: absolute;
-  top: 25px;
+  top: 50%;
   width: 800px;
   height: 600px;
   left: 50%;
-  transform: translate(-50%, 0%);
+  transform: translate(-50%, -50%);
   background-color: #fafafa;
 }
 
@@ -1128,6 +1128,31 @@ $CardColorYellow: hsl(46, 97%, 65%);
       font-size: 2.2rem;
     }
   }
+  .gameCardBlur {
+    h3 {
+      font-size: 2.5vw;
+    }
+  }
+  @keyframes circle-in-txt {
+    0% {
+      font-size: 2.2vw;
+    }
+    100% {
+      font-size: 0rem;
+    }
+  }
+  @keyframes circle-in {
+    0% {
+      width: 250%;
+      aspect-ratio: 1;
+      height: auto;
+    }
+    100% {
+      width: 0%;
+      aspect-ratio: 1;
+      height: auto;
+    }
+  }
 }
 
 @media all and (max-width: 550px) {
@@ -1301,7 +1326,6 @@ $CardColorYellow: hsl(46, 97%, 65%);
   }
   .centerDiv {
     height: 80vh;
-    top: 5vh;
     width: 50vw;
     h1 {
       font-size: 3vw;
