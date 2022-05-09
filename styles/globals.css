@@ -2,8 +2,7 @@
 
 @font-face {
   font-family: "Luckiest Guy";
-  src: local("Luckiest Guy"),
-    url(../assets/luckiestguyregular-webfont.ttf) format("truetype");
+  src: url("../assets/luckiestguyregular-webfont.ttf") format("truetype");
 }
 
 html,
