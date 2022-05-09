@@ -59,7 +59,10 @@ const Home: NextPage = () => {
     <div className="App">
       <Head>
         <title>Tablu Games</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="viewport"
+          content="initial-scale=1.0, width=device-width, text/html, http-equiv=Content-Type"
+        />
       </Head>
       <div className={FunctionMiddleContainer()}></div>
       {commSoonAlert()}
