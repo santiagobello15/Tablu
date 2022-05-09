@@ -691,12 +691,12 @@
   }
   .absDivIos {
     left: 0;
-    width: 30%;
+    width: 35%;
   }
   .absDivAndroid {
     left: 0;
     top: 40px;
-    width: 30%;
+    width: 35%;
   }
   .footerLight {
     top: 1450px;
@@ -705,6 +705,9 @@
   .footerDark {
     top: 1450px;
     height: 200px;
+  }
+  .bodyTextSecondRow {
+    top: 10%;
   }
 }
 
@@ -785,13 +788,15 @@
     }
   }
   .absDivAndroid {
-    left: 15%;
+    left: 20%;
     top: 0;
     right: auto;
+    width: 25%;
   }
   .absDivIos {
-    right: 15%;
+    right: 20%;
     left: auto;
+    width: 25%;
   }
   .bodyTextWebVersionDark,
   .bodyTextWebVersionLight {
