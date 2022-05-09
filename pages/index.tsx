@@ -60,6 +60,12 @@ const Home: NextPage = () => {
       <Head>
         <title>Tablu Games</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link
+          rel="preload"
+          href="/fonts/luckiestguyregular-webfont.ttf"
+          as="font"
+          crossOrigin=""
+        ></link>
       </Head>
       <div className={FunctionMiddleContainer()}></div>
       {commSoonAlert()}
