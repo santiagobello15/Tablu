@@ -204,7 +204,7 @@
   transition: transform 0.2s;
   width: 20%;
   position: absolute;
-  top: 60px;
+  top: 8%;
   left: -1%;
 }
 #iphoneContainerRightId {
@@ -216,7 +216,7 @@
 .bodyTextContainer {
   position: absolute;
   left: 35%;
-  top: 60px;
+  top: 10%;
   width: 60%;
   white-space: nowrap;
   height: 80%;
@@ -266,13 +266,14 @@
   animation-delay: 1s;
   opacity: 0;
   width: 100%;
-  line-height: 1.5rem;
 }
 .bodyTextSecondRow {
   animation: fade-in-body-text 0.5s linear forwards;
   animation-delay: 1s;
   opacity: 0;
   width: 100%;
+  position: absolute;
+  top: 15%;
 }
 .bodyTextThirdRow {
   animation: fade-in-body-text 0.5s linear forwards;
@@ -296,7 +297,7 @@
 .bodyTextFifth {
   top: 72%;
   width: 50%;
-  height: 100px;
+  height: 15%;
   position: absolute;
   animation: up-and-fade 0.3s linear forwards;
   opacity: 0;
@@ -399,7 +400,7 @@
   color: #9d4edd;
   text-shadow: 2px 2px black;
   position: absolute;
-  top: 20px;
+  top: 36%;
   animation: parpadding 1s linear forwards infinite;
   cursor: pointer;
 }
