@@ -5,7 +5,9 @@
   src: url("../public/fonts/luckiestguyregular-webfont.eot") format("eot");
   src: url("../public/fonts/luckiestguyregular-webfont.woff") format("woff");
   src: url("../public/fonts/luckiestguyregular-webfont.woff2") format("woff2");
-  src: url("../public/fonts/luckiestguyregular-webfont.ttf") format("truetype");
+  src: url("/fonts/luckiestguyregular-webfont.ttf") format("truetype");
+  /*  src: url("./public/fonts/luckiestguyregular-webfont.ttf") format("truetype"); */
+  src: url("/public/fonts/luckiestguyregular-webfont.ttf") format("truetype");
 }
 
 html,
