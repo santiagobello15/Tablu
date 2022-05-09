@@ -2,6 +2,9 @@
 
 @font-face {
   font-family: "Luckiest Guy";
+  src: url("../assets/luckiestguyregular-webfont.eot") format("eot");
+  src: url("../assets/luckiestguyregular-webfont.woff") format("woff");
+  src: url("../assets/luckiestguyregular-webfont.woff2") format("woff2");
   src: url("../assets/luckiestguyregular-webfont.ttf") format("truetype");
 }
 
