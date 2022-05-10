@@ -110,13 +110,6 @@ const Game: NextPage = ({ data }: any) => {
   useEffect(() => {
     BlurTimeUp();
   });
-  /*   const pivot4dev = () => {
-    if (currentCard == Object.keys(data.CardsArray).length) {
-      setCurrentCard(0);
-    }
-  };
-  pivot4dev();
- */
 
   const pivot4dev = () => {
     if (data.CardsArray !== undefined) {
@@ -570,6 +563,8 @@ const Game: NextPage = ({ data }: any) => {
     if (countDownGame == 0.0) {
       setCountDownGame(timeRound);
       setStartCounter(false);
+      setTimeUp(true);
+      setTimeout(() => setTimeUp(false), 4000);
       setCurrentRonda(currentRonda + 1);
       if (activeTeamOne == true) {
         setActiveTeamOne(false);
@@ -684,7 +679,7 @@ const Game: NextPage = ({ data }: any) => {
   return (
     <div className={styles.mainDiv}>
       <Head>
-        <title>Tablu Famosos</title>
+        <title>Tablu Marcas</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       {showSettingsModal && (
