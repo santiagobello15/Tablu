@@ -14,12 +14,13 @@ $CardColorYellow: hsl(46, 97%, 65%);
 }
 .centerDiv {
   position: absolute;
-  top: 50%;
+  top: 5%;
   width: 800px;
   height: 600px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0%);
   background-color: #fafafa;
+  overflow: hidden;
 }
 
 .closeBtn {
@@ -337,6 +338,34 @@ $CardColorYellow: hsl(46, 97%, 65%);
     animation: circle-in-txt 0.5s linear forwards 0.5s;
   }
 }
+.timeUpBlur {
+  height: 200%;
+  aspect-ratio: 1;
+  position: absolute;
+  background-color: #00000099;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(4px);
+  border-radius: 50%;
+  /*   overflow: hidden; */
+  animation: circle-in-timeup 3s linear forwards 1s;
+
+  h3 {
+    font-size: 3vw;
+    color: white;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Luckiest Guy";
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    font-weight: 100;
+    animation: circle-in-txt-timeup 2s linear forwards 2s;
+  }
+}
 
 .cardsUL1 {
   position: absolute;
@@ -351,6 +380,18 @@ $CardColorYellow: hsl(46, 97%, 65%);
   }
 }
 
+@keyframes circle-in-timeup {
+  0% {
+    width: auto;
+    aspect-ratio: 1;
+    height: 200%;
+  }
+  100% {
+    width: auto;
+    aspect-ratio: 1;
+    height: 0%;
+  }
+}
 @keyframes circle-in {
   0% {
     width: 100%;
@@ -369,6 +410,14 @@ $CardColorYellow: hsl(46, 97%, 65%);
   }
   100% {
     font-size: 0rem;
+  }
+}
+@keyframes circle-in-txt-timeup {
+  0% {
+    font-size: 3vw;
+  }
+  100% {
+    font-size: 0vw;
   }
 }
 

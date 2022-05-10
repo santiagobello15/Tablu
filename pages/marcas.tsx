@@ -61,6 +61,7 @@ const Game: NextPage = ({ data }: any) => {
   const [blockPass, setBlockPass] = useState(false);
   const [blockAdd, setBlockAdd] = useState(false);
   const [blockSubstract, setBlockSubstract] = useState(false);
+  const [timeUp, setTimeUp] = useState(false);
 
   interface CardsTableInterface {
     marca1: string;
@@ -106,7 +107,9 @@ const Game: NextPage = ({ data }: any) => {
   useEffect(() => {
     BlurAndText();
   });
-
+  useEffect(() => {
+    BlurTimeUp();
+  });
   /*   const pivot4dev = () => {
     if (currentCard == Object.keys(data.CardsArray).length) {
       setCurrentCard(0);
@@ -204,6 +207,15 @@ const Game: NextPage = ({ data }: any) => {
       );
     }
   };
+  const BlurTimeUp = () => {
+    if (timeUp == true) {
+      return (
+        <div className={styles.timeUpBlur}>
+          <h3>¡TIEMPO AGOTADO!</h3>
+        </div>
+      );
+    }
+  };
 
   const AddBlock = () => {
     if (blockAdd == true) {
@@ -225,6 +237,7 @@ const Game: NextPage = ({ data }: any) => {
     if (centerDivOpacity == 0) {
       return (
         <div className={styles.centerDiv}>
+          {BlurTimeUp()}
           <h1 className={styles.headerTitle}>TABLÚ MARCAS</h1>
           <div className={styles.gamingPad}>
             <div className={styles.gameCardLeft}>
