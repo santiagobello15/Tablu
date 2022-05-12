@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.scss";
 import { useState, useContext } from "react";
 import iphone from "../media/phone1.png";
-import iphoneMarcas from "../media/iphone-front-transparent-marcas.png";
+import iphoneMarcas from "../media/phone2.png";
 import iosBadge from "../media/badge-ios.svg";
 import androidBadge from "../media/badge-android.svg";
 import linkedBadge from "../media/badge-linked.svg";
