@@ -77,7 +77,7 @@ const Home: NextPage = () => {
             className={FunctionDarkModeToggle()}
             onClick={changeDarkMode}
           ></div>
-          <h1 className={FunctionH1DarkModeClass()}>{FunctionH1DarkMode()}</h1>
+          <p className={FunctionH1DarkModeClass()}>{FunctionH1DarkMode()}</p>
         </div>
       </div>
       <div className={FunctionDarkModeBodyDiv()}>
@@ -86,7 +86,7 @@ const Home: NextPage = () => {
           id={styles.iphoneContainerRightId}
         >
           <Image
-            alt="iphonepic"
+            alt="iphone picture"
             className={styles.iphonePic}
             src={iphoneMarcas}
           ></Image>
@@ -147,7 +147,7 @@ const Home: NextPage = () => {
         </div>
         <div className={styles.iphoneContainer}>
           <Image
-            alt="iphonepic"
+            alt="iphone picture"
             className={styles.iphonePic}
             src={iphone}
           ></Image>
@@ -233,7 +233,7 @@ const Home: NextPage = () => {
               );
             }}
           >
-            <Image layout="fill" alt="linkedbadge" src={linkedBadge}></Image>
+            <Image layout="fill" alt="linkedin badge" src={linkedBadge}></Image>
           </div>
         </div>
       </div>
