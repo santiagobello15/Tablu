@@ -60,6 +60,10 @@ const Home: NextPage = () => {
       <Head>
         <title>Tablu Games</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          content="Jugá el nuevo clásico juego de adivinar palabras, nuevas versiones. Probala online, o bajate la App"
+        ></meta>
         <link
           rel="preload"
           href="/fonts/luckiestguyregular-webfont.ttf"
