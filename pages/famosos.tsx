@@ -246,6 +246,20 @@ const Game: NextPage = ({ data }: any) => {
             </div>
 
             <div className={styles.gameCard}>
+              <div
+                className={styles.cardQuestion}
+                onClick={() => {
+                  window.open(
+                    "http://google.com/search?q=" +
+                      cardsTable.cardName +
+                      " " +
+                      cardsTable.cardLastName,
+                    "_blank"
+                  );
+                }}
+              >
+                <p>?</p>
+              </div>
               {BlurAndText()}
               <h1>{cardsTable.cardName}</h1>
               <h2>{cardsTable.cardLastName}</h2>

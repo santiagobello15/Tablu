@@ -429,7 +429,27 @@ $CardColorYellow: hsl(46, 97%, 65%);
     text-align: center;
   }
 }
+.cardQuestion {
+  top: 2%;
+  right: 2%;
+  position: absolute;
+  width: 10%;
+  aspect-ratio: 1;
+  border-width: 1px;
+  border-color: #fafafa;
+  border-radius: 50%;
+  cursor: pointer;
 
+  p {
+    font-size: 1.3vw;
+    position: absolute;
+    color: #fafafa;
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+  }
+}
 .gameCardLeft {
   height: 100%;
   width: 33.33%;
@@ -565,7 +585,7 @@ $CardColorYellow: hsl(46, 97%, 65%);
   transform: translate(-50%, 0%);
   width: 140px;
   height: 60px;
-  background-color: #295b16;
+  background-color: #13e013;
   border-radius: 10px;
   cursor: pointer;
   p {
@@ -588,7 +608,7 @@ $CardColorYellow: hsl(46, 97%, 65%);
   transform: translate(-50%, -50%);
   width: 140px;
   height: 60px;
-  background-color: #ba0000;
+  background-color: red;
   border-radius: 10px;
   cursor: pointer;
 
