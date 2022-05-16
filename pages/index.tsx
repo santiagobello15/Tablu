@@ -183,7 +183,10 @@ const Home: NextPage = () => {
               <div
                 className={styles.absDivIos}
                 onClick={() => {
-                  commingSoon();
+                  window.open(
+                    "https://play.google.com/store/apps/details?id=tablugames.marcas",
+                    "_blank"
+                  );
                 }}
               >
                 <div className={styles.buttonsStores} />
