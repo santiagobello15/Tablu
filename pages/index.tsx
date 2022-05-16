@@ -183,10 +183,7 @@ const Home: NextPage = () => {
               <div
                 className={styles.absDivIos}
                 onClick={() => {
-                  window.open(
-                    "https://play.google.com/store/apps/details?id=tablugames.marcas",
-                    "_blank"
-                  );
+                  commingSoon();
                 }}
               >
                 <div className={styles.buttonsStores} />
@@ -195,7 +192,10 @@ const Home: NextPage = () => {
               <div
                 className={styles.absDivAndroid}
                 onClick={() => {
-                  commingSoon();
+                  window.open(
+                    "https://play.google.com/store/apps/details?id=tablugames.marcas",
+                    "_blank"
+                  );
                 }}
               >
                 <div className={styles.buttonsStores} />
