@@ -11,6 +11,8 @@ import Image from "next/image";
 import clapsImg from "../media/clapsImg.png";
 import twitterImg from "../media/twitter.png";
 import facebookImg from "../media/facebook.png";
+import soundOff from "../media/soundOff.png";
+import soundOn from "../media/soundOn.png";
 import { Context } from "../context/AppContext";
 import Head from "next/head";
 
@@ -62,6 +64,7 @@ const Game: NextPage = ({ data }: any) => {
   const [blockAdd, setBlockAdd] = useState(false);
   const [blockSubstract, setBlockSubstract] = useState(false);
   const [timeUp, setTimeUp] = useState(false);
+  const [musicOn, setMusicOn] = useState(false);
 
   interface CardsTableInterface {
     cardName: string;
@@ -128,6 +131,13 @@ const Game: NextPage = ({ data }: any) => {
     }
   };
   pivot4dev();
+
+  const soundSwitch = () =>{
+    if (musicOn == true){
+      setMusicOn(false)
+    }
+    else {setMusicOn(true)}
+  }
 
   const cancelCounterQuitting = () => {
     if (restartCounterBoolean == true) {
@@ -313,6 +323,10 @@ const Game: NextPage = ({ data }: any) => {
     if (centerDivOpacity == 1) {
       return (
         <div className={styles.centerDiv}>
+                    <div
+            className={styles.soundImg} onClick={soundSwitch} >
+            <Image layout="fill" alt="linkedbadge" src={musicOn == true ? soundOn : soundOff}></Image>
+          </div>
           <h1 className={styles.headerTitle}>TABLÚ FAMOSOS</h1>
           <div className={styles.btnsContainer}>
             <div className={styles.configButton} onClick={settModalShow}>

@@ -23,6 +23,15 @@ $CardColorYellow: hsl(46, 97%, 65%);
   overflow: hidden;
 }
 
+.soundImg {
+  position: absolute;
+  top: 10px;
+  width: 4%;
+  aspect-ratio: 1;
+  left: 10px;
+  cursor: pointer;
+}
+
 .closeBtn {
   width: 40px;
   height: 40px;
