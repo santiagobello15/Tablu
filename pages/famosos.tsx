@@ -15,6 +15,7 @@ import soundOff from "../media/soundOff.png";
 import soundOn from "../media/soundOn.png";
 import { Context } from "../context/AppContext";
 import Head from "next/head";
+import useSound from 'use-sound';
 
 const ENVIRONMENT = process.env.REACT_APP_ENVIRONMENT;
 const API_URL =
@@ -138,6 +139,13 @@ const Game: NextPage = ({ data }: any) => {
     }
     else {setMusicOn(true)}
   }
+
+/*   useEffect(()=>{
+if(musicOn == true) {
+  songOn()
+}
+  }, [musicOn])
+ */
 
   const cancelCounterQuitting = () => {
     if (restartCounterBoolean == true) {
@@ -319,12 +327,16 @@ const Game: NextPage = ({ data }: any) => {
       );
     }
   };
+  const [songOn] = useSound(
+    'correct.mp3',
+    { volume: 0.25 }
+  );
   const CenterDivFunction = () => {
     if (centerDivOpacity == 1) {
       return (
         <div className={styles.centerDiv}>
                     <div
-            className={styles.soundImg} onClick={soundSwitch} >
+            className={styles.soundImg} onClick={()=>{songOn()}} >
             <Image layout="fill" alt="linkedbadge" src={musicOn == true ? soundOn : soundOff}></Image>
           </div>
           <h1 className={styles.headerTitle}>TABLÚ FAMOSOS</h1>
