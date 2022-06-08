@@ -115,7 +115,7 @@ const Game: NextPage = ({ data }: any) => {
     BlurTimeUp();
   });
 
-  const pivot4dev = () => {
+  useEffect(()=>{
     if (data.CardsArray !== undefined) {
       if (
         indexOnShuffled ==
@@ -130,15 +130,7 @@ const Game: NextPage = ({ data }: any) => {
         setIndexOnShuffled(0);
       }
     }
-  };
-  pivot4dev();
-
-  const soundSwitch = () =>{
-    if (musicOn == true){
-      setMusicOn(false)
-    }
-    else {setMusicOn(true)}
-  }
+  }, [])
 
   const cancelCounterQuitting = () => {
     if (restartCounterBoolean == true) {
@@ -598,7 +590,8 @@ const Game: NextPage = ({ data }: any) => {
     setBlockSubstract(true);
     setBlockAdd(true);
     setBlockPass(true);
-    setCurrentCard(currentCard + 1);
+    setIndexOnShuffled(indexOnShuffled + 1);
+    setCurrentCard(indexOnShuffled);
     setPassPoint(true);
     setTimeout(() => setPassPoint(false), 1000);
     setTimeout(() => setBlockPass(false), 1000);
