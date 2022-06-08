@@ -140,13 +140,6 @@ const Game: NextPage = ({ data }: any) => {
     else {setMusicOn(true)}
   }
 
-/*   useEffect(()=>{
-if(musicOn == true) {
-  songOn()
-}
-  }, [musicOn])
- */
-
   const cancelCounterQuitting = () => {
     if (restartCounterBoolean == true) {
       setStartCounter(false);
@@ -294,13 +287,13 @@ if(musicOn == true) {
             </div>
 
             <div className={styles.gameCardRight}>
-              <div className={AddBlock()} onClick={AddPoints}>
+              <div className={AddBlock()} onClick={()=>{AddPoints(), musicOn == true ? correctOn() : null}}>
                 <p>+1 Punto</p>
               </div>
-              <div className={PassBlock()} onClick={Pass}>
+              <div className={PassBlock()} onClick={()=>{Pass(), musicOn == true ? passOn() : null}}>
                 <p>Pasar</p>
               </div>
-              <div className={SubstractBlock()} onClick={DeductPoints}>
+              <div className={SubstractBlock()} onClick={()=>{DeductPoints(), musicOn == true ? incorrectOn() : null}}>
                 <p>-1 Punto</p>
               </div>
             </div>
@@ -330,6 +323,18 @@ if(musicOn == true) {
   const [songOn, {stop}] = useSound(
     'countryboy.mp3',
     { volume: 0.25, loop: true }
+  );
+  const [correctOn] = useSound(
+    'correct.mp3',
+    { volume: 1 }
+  );
+  const [incorrectOn] = useSound(
+    'incorrect.mp3',
+    { volume: 1 }
+  );
+  const [passOn] = useSound(
+    'pass.mp3',
+    { volume: 1 }
   );
 
   useEffect(()=>{
