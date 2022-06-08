@@ -327,16 +327,26 @@ if(musicOn == true) {
       );
     }
   };
-  const [songOn] = useSound(
-    'correct.mp3',
-    { volume: 0.25 }
+  const [songOn, {stop}] = useSound(
+    'countryboy.mp3',
+    { volume: 0.25, loop: true }
   );
+
+  useEffect(()=>{
+    if(musicOn == true){
+      songOn()
+    }
+    if(musicOn == false){
+      stop()
+    }
+  }, [musicOn])
+
   const CenterDivFunction = () => {
     if (centerDivOpacity == 1) {
       return (
         <div className={styles.centerDiv}>
                     <div
-            className={styles.soundImg} onClick={()=>{songOn()}} >
+            className={styles.soundImg} onClick={()=>{setMusicOn(!musicOn)}} >
             <Image layout="fill" alt="linkedbadge" src={musicOn == true ? soundOn : soundOff}></Image>
           </div>
           <h1 className={styles.headerTitle}>TABLÚ FAMOSOS</h1>
