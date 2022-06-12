@@ -235,6 +235,10 @@ const Game: NextPage = ({ data }: any) => {
       return (
         <div className={styles.centerDiv}>
           {BlurTimeUp()}
+          <div
+            className={styles.soundImg} onClick={()=>{setMusicOn(!musicOn)}} >
+            <Image layout="fill" alt="linkedbadge" src={musicOn == true ? soundOn : soundOff}></Image>
+          </div>
           <h1 className={styles.headerTitle}>TABLÚ FAMOSOS</h1>
           <div className={styles.gamingPad}>
             <div className={styles.gameCardLeft}>
@@ -328,6 +332,14 @@ const Game: NextPage = ({ data }: any) => {
     'pass.mp3',
     { volume: 1 }
   );
+  const [gameOverOn] = useSound(
+    'gameover.mp3',
+    { volume: 1 }
+  );
+  const [roundOverOn] = useSound(
+    'roundover.mp3',
+    { volume: 1 }
+  );
 
   useEffect(()=>{
     if(musicOn == true){
@@ -391,6 +403,10 @@ const Game: NextPage = ({ data }: any) => {
       return (
         <div className={styles.centerDiv}>
           <h1 className={styles.headerTitle}>TABLÚ FAMOSOS</h1>
+          <div
+            className={styles.soundImg} onClick={()=>{setMusicOn(!musicOn)}} >
+            <Image layout="fill" alt="linkedbadge" src={musicOn == true ? soundOn : soundOff}></Image>
+          </div>
           {ClapsCelebration()}
           <div className={styles.victoryH1}>
             <h1>Ganador: {renderGameResult()}</h1>
@@ -611,6 +627,7 @@ const Game: NextPage = ({ data }: any) => {
   const FinishedAlert = () => {
     if (countDownGame == 0.0) {
       setCountDownGame(timeRound);
+      if(currentRonda != quantityRound){roundOverOn()}
       setStartCounter(false);
       setTimeUp(true);
       setTimeout(() => setTimeUp(false), 4000);
@@ -643,6 +660,7 @@ const Game: NextPage = ({ data }: any) => {
   const GameOver = () => {
     if (countDownGame == 0.0 && currentRonda == quantityRound) {
       setCenterDivOpacity(2);
+      gameOverOn()
     }
   };
 
