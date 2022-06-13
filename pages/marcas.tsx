@@ -13,6 +13,7 @@ import twitterImg from "../media/twitter.png";
 import facebookImg from "../media/facebook.png";
 import { Context } from "../context/AppContext";
 import Head from "next/head";
+import useSound from 'use-sound';
 
 const ENVIRONMENT = process.env.REACT_APP_ENVIRONMENT;
 const API_URL =
@@ -62,6 +63,7 @@ const Game: NextPage = ({ data }: any) => {
   const [blockAdd, setBlockAdd] = useState(false);
   const [blockSubstract, setBlockSubstract] = useState(false);
   const [timeUp, setTimeUp] = useState(false);
+  const [musicOn, setMusicOn] = useState(false);
 
   interface CardsTableInterface {
     marca1: string;
@@ -111,7 +113,7 @@ const Game: NextPage = ({ data }: any) => {
     BlurTimeUp();
   });
 
-  const pivot4dev = () => {
+  useEffect(()=>{
     if (data.CardsArray !== undefined) {
       if (
         indexOnShuffled ==
@@ -126,8 +128,7 @@ const Game: NextPage = ({ data }: any) => {
         setIndexOnShuffled(0);
       }
     }
-  };
-  pivot4dev();
+  }, [])
 
   const cancelCounterQuitting = () => {
     if (restartCounterBoolean == true) {
