@@ -11,6 +11,8 @@ import Image from "next/image";
 import clapsImg from "../media/clapsImg.png";
 import twitterImg from "../media/twitter.png";
 import facebookImg from "../media/facebook.png";
+import soundOff from "../media/soundOff.png";
+import soundOn from "../media/soundOn.png";
 import { Context } from "../context/AppContext";
 import Head from "next/head";
 import useSound from 'use-sound';
@@ -232,6 +234,10 @@ const Game: NextPage = ({ data }: any) => {
       return (
         <div className={styles.centerDiv}>
           {BlurTimeUp()}
+          <div
+            className={styles.soundImg} onClick={()=>{setMusicOn(!musicOn)}} >
+            <Image layout="fill" alt="linkedbadge" src={musicOn == true ? soundOn : soundOff}></Image>
+          </div>
           <h1 className={styles.headerTitle}>TABLÚ MARCAS</h1>
           <div className={styles.gamingPad}>
             <div className={styles.gameCardLeft}>
@@ -276,13 +282,13 @@ const Game: NextPage = ({ data }: any) => {
             </div>
 
             <div className={styles.gameCardRight}>
-              <div className={AddBlock()} onClick={AddPoints}>
+              <div className={AddBlock()} onClick={()=>{AddPoints(), musicOn == true ? correctOn() : null}}>
                 <p>+1 Punto</p>
               </div>
-              <div className={PassBlock()} onClick={Pass}>
+              <div className={PassBlock()} onClick={()=>{Pass(), musicOn == true ? passOn() : null}}>
                 <p>Pasar</p>
               </div>
-              <div className={SubstractBlock()} onClick={DeductPoints}>
+              <div className={SubstractBlock()} onClick={()=>{DeductPoints(), musicOn == true ? incorrectOn() : null}}>
                 <p>-1 Punto</p>
               </div>
             </div>
@@ -309,10 +315,50 @@ const Game: NextPage = ({ data }: any) => {
       );
     }
   };
+
+  const [songOn, {stop}] = useSound(
+    'countryboy.mp3',
+    { volume: 0.25, loop: true }
+  );
+  const [correctOn] = useSound(
+    'correct.mp3',
+    { volume: 1 }
+  );
+  const [incorrectOn] = useSound(
+    'incorrect.mp3',
+    { volume: 1 }
+  );
+  const [passOn] = useSound(
+    'pass.mp3',
+    { volume: 1 }
+  );
+  const [gameOverOn] = useSound(
+    'gameover.mp3',
+    { volume: 1 }
+  );
+  const [roundOverOn] = useSound(
+    'roundover.mp3',
+    { volume: 1 }
+  );
+  
+
+  useEffect(()=>{
+    if(musicOn == true){
+      songOn()
+    }
+    if(musicOn == false){
+      stop()
+    }
+  }, [musicOn])
+
   const CenterDivFunction = () => {
     if (centerDivOpacity == 1) {
       return (
         <div className={styles.centerDiv}>
+          <div
+            className={styles.soundImg} onClick={()=>{setMusicOn(!musicOn)}} >
+            <Image layout="fill" alt="linkedbadge" src={musicOn == true ? soundOn : soundOff}></Image>
+          </div>
           <h1 className={styles.headerTitle}>TABLÚ MARCAS</h1>
           <div className={styles.btnsContainer}>
             <div className={styles.configButton} onClick={settModalShow}>
@@ -358,6 +404,10 @@ const Game: NextPage = ({ data }: any) => {
       return (
         <div className={styles.centerDiv}>
           <h1 className={styles.headerTitle}>TABLÚ MARCAs</h1>
+          <div
+            className={styles.soundImg} onClick={()=>{setMusicOn(!musicOn)}} >
+            <Image layout="fill" alt="linkedbadge" src={musicOn == true ? soundOn : soundOff}></Image>
+          </div>
           {ClapsCelebration()}
           <div className={styles.victoryH1}>
             <h1>Ganador: {renderGameResult()}</h1>
@@ -578,6 +628,7 @@ const Game: NextPage = ({ data }: any) => {
     if (countDownGame == 0.0) {
       setCountDownGame(timeRound);
       setStartCounter(false);
+      if(currentRonda != quantityRound){roundOverOn()}
       setTimeUp(true);
       setTimeout(() => setTimeUp(false), 4000);
       setCurrentRonda(currentRonda + 1);
@@ -609,6 +660,7 @@ const Game: NextPage = ({ data }: any) => {
   const GameOver = () => {
     if (countDownGame == 0.0 && currentRonda == quantityRound) {
       setCenterDivOpacity(2);
+      gameOverOn()
     }
   };
 

@@ -340,7 +340,7 @@ const Game: NextPage = ({ data }: any) => {
     'roundover.mp3',
     { volume: 1 }
   );
-  
+
 
   useEffect(()=>{
     if(musicOn == true){
@@ -355,7 +355,7 @@ const Game: NextPage = ({ data }: any) => {
     if (centerDivOpacity == 1) {
       return (
         <div className={styles.centerDiv}>
-                    <div
+            <div
             className={styles.soundImg} onClick={()=>{setMusicOn(!musicOn)}} >
             <Image layout="fill" alt="linkedbadge" src={musicOn == true ? soundOn : soundOff}></Image>
           </div>
