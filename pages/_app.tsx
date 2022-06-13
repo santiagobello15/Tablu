@@ -7,6 +7,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <GameContext>
       <ChakraProvider>
+        {/*
+ // @ts-ignore */}
         <Component {...pageProps} />
       </ChakraProvider>
     </GameContext>
