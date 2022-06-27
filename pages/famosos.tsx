@@ -19,7 +19,7 @@ import useSound from 'use-sound';
 
 const ENVIRONMENT = process.env.REACT_APP_ENVIRONMENT;
 const API_URL =
-  ENVIRONMENT === "local" ? "http://localhost:3000" : "https://tablu-santiagobello15.vercel.app/";
+  ENVIRONMENT === "local" ? "http://localhost:3000" : "https://tablugames.com/";
 
 const Game: NextPage = ({ data }: any) => {
   const {
