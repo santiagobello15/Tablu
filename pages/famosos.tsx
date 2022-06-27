@@ -776,7 +776,11 @@ const Game: NextPage = ({ data }: any) => {
 };
 
 export async function getServerSideProps() {
-  const response = await fetch(`${API_URL}/api/cardsFamosos`);
+  const response = await fetch(`${API_URL}/api/cardsFamosos`).catch((error) => {
+    // retrying to fetch
+    console.log(error);
+    getServerSideProps();
+  });
   const data = await response.json();
 
   return {
