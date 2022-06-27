@@ -779,7 +779,7 @@ export async function getStaticProps() {
     // retrying to fetch
     console.log(error);
       });
-  const data = await JSON.stringify(response);
+  const data = await response.json();
 
   return {
     props: {
