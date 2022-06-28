@@ -775,7 +775,7 @@ const Game: NextPage = ({ data }: any) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const response = await fetch(`${API_URL}/api/cardsFamosos`)
   const data = await response.json();
 
