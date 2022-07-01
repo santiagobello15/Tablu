@@ -391,7 +391,7 @@ const Game: NextPage = ({ data }: any) => {
             <p>{insultosFunction()}</p>
           </div>
           <Link href="/">
-            <div className={styles.closeBtn}>
+          <div className={styles.closeBtn} onClick={()=>{setMusicOn(false)}}>
               <p>X</p>
             </div>
           </Link>
